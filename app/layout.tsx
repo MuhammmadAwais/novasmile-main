@@ -13,7 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -30,9 +30,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${ebGaramond.variable} ${plusJakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-surface text-on-surface font-sans selection:bg-secondary-container selection:text-on-secondary-container">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-surface text-on-surface font-sans selection:bg-secondary-container selection:text-on-secondary-container"
+      >
         {children}
       </body>
     </html>

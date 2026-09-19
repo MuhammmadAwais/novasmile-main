@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { practiceData } from "@/content/practice-data";
 
 interface TreatmentShowcaseSectionProps {
@@ -31,9 +30,9 @@ export function TreatmentShowcaseSection({
   return (
     <section
       aria-labelledby="treatment-showcase-heading"
-      className={`relative w-full overflow-hidden bg-[#f7f5f0] text-on-surface ${className}`}
+      className={`relative w-full overflow-hidden bg-[#f4f1ec] text-on-surface ${className}`}
     >
-      {/* 1. Global High-Definition Marble Canvas Layer across entire section */}
+      {/* 1. Global High-Definition Marble Canvas Layer */}
       {data.marbleBg && (
         <div className="absolute inset-0 pointer-events-none z-0">
           <Image
@@ -41,29 +40,29 @@ export function TreatmentShowcaseSection({
             alt="Tactile white alabaster marble background texture"
             fill
             priority
-            className="object-cover opacity-70 mix-blend-multiply contrast-110"
+            className="object-cover opacity-75 mix-blend-multiply contrast-110 brightness-100"
           />
-          {/* Subtle warm ambient wash */}
-          <div className="absolute inset-0 bg-[#fcf9f5]/30" />
+          {/* Ambient warm tone wash */}
+          <div className="absolute inset-0 bg-[#fbf9f5]/25" />
         </div>
       )}
 
       {/* 2. Top Header: "your beautiful smile" */}
-      <div className="relative z-10 w-full pt-16 sm:pt-20 lg:pt-24 pb-6 sm:pb-10 px-6 sm:px-12 text-center">
+      <div className="relative z-10 w-full pt-14 sm:pt-18 lg:pt-20 pb-6 sm:pb-8 px-6 sm:px-12 text-center">
         <h2
           id="treatment-showcase-heading"
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-sans tracking-tight text-on-surface inline-block"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-sans tracking-tight text-on-surface inline-block"
         >
-          <span className="font-serif italic font-normal text-on-surface/85 mr-3">
+          <span className="font-light tracking-wide text-on-surface/85 mr-3 lowercase">
             {data.headlinePart1}
           </span>
-          <span className="font-sans font-bold tracking-tight text-on-surface">
+          <span className="font-extrabold tracking-tight text-on-surface lowercase">
             {data.headlinePart2}
           </span>
         </h2>
       </div>
 
-      {/* 3. Three Equal Square / Full-Bleed 50/50 Split Rows */}
+      {/* 3. Three Full-Bleed 50/50 Split Rows */}
       <div className="relative z-10 w-full flex flex-col">
         {data.items.map((item) => {
           const isImageRight = item.imagePosition === "right";
@@ -75,21 +74,21 @@ export function TreatmentShowcaseSection({
             >
               {/* === Column 1 === */}
               {isImageRight ? (
-                /* Text Column (Left Square -> Centered content in square marble space) */
-                <div className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[580px] xl:min-h-[640px] flex flex-col justify-center items-center text-center p-8 sm:p-12 lg:p-16 xl:p-20 z-10">
-                  <div className="max-w-md xl:max-w-lg flex flex-col items-center">
-                    {/* Category Title: Editorial Serif + Modern Sans Typography */}
-                    <h3 className="mb-4 sm:mb-5 leading-tight">
-                      <span className="block text-3xl sm:text-4xl lg:text-5xl font-sans font-extrabold tracking-tight text-on-surface">
+                /* Text Column (Left Side -> Right-aligned towards center seam) */
+                <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[540px] xl:min-h-[580px] flex flex-col justify-center items-center lg:items-end text-center lg:text-right px-6 sm:px-10 lg:pr-12 lg:pl-8 xl:pr-16 py-10 lg:py-14 z-10">
+                  <div className="max-w-md xl:max-w-lg flex flex-col items-center lg:items-end">
+                    {/* Two-Tone Title */}
+                    <h3 className="mb-2 leading-none">
+                      <span className="block text-4xl sm:text-5xl lg:text-[54px] font-sans font-extrabold tracking-tight text-on-surface lowercase">
                         {item.titlePart1}
                       </span>
-                      <span className="block text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-on-surface/90 mt-1">
+                      <span className="block text-4xl sm:text-5xl lg:text-[54px] font-sans font-extralight tracking-tight text-on-surface/90 lowercase mt-1">
                         {item.titlePart2}
                       </span>
                     </h3>
 
                     {/* Description Paragraph */}
-                    <p className="text-sm sm:text-base lg:text-[17px] text-on-surface-variant font-sans leading-relaxed mb-8 max-w-md">
+                    <p className="text-sm sm:text-base text-on-surface-variant font-sans leading-relaxed my-5 max-w-sm sm:max-w-md text-center lg:text-right">
                       {item.description}
                     </p>
 
@@ -97,16 +96,15 @@ export function TreatmentShowcaseSection({
                     <button
                       type="button"
                       onClick={() => handleCtaClick(item.categoryKey)}
-                      className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-full font-sans font-medium text-xs sm:text-sm tracking-wider uppercase bg-primary text-on-primary hover:bg-primary-container shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                      className="group inline-flex items-center justify-center px-7 sm:px-8 py-3.5 rounded-sm font-sans font-medium text-xs sm:text-sm tracking-wide lowercase bg-primary text-on-primary hover:bg-primary-container shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                     >
                       <span>{item.ctaText}</span>
-                      <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                     </button>
                   </div>
                 </div>
               ) : (
-                /* Image Column (Left Square -> Full Bleed) */
-                <div className="relative w-full min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] xl:min-h-[640px] overflow-hidden group">
+                /* Image Column (Left Side -> Full Bleed) */
+                <div className="relative w-full min-h-[360px] sm:min-h-[440px] lg:min-h-[540px] xl:min-h-[580px] overflow-hidden group order-2 lg:order-1">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
@@ -119,8 +117,8 @@ export function TreatmentShowcaseSection({
 
               {/* === Column 2 === */}
               {isImageRight ? (
-                /* Image Column (Right Square -> Full Bleed) */
-                <div className="relative w-full min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] xl:min-h-[640px] overflow-hidden group">
+                /* Image Column (Right Side -> Full Bleed) */
+                <div className="relative w-full min-h-[360px] sm:min-h-[440px] lg:min-h-[540px] xl:min-h-[580px] overflow-hidden group order-2 lg:order-2">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
@@ -130,21 +128,21 @@ export function TreatmentShowcaseSection({
                   />
                 </div>
               ) : (
-                /* Text Column (Right Square -> Centered content in square marble space) */
-                <div className="relative w-full min-h-[420px] sm:min-h-[500px] lg:min-h-[580px] xl:min-h-[640px] flex flex-col justify-center items-center text-center p-8 sm:p-12 lg:p-16 xl:p-20 z-10">
-                  <div className="max-w-md xl:max-w-lg flex flex-col items-center">
-                    {/* Category Title: Editorial Serif + Modern Sans Typography */}
-                    <h3 className="mb-4 sm:mb-5 leading-tight">
-                      <span className="block text-3xl sm:text-4xl lg:text-5xl font-sans font-extrabold tracking-tight text-on-surface">
+                /* Text Column (Right Side -> Left-aligned towards center seam) */
+                <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[540px] xl:min-h-[580px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-6 sm:px-10 lg:pl-12 lg:pr-8 xl:pl-16 py-10 lg:py-14 z-10 order-1 lg:order-2">
+                  <div className="max-w-md xl:max-w-lg flex flex-col items-center lg:items-start">
+                    {/* Two-Tone Title */}
+                    <h3 className="mb-2 leading-none">
+                      <span className="block text-4xl sm:text-5xl lg:text-[54px] font-sans font-extrabold tracking-tight text-on-surface lowercase">
                         {item.titlePart1}
                       </span>
-                      <span className="block text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-on-surface/90 mt-1">
+                      <span className="block text-4xl sm:text-5xl lg:text-[54px] font-sans font-extralight tracking-tight text-on-surface/90 lowercase mt-1">
                         {item.titlePart2}
                       </span>
                     </h3>
 
                     {/* Description Paragraph */}
-                    <p className="text-sm sm:text-base lg:text-[17px] text-on-surface-variant font-sans leading-relaxed mb-8 max-w-md">
+                    <p className="text-sm sm:text-base text-on-surface-variant font-sans leading-relaxed my-5 max-w-sm sm:max-w-md text-center lg:text-left">
                       {item.description}
                     </p>
 
@@ -152,10 +150,9 @@ export function TreatmentShowcaseSection({
                     <button
                       type="button"
                       onClick={() => handleCtaClick(item.categoryKey)}
-                      className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-full font-sans font-medium text-xs sm:text-sm tracking-wider uppercase bg-primary text-on-primary hover:bg-primary-container shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                      className="group inline-flex items-center justify-center px-7 sm:px-8 py-3.5 rounded-sm font-sans font-medium text-xs sm:text-sm tracking-wide lowercase bg-primary text-on-primary hover:bg-primary-container shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                     >
                       <span>{item.ctaText}</span>
-                      <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                     </button>
                   </div>
                 </div>

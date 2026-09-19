@@ -6,9 +6,9 @@
   --font-sans: var(--font-sans, "Plus Jakarta Sans"), system-ui, -apple-system, sans-serif;
 
   /* Brand Ochre Gold Accents */
-  --color-primary: #695216;
+  --color-primary: #836a2c;
   --color-on-primary: #ffffff;
-  --color-primary-container: #836a2c;
+  --color-primary-container: #9c8037;
   --color-on-primary-container: #ffefd1;
   --color-inverse-primary: #e2c37b;
   --color-primary-fixed: #ffdf98;

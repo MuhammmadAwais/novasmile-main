@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { HeroSection } from "@/features/hero";
 import { TrustMetricsSection } from "@/features/trust-metrics";
@@ -17,8 +17,17 @@ import {
 import { BookingModal, CallModal } from "@/features/booking";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [callOpen, setCallOpen] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <main className="min-h-screen bg-surface text-on-surface" />;
+  }
 
   return (
     <main className="min-h-screen bg-surface text-on-surface overflow-x-hidden flex flex-col">
