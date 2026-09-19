@@ -1,31 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import React from "react";
 import { practiceData } from "@/content/practice-data";
-import { ShieldCheck, Award, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { ShieldCheck, Award } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
 export function TrustMetricsSection() {
   const { milestones, affiliations } = practiceData;
-  const [activeSlide, setActiveSlide] = useState(0);
 
-  // 4 partners visible per slide on desktop, 2 on tablet/mobile
-  const itemsPerPage = 4;
-  const totalSlides = Math.ceil(affiliations.length / itemsPerPage);
-
-  // Gentle carousel rotation
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % totalSlides);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [totalSlides]);
-
-  const displayedAffiliations = affiliations.slice(
-    activeSlide * itemsPerPage,
-    activeSlide * itemsPerPage + itemsPerPage
-  );
+  // Duplicate for seamless infinite marquee loop
+  const marqueeItems = [...affiliations, ...affiliations];
 
   return (
     <section className="relative w-full py-16 sm:py-24 select-none overflow-hidden bg-[#faf7f2] border-b border-outline-variant/30">
@@ -122,139 +106,109 @@ export function TrustMetricsSection() {
             </div>
           ))}
         </div>
+      </div>
 
-        {/* 3. Accredited Associations & Company Partner Carousel (Matches reference emergency-bar-section.png) */}
-        <div className="relative pt-4 border-t border-outline-variant/30">
-          <div className="text-center mb-8">
-            <span className="font-sans text-[11px] font-semibold tracking-[0.2em] text-[#7a6a62] uppercase">
-              Accredited Clinical Excellence & Direct Insurance Partners
-            </span>
-          </div>
+      {/* 3. Full-Width Professional Marquee with Soft Edge Fades on Both Sides */}
+      <div className="relative w-full pt-6 border-t border-outline-variant/30">
+        <div className="text-center mb-6 px-4">
+          <span className="font-sans text-[11px] font-semibold tracking-[0.2em] text-[#7a6a62] uppercase">
+            Accredited Clinical Excellence & Direct Insurance Partners
+          </span>
+        </div>
 
-          {/* Carousel Slide Area */}
-          <div className="relative overflow-hidden py-4 px-2 sm:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 items-center justify-items-center">
-              {displayedAffiliations.map((partner) => (
-                <div
-                  key={partner.id}
-                  className="flex flex-col items-center text-center p-4 rounded-xl hover:bg-[#f2ece3]/80 transition-all duration-200 group w-full"
-                >
-                  {/* High-Fidelity Styled Logo Marks matching reference */}
-                  <div className="h-16 flex items-center justify-center mb-2">
-                    {partner.acronym === "ADA" && (
-                      <div className="flex items-center gap-2.5 text-[#2c221e] group-hover:text-primary transition-colors">
-                        <div className="w-10 h-10 rounded-lg border-[2px] border-[#2c221e] group-hover:border-primary flex items-center justify-center font-serif font-bold text-xs tracking-tighter shadow-2xs">
-                          ADA
-                        </div>
-                        <div className="text-left font-sans text-xs font-semibold leading-tight text-[#2c221e]">
-                          Alberta Dental<br />
-                          <span className="font-normal text-[11px] text-[#63554e]">Association</span>
-                        </div>
-                      </div>
-                    )}
+        {/* Outer Full-Width Masked Container */}
+        {/* Outer Full-Width Masked Container */}
+        <div className="relative w-full overflow-hidden py-6 sm:py-8">
+          {/* Left Side Gradient Fade Mask */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-52 md:w-64 bg-gradient-to-r from-[#faf7f2] via-[#faf7f2]/90 to-transparent z-20 pointer-events-none" />
 
-                    {partner.acronym === "CDSA" && (
-                      <div className="text-center text-[#2c221e] group-hover:text-primary transition-colors">
-                        <span className="font-sans text-3xl font-extrabold tracking-tighter block leading-none text-[#2c221e]">
-                          CDSA
-                        </span>
-                        <span className="font-sans text-[9px] uppercase tracking-[0.14em] text-[#63554e] block mt-1.5 font-medium">
-                          College of Dental Surgeons of Alberta
-                        </span>
-                      </div>
-                    )}
+          {/* Right Side Gradient Fade Mask */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-52 md:w-64 bg-gradient-to-l from-[#faf7f2] via-[#faf7f2]/90 to-transparent z-20 pointer-events-none" />
 
-                    {partner.acronym === "RCDC" && (
-                      <div className="text-center text-[#2c221e] group-hover:text-primary transition-colors">
-                        <span className="font-serif text-2xl tracking-[0.2em] block font-medium text-[#2c221e]">
-                          RCDC
-                        </span>
-                        <div className="flex items-center justify-center gap-2 mt-1">
-                          <span className="w-6 h-[1px] bg-[#2c221e]/40" />
-                          <span className="text-[11px] text-primary">🍁</span>
-                          <span className="w-6 h-[1px] bg-[#2c221e]/40" />
-                        </div>
-                      </div>
-                    )}
-
-                    {partner.acronym === "ASDS" && (
-                      <div className="flex items-center gap-2.5 text-[#2c221e] group-hover:text-primary transition-colors">
-                        <div className="w-9 h-9 rounded-full bg-[#836a2c]/10 text-primary flex items-center justify-center">
-                          <ShieldCheck className="w-5 h-5 text-primary" />
-                        </div>
-                        <div className="text-left font-sans text-xs font-semibold leading-tight text-[#2c221e]">
-                          <span className="text-[9px] uppercase tracking-wider text-[#63554e] block">
-                            Alberta Society of
-                          </span>
-                          Dental Specialists
-                        </div>
-                      </div>
-                    )}
-
-                    {partner.acronym === "AACD" && (
-                      <div className="flex items-center gap-2.5 text-[#2c221e] group-hover:text-primary transition-colors">
-                        <div className="w-9 h-9 rounded-full bg-[#836a2c]/10 text-primary flex items-center justify-center">
-                          <Award className="w-5 h-5 text-primary" />
-                        </div>
-                        <div className="text-left font-sans text-xs font-semibold leading-tight text-[#2c221e]">
-                          AACD Fellow<br />
-                          <span className="font-normal text-[11px] text-[#63554e]">Cosmetic Dentistry</span>
-                        </div>
-                      </div>
-                    )}
-
-                    {["DELTA", "CIGNA", "METLIFE"].includes(partner.acronym || "") && (
-                      <div className="text-center text-[#2c221e] group-hover:text-primary transition-colors">
-                        <span className="font-sans text-lg font-bold tracking-wider block text-[#2c221e]">
-                          {partner.name}
-                        </span>
-                        <span className="font-sans text-[10px] uppercase tracking-widest text-primary font-semibold">
-                          Direct Billing Partner
-                        </span>
-                      </div>
-                    )}
+          {/* Infinite Moving Ribbon */}
+          <div className="animate-marquee-smooth flex items-center gap-16 sm:gap-24 whitespace-nowrap">
+            {marqueeItems.map((partner, index) => (
+              <div
+                key={`${partner.id}-${index}`}
+                className="flex items-center gap-4 py-3 px-6 rounded-2xl hover:bg-[#f2ece3]/80 transition-all duration-200 group cursor-default shrink-0"
+              >
+                {/* Logo Mark Presentation */}
+                {partner.acronym === "ADA" && (
+                  <div className="flex items-center gap-3.5 text-[#2c221e] group-hover:text-primary transition-colors">
+                    <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-xl border-[2.5px] border-[#2c221e] group-hover:border-primary flex items-center justify-center font-serif font-bold text-sm sm:text-base tracking-tighter shadow-xs">
+                      ADA
+                    </div>
+                    <div className="text-left font-sans text-sm sm:text-[15px] font-semibold leading-snug text-[#2c221e]">
+                      Alberta Dental<br />
+                      <span className="font-normal text-xs sm:text-[12px] text-[#63554e]">Association</span>
+                    </div>
                   </div>
-
-                  <p className="text-[11px] text-[#786a63] font-sans">
-                    {partner.subtitle}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Left & Right Nav Arrows */}
-            <button
-              onClick={() =>
-                setActiveSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))
-              }
-              className="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-[#786a63] hover:text-[#2c221e] rounded-full hover:bg-surface-container transition-colors"
-              aria-label="Previous partner companies"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => setActiveSlide((prev) => (prev + 1) % totalSlides)}
-              className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-[#786a63] hover:text-[#2c221e] rounded-full hover:bg-surface-container transition-colors"
-              aria-label="Next partner companies"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Carousel Pagination Indicator Dots (Matches ••••• in reference) */}
-          <div className="flex items-center justify-center gap-2 mt-6">
-            {Array.from({ length: totalSlides }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveSlide(idx)}
-                className={cn(
-                  "transition-all duration-300 rounded-full",
-                  activeSlide === idx
-                    ? "w-7 h-1.5 bg-[#836a2c]"
-                    : "w-1.5 h-1.5 bg-[#d0c5b4] hover:bg-[#836a2c]/60"
                 )}
-                aria-label={`Go to carousel slide ${idx + 1}`}
-              />
+
+                {partner.acronym === "CDSA" && (
+                  <div className="text-left text-[#2c221e] group-hover:text-primary transition-colors">
+                    <span className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight block leading-none text-[#2c221e]">
+                      CDSA
+                    </span>
+                    <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#63554e] block mt-1.5 font-semibold">
+                      College of Dental Surgeons of Alberta
+                    </span>
+                  </div>
+                )}
+
+                {partner.acronym === "RCDC" && (
+                  <div className="text-center text-[#2c221e] group-hover:text-primary transition-colors">
+                    <span className="font-serif text-3xl sm:text-4xl tracking-[0.25em] block font-medium text-[#2c221e]">
+                      RCDC
+                    </span>
+                    <div className="flex items-center justify-center gap-2.5 mt-1">
+                      <span className="w-6 sm:w-8 h-[1.5px] bg-[#2c221e]/40" />
+                      <span className="text-xs sm:text-sm text-primary">🍁</span>
+                      <span className="w-6 sm:w-8 h-[1.5px] bg-[#2c221e]/40" />
+                    </div>
+                  </div>
+                )}
+
+                {partner.acronym === "ASDS" && (
+                  <div className="flex items-center gap-3.5 text-[#2c221e] group-hover:text-primary transition-colors">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#836a2c]/12 border border-[#836a2c]/25 text-primary flex items-center justify-center shadow-xs">
+                      <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
+                    </div>
+                    <div className="text-left font-sans text-sm sm:text-[15px] font-semibold leading-snug text-[#2c221e]">
+                      <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#63554e] block font-medium">
+                        Alberta Society of
+                      </span>
+                      Dental Specialists
+                    </div>
+                  </div>
+                )}
+
+                {partner.acronym === "AACD" && (
+                  <div className="flex items-center gap-3.5 text-[#2c221e] group-hover:text-primary transition-colors">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#836a2c]/12 border border-[#836a2c]/25 text-primary flex items-center justify-center shadow-xs">
+                      <Award className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
+                    </div>
+                    <div className="text-left font-sans text-sm sm:text-[15px] font-semibold leading-snug text-[#2c221e]">
+                      AACD Fellow<br />
+                      <span className="font-normal text-xs sm:text-[12px] text-[#63554e]">Cosmetic Dentistry</span>
+                    </div>
+                  </div>
+                )}
+
+                {["DELTA", "CIGNA", "METLIFE"].includes(partner.acronym || "") && (
+                  <div className="text-left text-[#2c221e] group-hover:text-primary transition-colors">
+                    <span className="font-sans text-lg sm:text-xl md:text-2xl font-bold tracking-tight block text-[#2c221e]">
+                      {partner.name}
+                    </span>
+                    <span className="font-sans text-[11px] sm:text-xs uppercase tracking-widest text-primary font-bold block mt-0.5">
+                      Direct Billing Partner
+                    </span>
+                  </div>
+                )}
+
+                {/* Subtle Divider between partner items */}
+                <div className="w-2 h-2 rounded-full bg-[#d0c5b4] ml-6 sm:ml-8 opacity-70" />
+              </div>
             ))}
           </div>
         </div>

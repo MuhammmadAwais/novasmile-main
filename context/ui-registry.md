@@ -78,7 +78,7 @@ Directly matches reference mockup (`hero-section-reference.png`). Features soft 
 
 ---
 
-### TrustMetricsSection (Milestones & Partner Carousel)
+### TrustMetricsSection (Milestones & Infinite Partner Ribbon)
 
 File: `components/sections/social-proof/trust-metrics-section.tsx`
 Last updated: 2026-09-19
@@ -94,10 +94,11 @@ Last updated: 2026-09-19
 | Spacing          | Cards: `p-6 sm:p-7`, Section: `py-16 sm:py-24 px-6 sm:px-12 lg:px-16` |
 | Hover state      | `hover:-translate-y-1 hover:shadow-xl transition-all duration-300` |
 | Shadow           | `shadow-md hover:shadow-xl` |
-| Accent usage     | Indicators `bg-[#836a2c]` (active) / `bg-[#d0c5b4]` (inactive) • Partner logos in `#2c221e` |
+| Marquee Mask     | Edge fades `w-24 sm:w-52 md:w-64 bg-gradient-to-r / to-l from-[#faf7f2] via-[#faf7f2]/90 to-transparent z-20` |
+| Accent usage     | Partner logos in `#2c221e`, enlarged badges (`w-12 h-12` to `w-14 h-14`), hover `text-primary`, subtle ochre highlights |
 
 **Pattern notes:**
-Matches layout in [`emergency-bar-section.png`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/context/designs/emergency-bar-section.png) elevated to NovaSmile's Warm Minimalism & Tactile Craft palette. Utilizes custom marble/stone backgrounds (`marble-texture-3-1.jpg`, `stone-background-1400.jpg`, `download.webp`), roasted espresso stat cards with glowing ochre highlights, and vector partner logos with pagination controls (`•••••`).
+Matches layout in [`emergency-bar-section.png`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/context/designs/emergency-bar-section.png) elevated to NovaSmile's Warm Minimalism & Tactile Craft palette. Features custom marble/stone backgrounds (`marble-texture-3-1.jpg`, `stone-background-1400.jpg`, `download.webp`), roasted espresso stat cards with glowing ochre highlights, and a full-width continuous marquee logo ribbon with enlarged clinical authority emblems and smooth edge gradient fade masks on both sides.
 
 ---
 
