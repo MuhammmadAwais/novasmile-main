@@ -30,7 +30,7 @@ export function Navbar({ onBookClick, onCallClick }: NavbarProps) {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-[#fdfbf8]/95 backdrop-blur-md shadow-xs border-b border-outline-variant/30 py-3"
+          ? "bg-[#fdfbf8]/95 backdrop-blur-md shadow-xs border-b border-outline-variant/30 py-3.5"
           : "bg-transparent py-5 sm:py-6"
       )}
     >

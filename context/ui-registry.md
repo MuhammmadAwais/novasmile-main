@@ -37,7 +37,7 @@ After building any component — run `/imprint` or append to this file with the 
 ### Navbar
 
 File: `components/layout/navbar.tsx`
-Last updated: 2026-09-18
+Last updated: 2026-09-19
 
 | Property         | Class |
 | ---------------- | ----- |
@@ -48,7 +48,7 @@ Last updated: 2026-09-18
 | Text — secondary | `text-[#6b5c56]` (dropdown descriptions) |
 | Spacing          | `py-5 sm:py-6 px-6 sm:px-12 lg:px-16` |
 | Hover state      | `hover:text-primary transition-colors duration-150` |
-| Shadow           | `shadow-xl ring-1 ring-black/5` (dropdown menu) |
+| Shadow           | `shadow-xs` (scrolled header), `shadow-xl ring-1 ring-black/5` (dropdown menu) |
 | Accent usage     | `bg-[#c5a767] hover:bg-[#b49553] text-[#2c221e]` (pill CTA) |
 
 **Pattern notes:**
@@ -59,7 +59,7 @@ The top bar floats over the ambient hero plate with transparent background until
 ### HeroSection
 
 File: `components/sections/hero/hero-section.tsx`
-Last updated: 2026-09-18
+Last updated: 2026-09-19
 
 | Property         | Class |
 | ---------------- | ----- |
@@ -68,13 +68,36 @@ Last updated: 2026-09-18
 | Border radius    | `rounded-full` (dual buttons) |
 | Text — primary   | `font-serif text-[#2c221e] text-4xl sm:text-5xl lg:text-[62px] xl:text-[68px]` (EB Garamond) |
 | Text — secondary | `font-sans text-[#4d443e] text-base sm:text-[17px] leading-[1.65]` (Plus Jakarta Sans) |
-| Spacing          | `max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-20 sm:pt-24 pb-8` |
+| Spacing          | `max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-24 sm:pt-28 pb-8` |
 | Hover state      | `hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200` |
 | Shadow           | `shadow-sm hover:shadow-md` |
 | Accent usage     | `text-[#9b7b37]` (location badge), delicate botanical leaf watermark in `text-[#a68644]/25` |
 
 **Pattern notes:**
 Directly matches reference mockup (`hero-section-reference.png`). Features soft left sunlight wash, subtle stone texture at `0.05` opacity, dual CTAs ("BOOK A VISIT" espresso pill + "CALL NOW" hairline outline pill), and delicate zen leaf watermark.
+
+---
+
+### TrustMetricsSection (Milestones & Partner Carousel)
+
+File: `components/sections/social-proof/trust-metrics-section.tsx`
+Last updated: 2026-09-19
+
+| Property         | Class |
+| ---------------- | ----- |
+| Background       | Section `bg-[#faf7f2]` with custom marble (`/marble-texture-3-1.jpg`) and stone (`/stone-background-1400.jpg`) textures |
+| Cards Background | Rich roasted espresso `bg-[#2d211d]` with internal marble texture plate (`/download.webp` at 14% opacity) |
+| Border           | `border border-[#836a2c]/25 hover:border-[#c4a96a]/60` |
+| Border radius    | `rounded-2xl` (milestone stat cards) |
+| Text — primary   | Stat numbers: `font-serif text-4xl sm:text-[46px] lg:text-[52px] font-light text-[#faf6f0] group-hover:text-[#ffefd1]` |
+| Text — secondary | Stat labels: `font-sans text-xs sm:text-[13px] text-[#d8c7be] font-medium tracking-wide` |
+| Spacing          | Cards: `p-6 sm:p-7`, Section: `py-16 sm:py-24 px-6 sm:px-12 lg:px-16` |
+| Hover state      | `hover:-translate-y-1 hover:shadow-xl transition-all duration-300` |
+| Shadow           | `shadow-md hover:shadow-xl` |
+| Accent usage     | Indicators `bg-[#836a2c]` (active) / `bg-[#d0c5b4]` (inactive) • Partner logos in `#2c221e` |
+
+**Pattern notes:**
+Matches layout in [`emergency-bar-section.png`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/context/designs/emergency-bar-section.png) elevated to NovaSmile's Warm Minimalism & Tactile Craft palette. Utilizes custom marble/stone backgrounds (`marble-texture-3-1.jpg`, `stone-background-1400.jpg`, `download.webp`), roasted espresso stat cards with glowing ochre highlights, and vector partner logos with pagination controls (`•••••`).
 
 ---
 

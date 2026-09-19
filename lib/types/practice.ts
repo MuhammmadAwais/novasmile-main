@@ -5,6 +5,37 @@ export interface NavLink {
   dropdownItems?: { label: string; href: string; description?: string }[];
 }
 
+export interface ClinicalMilestone {
+  label: string;
+  value: string;
+  subtext?: string;
+}
+
+export interface AffiliationPartner {
+  id: string;
+  name: string;
+  subtitle?: string;
+  category: "association" | "college" | "specialty" | "insurance";
+  acronym?: string;
+}
+
+export interface PatientTestimonial {
+  id: string;
+  author: string;
+  location: string;
+  treatment: string;
+  rating: number;
+  date: string;
+  quote: string;
+  avatarInitial?: string;
+}
+
+export interface AnnouncementConfig {
+  emergencyNotice: string;
+  badgeText: string;
+  actionText: string;
+}
+
 export interface PracticeConfig {
   id: string;
   name: string;
@@ -12,6 +43,7 @@ export interface PracticeConfig {
   emergencyHotline: string;
   officePhone: string;
   email: string;
+  announcement: AnnouncementConfig;
   locations: {
     city: string;
     state: string;
@@ -59,4 +91,7 @@ export interface PracticeConfig {
     smilesTransformed: number;
     satisfactionRate: number;
   };
+  milestones: ClinicalMilestone[];
+  affiliations: AffiliationPartner[];
+  testimonials: PatientTestimonial[];
 }

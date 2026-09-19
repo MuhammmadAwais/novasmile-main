@@ -7,6 +7,11 @@ export const practiceData: PracticeConfig = {
   emergencyHotline: "+1 (415) 890-3450",
   officePhone: "+1 (415) 555-0192",
   email: "care@novasmiledental.com",
+  announcement: {
+    badgeText: "EMERGENCY CARE",
+    emergencyNotice: "Same-Day Emergency Dental Relief Slots Available Today",
+    actionText: "Reserve Emergency Slot",
+  },
   locations: [
     {
       city: "San Francisco",
@@ -151,7 +156,139 @@ export const practiceData: PracticeConfig = {
   trustMetrics: {
     googleRating: 5.0,
     reviewCount: 382,
-    smilesTransformed: 4200,
+    smilesTransformed: 7500,
     satisfactionRate: 99.4,
   },
+
+  /* 4 Milestone Cards directly matching reference design emergency-bar-section.png */
+  milestones: [
+    {
+      label: "Patients Seen",
+      value: "7,500+",
+      subtext: "Across the Bay Area",
+    },
+    {
+      label: "Crowns & Veneers Completed",
+      value: "10,000+",
+      subtext: "Master porcelain artistry",
+    },
+    {
+      label: "Dental Implants Restored",
+      value: "5,000+",
+      subtext: "3D-guided surgical precision",
+    },
+    {
+      label: "Full Arches Completed",
+      value: "2,000+",
+      subtext: "Transformative rehabilitation",
+    },
+  ],
+
+  /* Accreditations & Association Partners directly matching emergency-bar-section.png */
+  affiliations: [
+    {
+      id: "ada-partner",
+      name: "Alberta Dental Association",
+      subtitle: "Member in Good Standing",
+      category: "association",
+      acronym: "ADA",
+    },
+    {
+      id: "cdsa-partner",
+      name: "CDSA",
+      subtitle: "College of Dental Surgeons of Alberta",
+      category: "college",
+      acronym: "CDSA",
+    },
+    {
+      id: "rcdc-partner",
+      name: "RCDC",
+      subtitle: "The Royal College of Dentists of Canada",
+      category: "college",
+      acronym: "RCDC",
+    },
+    {
+      id: "asds-partner",
+      name: "Alberta Society of Dental Specialists",
+      subtitle: "Specialist Accredited",
+      category: "specialty",
+      acronym: "ASDS",
+    },
+    {
+      id: "aacd-partner",
+      name: "American Academy of Cosmetic Dentistry",
+      subtitle: "Accredited Fellow Member",
+      category: "association",
+      acronym: "AACD",
+    },
+    {
+      id: "delta-partner",
+      name: "Delta Dental Premier",
+      subtitle: "Direct PPO Billing Partner",
+      category: "insurance",
+      acronym: "DELTA",
+    },
+    {
+      id: "cigna-partner",
+      name: "Cigna Dental Network",
+      subtitle: "In-Network Preferred Provider",
+      category: "insurance",
+      acronym: "CIGNA",
+    },
+    {
+      id: "metlife-partner",
+      name: "MetLife Dental",
+      subtitle: "Direct Electronic Claims",
+      category: "insurance",
+      acronym: "METLIFE",
+    },
+  ],
+
+  /* Authentic Patient Testimonials Carousel Data */
+  testimonials: [
+    {
+      id: "test-1",
+      author: "Julianne C.",
+      location: "San Francisco, CA",
+      treatment: "Porcelain Veneers & Smile Makeover",
+      rating: 5,
+      date: "2 weeks ago",
+      avatarInitial: "J",
+      quote:
+        "I used to get crippling panic attacks whenever I smelled a dental office. Novasmile feels completely different — like stepping into a serene Japanese spa. Dr. Vance gave me noise-canceling headphones, warm chamomile tea, and completely transformed my front teeth with zero discomfort.",
+    },
+    {
+      id: "test-2",
+      author: "Marcus Sterling",
+      location: "Mountain View, CA",
+      treatment: "Full Arch Dental Implant Restoration",
+      rating: 5,
+      date: "1 month ago",
+      avatarInitial: "M",
+      quote:
+        "The level of clinical precision here is unmatched. The 3D scan took two minutes without any gooey trays. My full arch implants feel completely natural, and I was back at work the very next morning. Best healthcare investment I have ever made.",
+    },
+    {
+      id: "test-3",
+      author: "Sophia Lin",
+      location: "Palo Alto, CA",
+      treatment: "Invisalign & Teeth Whitening",
+      rating: 5,
+      date: "3 weeks ago",
+      avatarInitial: "S",
+      quote:
+        "Their unhurried, hospitality-grade approach is genuine. No upselling, no guilt trips about flossing — just mindful, thoughtful care. The results of my aligners exceeded all my expectations.",
+    },
+    {
+      id: "test-4",
+      author: "David K.",
+      location: "San Francisco, CA",
+      treatment: "Same-Day Emergency Relief",
+      rating: 5,
+      date: "2 months ago",
+      avatarInitial: "D",
+      quote:
+        "Cracked a molar right before an international flight on a Sunday evening. Their emergency concierge took my call immediately and had me in the chair by 8 AM Monday. Gentle, calm, and completely painless relief.",
+    },
+  ],
 };

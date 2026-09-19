@@ -46,7 +46,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
       </div>
 
       {/* 4. Foreground Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-20 sm:pt-24 pb-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-24 sm:pt-28 pb-8">
         <div className="max-w-xl lg:max-w-2xl relative">
           {/* Delicate Botanical Zen Leaf Emblem Watermark (Matches Reference) */}
           <div className="absolute -top-20 sm:-top-28 -left-6 sm:-left-10 pointer-events-none z-0">
