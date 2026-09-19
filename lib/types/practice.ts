@@ -87,6 +87,38 @@ export interface SpecialistTeamMember {
   marbleBg?: string;
 }
 
+export interface ExperiencePillarItem {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface ExperiencePillarsConfig {
+  eyebrow: string;
+  title: string;
+  pillars: ExperiencePillarItem[];
+}
+
+export interface TreatmentShowcaseItem {
+  id: string;
+  titlePart1: string;
+  titlePart2: string;
+  description: string;
+  ctaText: string;
+  categoryKey: string;
+  image: string;
+  imageAlt: string;
+  imagePosition: "left" | "right";
+}
+
+export interface TreatmentShowcaseConfig {
+  headlinePart1: string;
+  headlinePart2: string;
+  marbleBg?: string;
+  items: TreatmentShowcaseItem[];
+}
+
 export interface PracticeConfig {
   id: string;
   name: string;
@@ -149,4 +181,6 @@ export interface PracticeConfig {
   dentistPromise?: DentistPromiseConfig;
   dentistSpotlight?: DentistSpotlightMember[];
   specialistTeam?: SpecialistTeamMember[];
+  experiencePillars?: ExperiencePillarsConfig;
+  treatmentShowcase?: TreatmentShowcaseConfig;
 }

@@ -200,3 +200,45 @@ Last updated: 2026-09-19
 
 **Pattern notes:**
 Matches `our-all-dentist.png`. Full 4-clinician roster showcasing periods, cosmetic prosthodontics, biomimetic surgery, and orthodontics with tactile marble reveal cards.
+
+---
+
+### ExperiencePillarsSection ("The Experience")
+
+File: `features/treatments/components/experience-pillars-section.tsx`
+Last updated: 2026-09-19
+
+| Property         | Class |
+| ---------------- | ----- |
+| Background       | `bg-surface text-on-surface border-t border-outline-variant/30` |
+| Typography       | Eyebrow: `text-xs sm:text-sm font-semibold tracking-[0.25em] text-primary uppercase`, Title: `font-serif text-4xl sm:text-5xl lg:text-6xl text-on-surface`, Card Title: `font-serif text-2xl sm:text-3xl font-medium`, Body: `font-sans text-sm sm:text-base text-on-surface-variant` |
+| Pillars Layout   | 3-column grid (`grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 text-center`) |
+| Gold Icon Frame  | `w-20 h-20 mb-6 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-110` with `bg-primary-container/10` halo blur |
+| Hover State      | `hover:bg-surface-container-low/60 hover:-translate-y-1 transition-all duration-300 rounded-2xl` |
+| Accent usage     | Official gold icons (`/dentist-chair-icon.png`, `/safe-icon.png`, `/stars-icons.png`) |
+
+**Pattern notes:**
+Matches `feature-section-top.png`. 3 core clinical philosophy pillars with gold iconography (*Personalized Care*, *Financial Clarity*, *Comfort Add-Ons*) providing trust reassurance before exploring individual treatment catalogs.
+
+---
+
+### TreatmentShowcaseSection ("Your Beautiful Smile")
+
+File: `features/treatments/components/treatment-showcase-section.tsx`
+Last updated: 2026-09-19
+
+| Property         | Class |
+| ---------------- | ----- |
+| Background       | Full-width section with high-definition tactile marble texture (`marble-texture-3-1.jpg`) at 60% opacity with warm wash (`#fdfbf7`/40) |
+| Display Header   | `text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-sans tracking-tight text-on-surface` (`your` light + `beautiful smile` extrabold) |
+| Row Titles       | `titlePart1` (extrabold sans `text-3xl sm:text-4xl lg:text-5xl`) + `titlePart2` (light sans `text-3xl sm:text-4xl lg:text-5xl text-on-surface/90`) |
+| Body Text        | `font-sans text-sm sm:text-[15px] lg:text-base text-on-surface-variant leading-relaxed max-w-md xl:max-w-lg` |
+| Text Alignment   | Left rows: Right-aligned (`text-right items-end pr-6 sm:pr-12 lg:pr-16 xl:pr-24`), Right rows: Left-aligned (`text-left items-start pl-6 sm:pl-12 lg:pl-16 xl:pl-24`) |
+| CTA Button       | `bg-primary text-on-primary hover:bg-primary-container rounded-sm sm:rounded-md px-7 sm:px-8 py-3.5 sm:py-4 font-medium text-xs sm:text-sm tracking-wide shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]` |
+| Image Frame      | Full-bleed 50% width photographic columns (`features-1.jpg`, `features-2.jpg`, `features-3.jpg`) with `min-h-[540px] group-hover:scale-105 transition-transform duration-700` |
+| Layout           | Full-bleed 50/50 architectural grid matching `features-section.png` with edge-to-edge imagery and continuous marble backdrop |
+
+**Pattern notes:**
+Directly matches reference design `features-section.png`. Features seamless 50/50 edge-to-edge layout, prominent alabaster marble texture, right-aligned / left-aligned text blocks framing the photography, and warm ochre gold CTA buttons.
+
+

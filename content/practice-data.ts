@@ -428,4 +428,79 @@ export const practiceData: PracticeConfig = {
       marbleBg: "/marble-texture-3-1.jpg",
     },
   ],
+
+  /* The Experience - 3 Value Pillars (matching feature-section-top.png) */
+  experiencePillars: {
+    eyebrow: "DENTISTRY DONE DIFFERENTLY",
+    title: "The Experience",
+    pillars: [
+      {
+        id: "exp-1",
+        icon: "/dentist-chair-icon.png",
+        title: "Personalized Care",
+        description:
+          "We get to know your story — your habits, history, goals, and what makes you feel comfortable in the chair. Our approach is thoughtful and rooted in long-term wellness (not short-term fixes).",
+      },
+      {
+        id: "exp-2",
+        icon: "/safe-icon.png",
+        title: "Financial Clarity",
+        description:
+          "We accept insurance, review benefits before your visit, and handle all the paperwork. No insurance? Ask us about flexible financing options and our in-house membership plan.",
+      },
+      {
+        id: "exp-3",
+        icon: "/stars-icons.png",
+        title: "Comfort Add-Ons",
+        description:
+          "Our comfort menu is designed for those who appreciate a little extra TLC: weighted blankets, earbuds, warm towels, sedation options, and more.",
+      },
+    ],
+  },
+
+  /* Treatment Showcase - 3 Staggered Treatment Rows (matching features-section.png) */
+  treatmentShowcase: {
+    headlinePart1: "your",
+    headlinePart2: "beautiful smile",
+    marbleBg: "/marble-texture-3-1.jpg",
+    items: [
+      {
+        id: "feat-routine",
+        titlePart1: "routine",
+        titlePart2: "dental care",
+        description:
+          "Clean and healthy has never been this easy — or this enjoyable. We're your entire family's partner in dental health.",
+        ctaText: "explore general dentistry",
+        categoryKey: "general",
+        image: "/features-1.jpg",
+        imageAlt: "Lead dentist reviewing 3D dental model with smiling teenager during routine checkup",
+        imagePosition: "right",
+      },
+      {
+        id: "feat-restorative",
+        titlePart1: "restorative",
+        titlePart2: "procedures",
+        description:
+          "With advanced training and a focus on full-mouth reconstruction, our doctors provide premier care for those dealing with damaged or missing teeth.",
+        ctaText: "explore surgical dentistry",
+        categoryKey: "surgical",
+        image: "/features-2.jpg",
+        imageAlt: "Restorative dental specialist wearing surgical loupes performing delicate tooth restoration",
+        imagePosition: "left",
+      },
+      {
+        id: "feat-cosmetic",
+        titlePart1: "cosmetic",
+        titlePart2: "transformations",
+        description:
+          "See what's possible through veneers, GLO whitening, or clear aligners. We're a certified Invisalign provider and have designed thousands of confident smiles.",
+        ctaText: "explore cosmetic dentistry",
+        categoryKey: "cosmetic",
+        image: "/features-3.jpg",
+        imageAlt: "Cosmetic dentist photographing radiant aesthetic smile transformation result",
+        imagePosition: "right",
+      },
+    ],
+  },
 };
+

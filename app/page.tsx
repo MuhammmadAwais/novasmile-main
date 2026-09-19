@@ -10,6 +10,10 @@ import {
   DentistSpotlightCarousel,
   DentistTeamGrid,
 } from "@/features/dentists";
+import {
+  ExperiencePillarsSection,
+  TreatmentShowcaseSection,
+} from "@/features/treatments";
 import { BookingModal, CallModal } from "@/features/booking";
 
 export default function Home() {
@@ -44,6 +48,15 @@ export default function Home() {
 
       {/* 4. Specialist Team Interactive Grid with Marble Reveal (our-all-dentist.png) */}
       <DentistTeamGrid />
+
+      {/* 5. The Experience - 3 Value Pillars (feature-section-top.png) */}
+      <ExperiencePillarsSection />
+
+      {/* 6. Your Beautiful Smile - 3 Staggered Treatment Rows (features-section.png) */}
+      <TreatmentShowcaseSection
+        onBookClick={() => setBookingOpen(true)}
+        onSelectCategory={() => setBookingOpen(true)}
+      />
 
       {/* Interactive Appointment Reservation Modal */}
       <BookingModal

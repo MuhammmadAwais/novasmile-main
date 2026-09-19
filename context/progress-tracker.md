@@ -6,13 +6,11 @@ Update this file after every completed feature. Any AI agent reading this immedi
 
 ## Current Status
 
-**Phase:** Smile Hook & Clinician Authority Suite Complete
+**Phase:** Practice Features & Treatment Showcase Suite Complete
 **Last completed:**
-1. **Smile Specialty Hook Section** ([`smile-hook-section.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/smile-hook/components/smile-hook-section.tsx)) matching `hook-reference.png` with editorial serif copy and 3 staggered vertical clinical imagery cards.
-2. **"Dentistry Done Right" Practice Promise Card** ([`dentist-promise-card.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/dentists/components/dentist-promise-card.tsx)) matching `Our-dentist-top.png` with warm-filtered canvas plate, checkmarked benefits, clinician photo, quote, and floating Lifetime Warranty badge.
-3. **Lead Clinician Spotlight Carousel** ([`dentist-spotlight-carousel.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/dentists/components/dentist-spotlight-carousel.tsx)) matching `our-top-dentist.png` with numeric index `(01)`, doctor bio, star seal stamp, and next/prev controls.
-4. **Specialist Team Interactive Grid** ([`dentist-team-grid.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/dentists/components/dentist-team-grid.tsx)) matching `our-all-dentist.png` with 2×2 specialist cards featuring dynamic marble texture card reveals on hover.
-**Next:** User will specify the next section and design to implement (e.g., Features / Services Catalog).
+1. **The Experience (3 Value Pillars)** ([`experience-pillars-section.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/treatments/components/experience-pillars-section.tsx)) matching `feature-section-top.png` with gold icons (*Personalized Care*, *Financial Clarity*, *Comfort Add-Ons*).
+2. **Treatment Showcase ("Your Beautiful Smile")** ([`treatment-showcase-section.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/treatments/components/treatment-showcase-section.tsx)) matching `features-section.png` with warm marble background (`marble-texture-3-1.jpg`), high-fashion editorial two-tone typography, alternating rows for *Routine Dental Care*, *Restorative Procedures*, and *Cosmetic Transformations*, and warm ochre CTA buttons.
+**Next:** Visual Proof / Before & After Transformations or next section specified by the user.
 
 ---
 
@@ -34,8 +32,9 @@ Update this file after every completed feature. Any AI agent reading this immedi
 - [x] Lead Clinician Spotlight Carousel with index badge, star stamp & navigation (`our-top-dentist.png`)
 - [x] Specialist Team Interactive Grid with marble reveal hover state (`our-all-dentist.png`)
 
-### Phase 5 — Practice Features & Treatments Catalog
-- [ ] Comprehensive Treatment Grid & Detail Modal (Features section)
+### Phase 5 — Practice Features & Treatments Showcase
+- [x] The Experience: 3 Value Pillars with Gold Iconography (`feature-section-top.png`)
+- [x] Treatment Showcase: 3 Staggered Treatment Rows with Marble Backdrop (`features-section.png`)
 
 ### Phase 6 — Visual Proof & Modern Technology
 - [ ] Interactive Before & After Smile Transformation Slider
