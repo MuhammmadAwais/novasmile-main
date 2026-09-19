@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { practiceData } from "@/content/practice-data";
-import { ShieldCheck, Award } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
 export function TrustMetricsSection() {
@@ -55,7 +55,7 @@ export function TrustMetricsSection() {
           </h2>
         </div>
 
-        {/* 2. Four Milestone Stat Cards (Matches reference emergency-bar-section.png with tactile marble & espresso craft) */}
+        {/* 2. Four Milestone Stat Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
           {milestones.map((item, idx) => (
             <div
@@ -69,7 +69,7 @@ export function TrustMetricsSection() {
                 "group cursor-default"
               )}
             >
-              {/* Marble Texture Plate inside card for tactile organic luxury */}
+              {/* Marble Texture Plate inside card */}
               <div
                 className="absolute inset-0 opacity-[0.14] mix-blend-screen pointer-events-none group-hover:opacity-[0.22] transition-opacity duration-300"
                 style={{
@@ -92,7 +92,7 @@ export function TrustMetricsSection() {
                 </span>
               </div>
 
-              {/* Stat Main Value in Refined Serif Typography */}
+              {/* Stat Main Value */}
               <div className="relative z-10 mt-5 sm:mt-6">
                 <div className="font-serif text-4xl sm:text-[46px] lg:text-[52px] font-light tracking-tight leading-none text-[#faf6f0] group-hover:text-[#ffefd1] transition-colors">
                   {item.value}
@@ -108,11 +108,11 @@ export function TrustMetricsSection() {
         </div>
       </div>
 
-      {/* 3. Full-Width Professional Marquee with Soft Edge Fades on Both Sides */}
+      {/* 3. Full-Width Professional Marquee with Gold Company Icons */}
       <div className="relative w-full pt-6 border-t border-outline-variant/30">
         <div className="text-center mb-6 px-4">
           <span className="font-sans text-[11px] font-semibold tracking-[0.2em] text-[#7a6a62] uppercase">
-            Accredited Clinical Excellence & Direct Insurance Partners
+            Accredited Clinical Excellence & Technology Partners
           </span>
         </div>
 
@@ -125,88 +125,50 @@ export function TrustMetricsSection() {
           <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-52 md:w-64 bg-gradient-to-l from-[#faf7f2] via-[#faf7f2]/90 to-transparent z-20 pointer-events-none" />
 
           {/* Infinite Moving Ribbon */}
-          <div className="animate-marquee-smooth flex items-center gap-16 sm:gap-24 whitespace-nowrap">
+          <div className="animate-marquee-smooth flex items-center gap-14 sm:gap-20 whitespace-nowrap">
             {marqueeItems.map((partner, index) => (
               <div
                 key={`${partner.id}-${index}`}
-                className="flex items-center gap-4 py-3 px-6 rounded-2xl hover:bg-[#f2ece3]/80 transition-all duration-200 group cursor-default shrink-0"
+                className="flex items-center gap-4 py-2.5 px-5 rounded-2xl hover:bg-[#f2ece3]/90 transition-all duration-200 group cursor-default shrink-0"
               >
-                {/* Logo Mark Presentation */}
-                {partner.acronym === "ADA" && (
-                  <div className="flex items-center gap-3.5 text-[#2c221e] group-hover:text-primary transition-colors">
-                    <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-xl border-[2.5px] border-[#2c221e] group-hover:border-primary flex items-center justify-center font-serif font-bold text-sm sm:text-base tracking-tighter shadow-xs">
-                      ADA
+                {/* Official Gold Company Logo Mark */}
+                {partner.logoUrl ? (
+                  <div className="flex items-center gap-3.5">
+                    <div className="relative h-10 sm:h-12 w-24 sm:w-32 flex items-center justify-center">
+                      <Image
+                        src={partner.logoUrl}
+                        alt={partner.name}
+                        fill
+                        className="object-contain filter brightness-95 group-hover:brightness-105 group-hover:scale-105 transition-all duration-200"
+                        sizes="130px"
+                      />
                     </div>
-                    <div className="text-left font-sans text-sm sm:text-[15px] font-semibold leading-snug text-[#2c221e]">
-                      Alberta Dental<br />
-                      <span className="font-normal text-xs sm:text-[12px] text-[#63554e]">Association</span>
-                    </div>
-                  </div>
-                )}
-
-                {partner.acronym === "CDSA" && (
-                  <div className="text-left text-[#2c221e] group-hover:text-primary transition-colors">
-                    <span className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight block leading-none text-[#2c221e]">
-                      CDSA
-                    </span>
-                    <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#63554e] block mt-1.5 font-semibold">
-                      College of Dental Surgeons of Alberta
-                    </span>
-                  </div>
-                )}
-
-                {partner.acronym === "RCDC" && (
-                  <div className="text-center text-[#2c221e] group-hover:text-primary transition-colors">
-                    <span className="font-serif text-3xl sm:text-4xl tracking-[0.25em] block font-medium text-[#2c221e]">
-                      RCDC
-                    </span>
-                    <div className="flex items-center justify-center gap-2.5 mt-1">
-                      <span className="w-6 sm:w-8 h-[1.5px] bg-[#2c221e]/40" />
-                      <span className="text-xs sm:text-sm text-primary">🍁</span>
-                      <span className="w-6 sm:w-8 h-[1.5px] bg-[#2c221e]/40" />
-                    </div>
-                  </div>
-                )}
-
-                {partner.acronym === "ASDS" && (
-                  <div className="flex items-center gap-3.5 text-[#2c221e] group-hover:text-primary transition-colors">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#836a2c]/12 border border-[#836a2c]/25 text-primary flex items-center justify-center shadow-xs">
-                      <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
-                    </div>
-                    <div className="text-left font-sans text-sm sm:text-[15px] font-semibold leading-snug text-[#2c221e]">
-                      <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#63554e] block font-medium">
-                        Alberta Society of
+                    <div className="text-left font-sans">
+                      <span className="block text-xs sm:text-[13px] font-semibold text-[#2c221e] group-hover:text-primary transition-colors">
+                        {partner.name}
                       </span>
-                      Dental Specialists
+                      {partner.subtitle && (
+                        <span className="block text-[10px] sm:text-[11px] text-[#7a6a62] font-normal">
+                          {partner.subtitle}
+                        </span>
+                      )}
                     </div>
                   </div>
-                )}
-
-                {partner.acronym === "AACD" && (
-                  <div className="flex items-center gap-3.5 text-[#2c221e] group-hover:text-primary transition-colors">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#836a2c]/12 border border-[#836a2c]/25 text-primary flex items-center justify-center shadow-xs">
-                      <Award className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
-                    </div>
-                    <div className="text-left font-sans text-sm sm:text-[15px] font-semibold leading-snug text-[#2c221e]">
-                      AACD Fellow<br />
-                      <span className="font-normal text-xs sm:text-[12px] text-[#63554e]">Cosmetic Dentistry</span>
-                    </div>
-                  </div>
-                )}
-
-                {["DELTA", "CIGNA", "METLIFE"].includes(partner.acronym || "") && (
+                ) : (
                   <div className="text-left text-[#2c221e] group-hover:text-primary transition-colors">
-                    <span className="font-sans text-lg sm:text-xl md:text-2xl font-bold tracking-tight block text-[#2c221e]">
+                    <span className="font-sans text-base sm:text-lg font-bold tracking-tight block">
                       {partner.name}
                     </span>
-                    <span className="font-sans text-[11px] sm:text-xs uppercase tracking-widest text-primary font-bold block mt-0.5">
-                      Direct Billing Partner
-                    </span>
+                    {partner.subtitle && (
+                      <span className="font-sans text-[10px] uppercase tracking-widest text-primary font-semibold block">
+                        {partner.subtitle}
+                      </span>
+                    )}
                   </div>
                 )}
 
-                {/* Subtle Divider between partner items */}
-                <div className="w-2 h-2 rounded-full bg-[#d0c5b4] ml-6 sm:ml-8 opacity-70" />
+                {/* Subtle Dot Divider */}
+                <div className="w-1.5 h-1.5 rounded-full bg-[#d0c5b4] ml-6 sm:ml-8 opacity-70" />
               </div>
             ))}
           </div>

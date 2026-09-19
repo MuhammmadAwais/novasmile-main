@@ -15,8 +15,9 @@ export interface AffiliationPartner {
   id: string;
   name: string;
   subtitle?: string;
-  category: "association" | "college" | "specialty" | "insurance";
+  category: "association" | "college" | "specialty" | "insurance" | "technology";
   acronym?: string;
+  logoUrl?: string;
 }
 
 export interface PatientTestimonial {

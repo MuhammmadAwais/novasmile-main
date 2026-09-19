@@ -95,10 +95,10 @@ Last updated: 2026-09-19
 | Hover state      | `hover:-translate-y-1 hover:shadow-xl transition-all duration-300` |
 | Shadow           | `shadow-md hover:shadow-xl` |
 | Marquee Mask     | Edge fades `w-24 sm:w-52 md:w-64 bg-gradient-to-r / to-l from-[#faf7f2] via-[#faf7f2]/90 to-transparent z-20` |
-| Accent usage     | Partner logos in `#2c221e`, enlarged badges (`w-12 h-12` to `w-14 h-14`), hover `text-primary`, subtle ochre highlights |
+| Accent usage     | Official gold logos (`/company1-icon.png`, `/company2-icon.png`, `/company3-icon.png`, `/company4-icon.png`, `/company-5-icon.png`, `/safe-icon.png`) with `brightness-95 group-hover:brightness-105 group-hover:scale-105` |
 
 **Pattern notes:**
-Matches layout in [`emergency-bar-section.png`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/context/designs/emergency-bar-section.png) elevated to NovaSmile's Warm Minimalism & Tactile Craft palette. Features custom marble/stone backgrounds (`marble-texture-3-1.jpg`, `stone-background-1400.jpg`, `download.webp`), roasted espresso stat cards with glowing ochre highlights, and a full-width continuous marquee logo ribbon with enlarged clinical authority emblems and smooth edge gradient fade masks on both sides.
+Matches layout in [`emergency-bar-section.png`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/context/designs/emergency-bar-section.png) elevated to NovaSmile's Warm Minimalism & Tactile Craft palette. Features custom marble/stone backgrounds (`marble-texture-3-1.jpg`, `stone-background-1400.jpg`, `download.webp`), roasted espresso stat cards with glowing ochre highlights, and a full-width continuous marquee logo ribbon with official gold clinical authority and technology partner logos (ADA, CDA, Invisalign, Solea, Spear, Direct PPO) and smooth edge gradient fade masks on both sides.
 
 ---
 
