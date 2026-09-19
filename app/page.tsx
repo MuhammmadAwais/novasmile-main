@@ -2,10 +2,9 @@
 
 import React, { useState } from "react";
 import { Navbar } from "@/components/layout/navbar";
-import { HeroSection } from "@/components/sections/hero/hero-section";
-import { TrustMetricsSection } from "@/components/sections/social-proof/trust-metrics-section";
-import { BookingModal } from "@/components/booking/booking-modal";
-import { CallModal } from "@/components/booking/call-modal";
+import { HeroSection } from "@/features/hero";
+import { TrustMetricsSection } from "@/features/trust-metrics";
+import { BookingModal, CallModal } from "@/features/booking";
 
 export default function Home() {
   const [bookingOpen, setBookingOpen] = useState(false);

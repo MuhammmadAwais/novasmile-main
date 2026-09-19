@@ -58,7 +58,7 @@ The top bar floats over the ambient hero plate with transparent background until
 
 ### HeroSection
 
-File: `components/sections/hero/hero-section.tsx`
+File: `features/hero/components/hero-section.tsx`
 Last updated: 2026-09-19
 
 | Property         | Class |
@@ -80,7 +80,7 @@ Directly matches reference mockup (`hero-section-reference.png`). Features soft 
 
 ### TrustMetricsSection (Milestones & Infinite Partner Ribbon)
 
-File: `components/sections/social-proof/trust-metrics-section.tsx`
+File: `features/trust-metrics/components/trust-metrics-section.tsx`
 Last updated: 2026-09-19
 
 | Property         | Class |
@@ -104,7 +104,7 @@ Matches layout in [`emergency-bar-section.png`](file:///c:/Users/Prime/OneDrive/
 
 ### BookingModal & CallModal
 
-File: `components/booking/booking-modal.tsx`, `components/booking/call-modal.tsx`
+File: `features/booking/components/booking-modal.tsx`, `features/booking/components/call-modal.tsx`
 Last updated: 2026-09-18
 
 | Property         | Class |

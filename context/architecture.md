@@ -27,15 +27,15 @@ NovaSmile Dental Care is architected as an **enterprise-grade, high-conversion h
 | **Fonts** | `next/font/google` | Built-in | Zero-layout-shift self-hosted `EB Garamond` (Editorial) & `Plus Jakarta Sans` (UI) |
 
 ---
+## 3. Modular Feature-Based Directory Structure
 
-## 3. Directory Structure
-
-The repository follows a **Domain-Driven Feature Section** architecture with atomic UI primitives and a centralized data layer:
+The repository follows an enterprise-grade **Feature-Driven Domain Architecture** with clear boundaries between domain modules (`features/`), shared atomic UI primitives (`components/ui/`), application chrome (`components/layout/`), and the single-source-of-truth data layer (`content/`):
 
 ```
 novasmile/
 ├── AGENTS.md                              → Agent workflow rules, read strategy & core invariants
 ├── DESIGN.md                              → Definitive design system tokens and visual specification
+├── memory.md                              → Saved cross-session operational memory
 ├── context/                               → Project memory and living architectural context
 │   ├── project-overview.md                → Brand philosophy, conversion strategy & pitch objectives
 │   ├── architecture.md                    → System architecture, stack, directory structure & state
@@ -51,92 +51,66 @@ novasmile/
 │   └── practice-data.ts                   → Centralized practice data configuration (Single Source of Truth)
 ├── app/
 │   ├── layout.tsx                         → Root layout with fonts, JSON-LD Schema, and meta tags
-│   ├── page.tsx                           → Complete landing page assembling all feature sections
+│   ├── page.tsx                           → Complete landing page assembling feature modules
 │   ├── globals.css                        → Tailwind v4 @theme definitions, ambient shadows, and utilities
 │   ├── sitemap.ts                         → Dynamic sitemap generator for local dental SEO
-│   ├── robots.ts                          → Search engine crawler instructions
-│   └── api/
-│       └── booking/
-│           └── route.ts                   → Appointment submission endpoint (email/SMS/webhook dispatch)
-├── components/
+│   └── robots.ts                          → Search engine crawler instructions
+├── features/                              → Self-Contained Domain Feature Modules (Screaming Architecture)
+│   ├── index.ts                           → Root feature barrel export
+│   ├── hero/                              → Sanctuary Hero Domain
+│   │   ├── components/
+│   │   │   └── hero-section.tsx           → Hero plate, room photo, sunlight wash, dual CTAs
+│   │   └── index.ts                       → Public feature exports
+│   ├── trust-metrics/                     → Clinical Proof & Partner Marquee Domain
+│   │   ├── components/
+│   │   │   └── trust-metrics-section.tsx  → 4 milestone cards + full-width infinite marquee ribbon
+│   │   └── index.ts
+│   ├── booking/                           → Interactive Appointment Engine Domain
+│   │   ├── components/
+│   │   │   ├── booking-modal.tsx          → 3-step appointment reservation modal
+│   │   │   └── call-modal.tsx             → 24/7 concierge & emergency triage modal
+│   │   └── index.ts
+│   ├── services/                          → Treatment Catalog Domain (Phase 4)
+│   │   ├── components/
+│   │   └── index.ts
+│   ├── philosophy/                        → Practice Wellness Pillars (Phase 4)
+│   │   ├── components/
+│   │   └── index.ts
+│   ├── smile-transformation/              → Before & After Case Slider (Phase 5)
+│   │   ├── components/
+│   │   └── index.ts
+│   ├── doctor-profile/                    → Lead Clinician Credentials & Bio (Phase 6)
+│   │   ├── components/
+│   │   └── index.ts
+│   ├── testimonials/                      → Patient Stories & Reviews (Phase 6)
+│   │   ├── components/
+│   │   └── index.ts
+│   ├── clinic-location/                   → Studio Locations & Interactive Maps (Phase 8)
+│   │   ├── components/
+│   │   └── index.ts
+│   └── faq/                               → Patient Question Accordion (Phase 8)
+│       ├── components/
+│       └── index.ts
+├── components/                            → Feature-Agnostic Primitives & Global Layout Chrome
+│   ├── index.ts
 │   ├── ui/                                → Atomic Design System Primitives
-│   │   ├── button.tsx                     → Primary, Secondary, Outline & Ghost variants
-│   │   ├── input.tsx                      → Tactile input with floating label & ochre focus ring
-│   │   ├── badge.tsx                      → Pill badges (Default, Accent, Emergency, Accepting Patients)
-│   │   ├── card.tsx                       → Tonal layered cards with subtle borders
-│   │   ├── dialog.tsx                     → Accessible modal dialog container with backdrop blur
-│   │   ├── drawer.tsx                     → Slide-in right drawer with smooth transitions
-│   │   ├── accordion.tsx                  → Collapsible FAQ item with smooth height transitions
-│   │   └── toast.tsx                      → Ambient notification toasts for feedback
-│   ├── layout/                            → Global Chrome & Conversion Navigation
-│   │   ├── announcement-bar.tsx           → Clinic hours, address, and 1-tap emergency dialer
-│   │   ├── navbar.tsx                     → Sticky glassmorphic header with navigation & primary CTA
-│   │   ├── mobile-menu.tsx                → Slide-out mobile navigation drawer
-│   │   ├── sticky-mobile-cta.tsx          → Pinned bottom 1-tap dial/book bar for mobile screens
-│   │   ├── section-container.tsx          → Standardized 1280px max-width container with responsive padding
-│   │   ├── section-header.tsx             → Editorial category tag, serif title, and calming subhead
-│   │   └── footer.tsx                     → Accreditations, legal notices, hours, and navigation links
-│   ├── sections/                          → Self-Contained Domain Feature Sections
-│   │   ├── hero/
-│   │   │   ├── hero-section.tsx           → Serif headline, bedside reassurance, dual conversion CTAs
-│   │   │   ├── trust-pills.tsx            → 5.0 Star rating, pain-free guarantee, volume counters
-│   │   │   └── quick-booking-strip.tsx    → Rapid 3-field booking filter widget
-│   │   ├── services/
-│   │   │   ├── services-section.tsx       → Treatment category tabs and grid container
-│   │   │   ├── service-card.tsx           → Procedure card with duration, investment, and CTA
-│   │   │   └── service-detail-modal.tsx   → Deep dive into treatment steps, pain management, recovery
-│   │   ├── transformation/
-│   │   │   ├── before-after-section.tsx   → Visual proof container and clinical case notes
-│   │   │   └── before-after-slider.tsx    → Interactive touch/drag horizontal image comparison slider
-│   │   ├── philosophy/
-│   │   │   ├── philosophy-section.tsx     → Hospitality-grade dental wellness statement
-│   │   │   └── comfort-pillars.tsx        → Mindful sedation, biological health, unhurried consultations
-│   │   ├── team/
-│   │   │   ├── team-section.tsx           → Clinical leadership container
-│   │   │   └── doctor-bio-card.tsx        → Portrait, credentials, bedside philosophy, and signature
-│   │   ├── technology/
-│   │   │   ├── technology-section.tsx     → Anxiety-reduction technology showcase
-│   │   │   └── tech-feature-card.tsx      → 3D scanning, painless injection, entertainment amenities
-│   │   ├── reviews/
-│   │   │   ├── reviews-section.tsx        → Verified patient testimonial cards container
-│   │   │   ├── testimonial-card.tsx       → Patient story with quote, star rating, and treatment tag
-│   │   │   └── google-rating-widget.tsx   → Live Google review trust badge with external review link
-│   │   ├── pricing-insurance/
-│   │   │   ├── insurance-section.tsx      → Direct billing insurance logos and coverage guidelines
-│   │   │   └── financing-calculator.tsx   → Monthly installment estimator for cosmetic/implant cases
-│   │   ├── faq/
-│   │   │   ├── faq-section.tsx            → Categorized patient question accordion container
-│   │   │   └── faq-accordion.tsx          → Expandable accessible question/answer items
-│   │   └── location-contact/
-│   │       ├── location-section.tsx       → Clinic office layout, parking, and transit
-│   │       ├── hours-table.tsx            → Operating hours with real-time "Open Now" status badge
-│   │       └── map-view.tsx               → Interactive map embed with 1-tap directions
-│   └── booking/                           → Interactive Appointment Engine
-│       ├── booking-drawer.tsx             → Slide-over drawer container orchestrating the 3 steps
-│       ├── step-indicator.tsx             → Visual breadcrumb indicator (1. Service → 2. Time → 3. Info)
-│       ├── service-selector-step.tsx      → Treatment category and specific procedure selector
-│       ├── slot-matrix-step.tsx           → Date picker and Morning/Afternoon/Evening slot grid
-│       ├── patient-details-step.tsx       → Contact inputs, insurance provider, and anxiety flag
-│       └── booking-confirmation-step.tsx  → Success card with calendar sync (.ics/Google) and clinic tips
-├── actions/
-│   └── submit-booking.ts                  → React 19 Server Action for appointment booking submission
+│   │   ├── index.ts                       → Barrel export for primitives
+│   │   ├── button.tsx                     → Primary, Secondary, Outline, Ghost & Espresso variants
+│   │   ├── badge.tsx                      → Pill badges (Default, Accent, Emergency, Neutral)
+│   │   ├── card.tsx                       → Tonal layered cards (Surface, Elevated, Espresso)
+│   │   └── dialog.tsx                     → Accessible modal dialog container with backdrop blur
+│   └── layout/                            → Global Chrome & Conversion Layout
+│       ├── index.ts                       → Barrel export for layout components
+│       ├── navbar.tsx                     → Floating glassmorphic header with navigation & CTA
+│       ├── section-container.tsx          → Standardized max-width containers with responsive padding
+│       ├── section-header.tsx             → Editorial category tag, serif title, and calming subhead
 └── lib/
     ├── types/                             → Domain Data Models
-    │   ├── practice.ts                    → PracticeConfig, Address, Hours, Doctor interfaces
-    │   ├── treatment.ts                   → Treatment, Category, ProcedureDetail interfaces
-    │   ├── booking.ts                     → BookingRequest, TimeSlot, DayAvailability interfaces
-    │   └── review.ts                      → Testimonial, GoogleReview interfaces
-    ├── schemas/                           → Zod Form Validation Schemas
-    │   ├── booking.schema.ts              → Schema for appointment request payload
-    │   └── contact.schema.ts              → Schema for general inquiry form
+    │   └── practice.ts                    → PracticeConfig, Address, Hours, Doctor interfaces
+    ├── utils/                             → Shared Helpers
+    │   └── cn.ts                          → Class name merger (clsx + twMerge)
     ├── store/                             → Global UI State
-    │   └── use-booking-store.ts           → Zustand/Context store for drawer state and pre-selections
-    ├── seo/                               → Local Healthcare SEO
-    │   └── json-ld.ts                     → Schema.org Dentist & MedicalBusiness structured data generator
-    └── utils/                             → Shared Helpers
-        ├── cn.ts                          → Class name merger (clsx + twMerge)
-        ├── date-helpers.ts                → Dynamic time slot generator and calendar day utilities
-        └── formatters.ts                  → Phone numbers, currency formatting, and operating hours status
+    └── seo/                               → Local Healthcare SEO Structured Data
 ```
 
 ---
