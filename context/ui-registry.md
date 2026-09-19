@@ -229,17 +229,18 @@ Last updated: 2026-09-19
 
 | Property         | Class |
 | ---------------- | ----- |
-| Background       | Full-width section with high-definition tactile marble texture (`marble-texture-3-1.jpg`) at 65% opacity with gentle linen wash (`#fdfbf7`/30) |
-| Display Header   | `text-4xl sm:text-5xl md:text-6xl lg:text-[76px] font-sans tracking-tight text-on-surface` (`your` in `font-light lowercase` + `beautiful smile` in `font-extrabold lowercase`) |
-| Row Titles       | `titlePart1` (lowercase `font-sans font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-on-surface`) + `titlePart2` (lowercase `font-sans font-extralight text-4xl sm:text-5xl lg:text-6xl text-on-surface/90`) |
-| Body Text        | `font-sans text-sm sm:text-[15px] lg:text-base text-on-surface-variant leading-relaxed max-w-sm sm:max-w-md my-6` |
-| Text Layout      | Unorthodox seam-hugging alignment: Rows 1 & 3 are `text-right items-end lg:pr-14 xl:pr-20`, Row 2 is `text-left items-start lg:pl-14 xl:pl-20` |
-| CTA Button       | `bg-primary text-on-primary hover:bg-primary-container rounded-sm px-8 py-3.5 sm:py-4 font-sans font-medium text-xs sm:text-sm tracking-wide lowercase shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]` |
-| Image Frame      | Full-bleed 50% split photographic blocks (`features-1.jpg`, `features-2.jpg`, `features-3.jpg`) with `min-h-[600px] xl:min-h-[650px] group-hover:scale-105 transition-transform duration-700` |
-| Layout           | Exact full-bleed 50/50 architectural grid matching `features-section.png` with edge-to-edge imagery and continuous marble backdrop |
+| Background       | Full-width section with high-definition tactile alabaster marble canvas (`marble-texture-3-1.jpg`) at 75% opacity with gentle warm linen wash (`#fbf9f5`/25) |
+| Display Header   | `text-4xl sm:text-5xl md:text-6xl lg:text-[70px] xl:text-[76px] font-sans tracking-tight text-on-surface` (`your` in `font-light lowercase` + `beautiful smile` in `font-extrabold lowercase`) |
+| Asymmetrical Grid| `grid grid-cols-1 lg:grid-cols-12`: Photography dominates at `lg:col-span-7` (~58.3% width), Marble Text block at `lg:col-span-5` (~41.7% width) |
+| Row Titles       | `titlePart1` (lowercase `font-sans font-extrabold text-4xl sm:text-5xl lg:text-[52px] xl:text-[56px] tracking-tight text-on-surface`) + `titlePart2` (lowercase `font-sans font-extralight text-4xl sm:text-5xl lg:text-[52px] xl:text-[56px] text-on-surface/90`) |
+| Body Text        | `font-sans text-sm sm:text-base text-on-surface-variant leading-relaxed max-w-sm sm:max-w-md my-5 lg:my-6` |
+| Text Layout      | Asymmetrical centered alignment: Rows 1 & 3 are `text-right items-end lg:pr-14 xl:pr-20`, Row 2 is `text-left items-start lg:pl-14 xl:pl-20` |
+| CTA Button       | `bg-primary text-on-primary hover:bg-primary-container rounded-sm px-7 sm:px-8 py-3.5 font-sans font-medium text-xs sm:text-sm tracking-wide lowercase shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]` |
+| Image Frame      | High-impact dominant photo panels (`features-1.jpg`, `features-2.jpg`, `features-3.jpg`) with `min-h-[600px] xl:min-h-[660px] group-hover:scale-105 transition-transform duration-700` |
+| Layout Pattern   | Un-symmetrical 7:5 / 5:7 column split matching `features-section.png` where wide clinical photography commands visual focus and text blocks sit balanced in the marble column |
 
 **Pattern notes:**
-Directly matches reference design `features-section.png`. Features seamless 50/50 edge-to-edge layout, prominent alabaster marble texture, right-aligned / left-aligned text blocks hugging the center image seam, lowercase bold/thin typographic hierarchy, and warm ochre gold CTAs.
+Directly matches reference design `features-section.png`. Features asymmetrical 58/42 column split, giving photography visual dominance while text sits cleanly balanced in the marble panel. Uses two-tone bold/light typography, right-aligned and left-aligned text blocks towards the seam, and warm ochre gold CTAs.
 
 
 
