@@ -291,4 +291,133 @@ export const practiceData: PracticeConfig = {
         "Cracked a molar right before an international flight on a Sunday evening. Their emergency concierge took my call immediately and had me in the chair by 8 AM Monday. Gentle, calm, and completely painless relief.",
     },
   ],
+
+  /* Smile Hook Section Config matching hook-reference.png */
+  smileHook: {
+    headlinePart1: "YOUR SMILE.",
+    headlinePart2: "OUR SPECIALTY.",
+    subtitle: "Advanced Dental Care, Led by Specialists",
+    paragraphs: [
+      "Novasmile Care is a multidisciplinary specialty hub, bringing together prosthodontics, periodontics, and an in-house dental laboratory under one roof. We specialize in Bay Area dental implants, cosmetic dentistry, and advanced reconstructive dentistry.",
+      "Our multispecialty centre collaborates with leading dentists and specialists across San Francisco, Mountain View, and the surrounding area, managing every detail to deliver beautiful, long-lasting smiles for our patients.",
+    ],
+    highlightBadge:
+      "We treat patients from across California and around the globe, requiring restoration or replacement of teeth.",
+    galleryImages: [
+      {
+        src: "/your-smile-1.webp",
+        alt: "Custom porcelain shade matching and cosmetic veneer perfection",
+        caption: "Precision Shade Matching",
+      },
+      {
+        src: "/your-smile-2.webp",
+        alt: "Specialist consultation and unhurried patient care",
+        caption: "Unhurried Specialist Care",
+      },
+      {
+        src: "/your-smile-3.webp",
+        alt: "Master in-house dental laboratory ceramic craftsmanship",
+        caption: "In-House Digital Lab",
+      },
+    ],
+  },
+
+  /* Dentist Promise Card Config matching Our-dentist-top.png */
+  dentistPromise: {
+    headline: "Dentistry Done Right",
+    description:
+      "Adults and kids, we welcome patients from 3-year-olds to seniors! Our team is passionate about building lifetime relationships through positive experiences, featuring:",
+    features: [
+      "Transparent Pricing",
+      "Unparalleled Warranty",
+      "FREE Whitening (for life!)",
+    ],
+    quote:
+      "Our word is our worth. We promise to do it right, timely, and for a fair price.",
+    image: "/our-dentist-top-img.jpg",
+    warrantySealText: {
+      title: "Lifetime Warranty",
+      description: "If it breaks, we fix it at no cost to you.",
+    },
+  },
+
+  /* Lead Clinician Spotlight Carousel Config matching our-top-dentist.png */
+  dentistSpotlight: [
+    {
+      id: "jennifer-da",
+      indexNumber: "01",
+      name: "Jennifer",
+      role: "Dental Assistant & Patient Concierge",
+      credentials: "RDA, CDA",
+      bio: "Jennifer knows the ins and outs of dentistry and exactly how to make your visit feel seamless. Quick with a kind word, a steady hand, and just the right amount of reassurance, she's deeply knowledgeable and focused on making your visit feel comfortable.",
+      ctaText: "About Us",
+      badgeText: "Rated 5-Stars / Woman-Owned & Operated",
+      badgeIcon: "/top-rated-icon.png",
+      photoUrl: "/top-rated-dentist-img.jfif",
+    },
+    {
+      id: "dr-elena-vance",
+      indexNumber: "02",
+      name: "Dr. Elena Vance",
+      role: "Lead Cosmetic & Restorative Clinician",
+      credentials: "DDS, FAGD, AACD",
+      bio: "With over 14 years perfecting facial aesthetics and biocompatible porcelain artistry, Dr. Vance combines clinical mastery with an unhurried, empathetic bedside presence that puts even the most anxious patients completely at ease.",
+      ctaText: "Meet Dr. Vance",
+      badgeText: "AACD Fellow / Top Dentist 2026",
+      badgeIcon: "/top-rated-icon.png",
+      photoUrl: "/our-dentists-2.webp",
+    },
+    {
+      id: "dr-ali-reza",
+      indexNumber: "03",
+      name: "Dr. Ali Reza",
+      role: "Periodontist & Dental Implant Specialist",
+      credentials: "MDS, MSc, Board Certified",
+      bio: "Specializing in 3D-guided implantology, bone reconstruction, and minimally invasive microsurgical periodontal therapy, Dr. Reza provides the precision foundations that ensure lifetime restoration longevity.",
+      ctaText: "Meet Dr. Reza",
+      badgeText: "Diplomate ABO / 5-Star Rated",
+      badgeIcon: "/top-rated-icon.png",
+      photoUrl: "/our-dentists-1.webp",
+    },
+  ],
+
+  /* Specialist Team Grid Config matching our-all-dentist.png */
+  specialistTeam: [
+    {
+      id: "spec-1",
+      name: "Dr. Ali Reza",
+      credentials: "MDS, MSc",
+      specialty: "Bay Area Periodontist & Dental Implant Specialist",
+      bio: "University-trained with a Master of Science (MSc) in Periodontology, Dr. Reza is a specialist in periodontal and implant-supportive surgery. He provides the precision care behind strong, stable foundations, supporting implant success and protecting long-term oral health.",
+      photoUrl: "/our-dentists-1.webp",
+      marbleBg: "/marble-texture-3-1.jpg",
+    },
+    {
+      id: "spec-2",
+      name: "Dr. Nazia Abrol",
+      credentials: "MDS, MSc",
+      specialty: "Edmonton Periodontist & Dental Implant Specialist",
+      bio: "University of Alberta-trained with a Master of Science (MSc) in Periodontology, Dr. Abrol is a specialist in periodontal and implant-supportive surgery. She provides the precision care behind strong, stable foundations, supporting implant success and protecting long-term oral health.",
+      photoUrl: "/our-dentists-2.webp",
+      marbleBg: "/marble-texture-3-1.jpg",
+    },
+    {
+      id: "spec-3",
+      name: "Dr. Marcus Vance",
+      credentials: "DDS, FAGD",
+      specialty: "Biomimetic Restorative Surgeon",
+      bio: "Harvard-trained clinician focused on conservative, tooth-preserving restorations. Utilizing 3D guided CAD/CAM ceramic milling, Dr. Vance ensures natural strength, biocompatibility, and immaculate aesthetic harmony.",
+      photoUrl: "/our-dentists-3.webp",
+      marbleBg: "/marble-texture-3-1.jpg",
+    },
+    {
+      id: "spec-4",
+      name: "Dr. Priya Sharma",
+      credentials: "DDS, MS Ortho",
+      specialty: "Orthodontics & Facial Symmetry Specialist",
+      bio: "UCSF Orthodontic Residency graduate specializing in discreet clear aligner biomechanics and airway-centered arch development. Passionate about crafting radiant smiles that harmonize with natural facial proportions.",
+      photoUrl: "/our-dentists-4.webp",
+      marbleBg: "/marble-texture-3-1.jpg",
+    },
+  ],
 };

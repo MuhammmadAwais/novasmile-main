@@ -121,3 +121,82 @@ Last updated: 2026-09-18
 
 **Pattern notes:**
 3-step progressive disclosure flow (Studio Location & Treatment -> Slot Matrix -> Patient Details) with anxiety-free gentle care toggle and immediate confirmation screen.
+
+---
+
+### SmileHookSection
+
+File: `features/smile-hook/components/smile-hook-section.tsx`
+Last updated: 2026-09-19
+
+| Property         | Class |
+| ---------------- | ----- |
+| Background       | `bg-surface-container-lowest` with bottom hairline `border-b border-outline-variant/30` |
+| Typography       | Headline: `font-serif text-4xl sm:text-5xl lg:text-6xl text-on-surface`, Subtitle: `font-sans text-lg sm:text-xl font-medium`, Body: `font-sans text-sm sm:text-base text-on-surface-variant` |
+| Dividers         | Hairline accents `w-full h-px bg-outline-variant/40` |
+| Staggered Grid   | 3-column layout with vertical offsets (`pt-8 sm:pt-12`, `-translate-y-2 sm:-translate-y-4`, `pt-4 sm:pt-6`) |
+| Image Cards      | `aspect-[9/18] sm:aspect-[9/19] rounded-xl sm:rounded-2xl overflow-hidden bg-surface-container shadow-md group-hover:shadow-xl` |
+| Hover state      | `group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-500` |
+
+**Pattern notes:**
+Matches layout in `hook-reference.png`. Dual-column structure pairing high-authority clinical copy with 3 staggered vertical imagery columns for shade matching, patient consultation, and in-house digital laboratory craftsmanship.
+
+---
+
+### DentistPromiseCard ("Dentistry Done Right")
+
+File: `features/dentists/components/dentist-promise-card.tsx`
+Last updated: 2026-09-19
+
+| Property         | Class |
+| ---------------- | ----- |
+| Background       | Filtered textured canvas `custom-graphic-blue.jfif` with warm espresso tone filter + `bg-[#281d19]` gradient |
+| Frame Border     | Inner rounded frame `border border-white/20 rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-10 lg:p-12` |
+| Outer Card       | `rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#281d19]` |
+| Typography       | Title: `font-serif text-3xl sm:text-4xl lg:text-5xl text-white`, Quote: `font-serif italic text-base sm:text-lg lg:text-xl text-white/95` |
+| Feature Items    | `flex items-center gap-3.5 text-white/95 text-base sm:text-lg` with `bg-primary/20 border-primary/50 text-primary-light` checkmark pills |
+| Quotation Accent | Vertical amber rule `border-l-2 border-primary pl-4 sm:pl-5` |
+| Floating Seal    | Circular seal `w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full bg-surface-container-lowest border-2 border-primary/40 shadow-2xl` |
+
+**Pattern notes:**
+Matches `Our-dentist-top.png`. Converts canvas graphic into a rich roasted espresso plate with checkmark benefits, clinician team photo, doctor quote, and floating Lifetime Warranty guarantee stamp.
+
+---
+
+### DentistSpotlightCarousel
+
+File: `features/dentists/components/dentist-spotlight-carousel.tsx`
+Last updated: 2026-09-19
+
+| Property         | Class |
+| ---------------- | ----- |
+| Background       | `bg-surface-container-lowest` inside card with `border border-outline-variant/60 rounded-[2rem] sm:rounded-[2.5rem] shadow-lg` |
+| Index Badge      | Numeric pill `w-9 h-9 rounded-full border border-outline-variant font-mono text-xs text-on-surface-variant` |
+| Typography       | Name: `font-serif text-3xl sm:text-4xl lg:text-5xl text-on-surface`, Role: `font-serif italic text-lg sm:text-xl text-on-surface-variant` |
+| Button CTA       | Ochre pill `bg-primary text-white hover:bg-primary-dark rounded-full px-7 py-3 font-semibold text-sm shadow-sm` |
+| Star Seal        | Rotating circular stamp `w-16 h-16 sm:w-20 sm:h-20 animate-spin-slow` (`/top-rated-icon.png`) |
+| Carousel Nav     | Prev/Next buttons `w-10 h-10 rounded-lg border border-outline-variant/80 hover:bg-surface-container hover:border-primary` |
+| Portrait Frame   | `aspect-[4/5] sm:aspect-[3/4] max-h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md` |
+
+**Pattern notes:**
+Matches `our-top-dentist.png`. Interactive carousel with active index indicator, fluid profile navigation, star accreditation emblem, and high-res doctor portrait.
+
+---
+
+### DentistTeamGrid (Specialist Team Interactive Marble Grid)
+
+File: `features/dentists/components/dentist-team-grid.tsx`
+Last updated: 2026-09-19
+
+| Property         | Class |
+| ---------------- | ----- |
+| Background       | Section `bg-surface-container-lowest`, Grid Cards `rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg bg-surface-container` |
+| Layout           | 2×2 responsive grid (`grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto`) |
+| Base Portrait    | Doctor photograph with subtle zoom `group-hover:scale-105 transition-transform duration-700` |
+| Reveal Overlay   | Marble texture background plate (`marble-texture-3-1.jpg`) + `bg-[#251b17]/88 backdrop-blur-[2px]` |
+| Typography       | Name: `font-serif text-2xl sm:text-3xl text-white`, Credentials: `font-sans text-xs sm:text-sm font-semibold text-primary-light uppercase tracking-wider` |
+| Bio Frame        | Framed box `border border-white/25 rounded-xl p-4 sm:p-5 bg-black/10` with crisp typography |
+| Transition       | `transition-all duration-500 ease-in-out` with hover, keyboard focus, and mobile tap toggle |
+
+**Pattern notes:**
+Matches `our-all-dentist.png`. Full 4-clinician roster showcasing periods, cosmetic prosthodontics, biomimetic surgery, and orthodontics with tactile marble reveal cards.

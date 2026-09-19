@@ -36,6 +36,56 @@ export interface AnnouncementConfig {
   actionText: string;
 }
 
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface SmileHookConfig {
+  headlinePart1: string;
+  headlinePart2: string;
+  subtitle: string;
+  paragraphs: string[];
+  highlightBadge: string;
+  galleryImages: GalleryImage[];
+}
+
+export interface DentistPromiseConfig {
+  headline: string;
+  description: string;
+  features: string[];
+  quote: string;
+  image: string;
+  warrantySealText: {
+    title: string;
+    description: string;
+  };
+}
+
+export interface DentistSpotlightMember {
+  id: string;
+  indexNumber: string;
+  name: string;
+  role: string;
+  credentials?: string;
+  bio: string;
+  ctaText: string;
+  badgeText: string;
+  badgeIcon: string;
+  photoUrl: string;
+}
+
+export interface SpecialistTeamMember {
+  id: string;
+  name: string;
+  credentials: string;
+  specialty: string;
+  bio: string;
+  photoUrl: string;
+  marbleBg?: string;
+}
+
 export interface PracticeConfig {
   id: string;
   name: string;
@@ -94,4 +144,8 @@ export interface PracticeConfig {
   milestones: ClinicalMilestone[];
   affiliations: AffiliationPartner[];
   testimonials: PatientTestimonial[];
+  smileHook?: SmileHookConfig;
+  dentistPromise?: DentistPromiseConfig;
+  dentistSpotlight?: DentistSpotlightMember[];
+  specialistTeam?: SpecialistTeamMember[];
 }
