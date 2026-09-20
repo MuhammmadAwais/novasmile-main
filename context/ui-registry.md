@@ -300,4 +300,5 @@ Last updated: 2026-09-20
 | Index & Action   | Left: `font-mono text-[11px] sm:text-xs text-[#c4a96a]`, Right: `font-mono text-[11px] text-white/50 group-hover:text-white` with `ArrowUpRight` |
 
 **Pattern notes:**
-Directly matches Reference Images 2 & 3. Full-screen width architectural typography with zero initial expanded thumbnails. Moving cursor across rows reveals geometric wireframes on left/right and smoothly splits headlines to display the thumbnail portal with the signature circular dot indicator.
+Directly matches Reference Images 2 & 3 powered by GreenSock GSAP animations. Full-screen width architectural typography with zero initial expanded thumbnails. Hovering a row smoothly slides title words apart with `power3.out` easing while expanding the thumbnail portal from `width: 0` to full frame, animates the inner photo from `scale: 1.3 -> 1`, pops in the signature circular dot halo (`back.out(2)`), reveals the details drawer, and illuminates geometric wireframes on the left and right.
+
