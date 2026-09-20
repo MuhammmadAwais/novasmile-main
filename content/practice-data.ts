@@ -668,5 +668,96 @@ export const practiceData: PracticeConfig = {
       },
     ],
   },
+
+  /* Phase 6 — Interactive Before & After Smile Transformations with Stacking Cards */
+  transformations: {
+    sectionIndex: "/04",
+    eyebrow: "CLINICAL EXCELLENCE & PATIENT OUTCOMES",
+    headline: "Real Patients. Life-Changing Transformations.",
+    subtitle:
+      "Every smile has a story. Explore our interactive before-and-after cases to witness how precision biomimetic dentistry and compassionate care restore natural harmony, function, and enduring confidence.",
+    cases: [
+      {
+        id: "trans-full-mouth",
+        indexTag: "CASE / 01",
+        category: "Full-Mouth Reconstruction",
+        title: "A Full-Mouth Reconstruction",
+        description:
+          "Years of wear had left their mark. The solution? A complete reimagining. Custom crowns delivered what this patient deserved all along: a highly functional smile that looks flawless.",
+        treatment: "Custom Ceramic Crowns & Full Rehabilitation",
+        ctaText: "Explore Crowns",
+        patientImage: "/person-1.avif",
+        patientAlt: "Patient smiling radiantly after full mouth reconstruction",
+        patientName: "Aria M.",
+        beforeImage: "/person-1-before.webp",
+        afterImage: "/person-1-after.webp",
+        clinicalStats: [
+          { label: "Procedure", value: "Custom Crowns" },
+          { label: "Primary Goal", value: "Aesthetics & Bite Stability" },
+          { label: "Clinical Outcome", value: "Flawless Function & Alignment" },
+        ],
+      },
+      {
+        id: "trans-anterior-trauma",
+        indexTag: "CASE / 02",
+        category: "Trauma Restorative",
+        title: "Fractured Front Tooth Restoration",
+        description:
+          "After a hockey injury resulted in a fractured front tooth, this patient was concerned about both the appearance and stability of their heavily restored anterior teeth. A traditional dental bridge was used to restore the area, bringing back natural esthetics, symmetry, and strength — leaving the patient with a confident, seamless smile once again.",
+        treatment: "Traditional Dental Bridge & Esthetic Restoration",
+        ctaText: "Explore Bridges & Implants",
+        patientImage: "/person-2.avif",
+        patientAlt: "Patient restored confident smile after front tooth trauma",
+        patientName: "David K.",
+        beforeImage: "/person-2-before.jpg",
+        afterImage: "/person-2-after.jpg",
+        clinicalStats: [
+          { label: "Procedure", value: "Dental Bridge" },
+          { label: "Indication", value: "Sports Trauma / Anterior Fracture" },
+          { label: "Clinical Outcome", value: "Natural Symmetry & High Strength" },
+        ],
+      },
+      {
+        id: "trans-trauma-dentures",
+        indexTag: "CASE / 03",
+        category: "Prosthodontic Rehabilitation",
+        title: "Recovering Comfort After Trauma",
+        description:
+          "Severe facial trauma, advanced periodontal disease, a Class III bite, and failing teeth left him in persistent pain. With fixed upper and lower dentures, we rebuilt stability, comfort, and function. Today, he can chew confidently and smile freely without discomfort.",
+        treatment: "Fixed Upper & Lower Implant-Supported Dentures",
+        ctaText: "Explore Full Reconstruction",
+        patientImage: "/person-3.avif",
+        patientAlt: "Patient smiling comfortably after prosthodontic trauma reconstruction",
+        patientName: "Robert H.",
+        beforeImage: "/person-3-before.webp",
+        afterImage: "/person-3-after.webp",
+        clinicalStats: [
+          { label: "Procedure", value: "Fixed Dentures" },
+          { label: "Indication", value: "Class III Bite & Periodontal Trauma" },
+          { label: "Clinical Outcome", value: "Pain-Free Comfort & Confident Chewing" },
+        ],
+      },
+      {
+        id: "trans-agenesis-bridge",
+        indexTag: "CASE / 04",
+        category: "Congenital Restoration",
+        title: "A Smile, Carefully Rebuilt",
+        description:
+          "She came to us with missing permanent teeth from birth, retained baby teeth, and spacing that made everyday function a real concern. With a carefully coordinated plan using crowns, implant crowns, and an implant-supported bridge, we restored balance, comfort, and a natural look.",
+        treatment: "Crowns, Implant Crowns & Implant-Supported Bridge",
+        ctaText: "Explore Bridges",
+        patientImage: "/person-4.avif",
+        patientAlt: "Patient smiling with restored harmony after congenital spacing reconstruction",
+        patientName: "Elena R.",
+        beforeImage: "/person-4-before.webp",
+        afterImage: "/person-4-after.webp",
+        clinicalStats: [
+          { label: "Procedure", value: "Implant Bridge & Crowns" },
+          { label: "Indication", value: "Congenitally Missing Teeth" },
+          { label: "Clinical Outcome", value: "Harmonious Natural Smile" },
+        ],
+      },
+    ],
+  },
 };
 

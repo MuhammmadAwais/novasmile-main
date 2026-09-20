@@ -155,6 +155,30 @@ export interface ServicesSuiteConfig {
   procedures: ServiceRowProcedure[];
 }
 
+export interface TransformationCase {
+  id: string;
+  indexTag: string;
+  category: string;
+  title: string;
+  description: string;
+  treatment: string;
+  ctaText: string;
+  patientImage: string;
+  patientAlt: string;
+  patientName?: string;
+  beforeImage: string;
+  afterImage: string;
+  clinicalStats?: { label: string; value: string }[];
+}
+
+export interface TransformationsConfig {
+  eyebrow: string;
+  sectionIndex: string;
+  headline: string;
+  subtitle: string;
+  cases: TransformationCase[];
+}
+
 export interface PracticeConfig {
   id: string;
   name: string;
@@ -220,4 +244,5 @@ export interface PracticeConfig {
   experiencePillars?: ExperiencePillarsConfig;
   treatmentShowcase?: TreatmentShowcaseConfig;
   servicesSuite?: ServicesSuiteConfig;
+  transformations?: TransformationsConfig;
 }

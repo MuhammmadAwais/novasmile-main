@@ -86,6 +86,9 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
+    scrollbar-width: thin;
+    scrollbar-color: #c4a96a #fcf9f6;
   }
 
   body {
@@ -93,6 +96,28 @@
     color: var(--color-on-surface);
     font-family: var(--font-sans), sans-serif;
     min-height: 100vh;
+    overflow-x: clip;
+  }
+
+  /* Custom Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #fcf9f6;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #c4a96a;
+    border-radius: 9999px;
+    border: 2px solid #fcf9f6;
+    transition: background-color 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #836a2c;
   }
 }
 

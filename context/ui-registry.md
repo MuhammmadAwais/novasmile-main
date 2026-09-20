@@ -302,3 +302,37 @@ Last updated: 2026-09-20
 **Pattern notes:**
 Directly matches Reference Images 2 & 3 powered by GreenSock GSAP animations. Full-screen width architectural typography with zero initial expanded thumbnails. Hovering a row smoothly slides title words apart with `power3.out` easing while expanding the thumbnail portal from `width: 0` to full frame, animates the inner photo from `scale: 1.3 -> 1`, pops in the signature circular dot halo (`back.out(2)`), reveals the details drawer, and illuminates geometric wireframes on the left and right.
 
+---
+
+### TransformationsStackedSection & TransformationCard (Interactive Before & After Stacking Cards)
+
+File: `features/transformations/components/transformations-stacked-section.tsx` & `features/transformations/components/transformation-card.tsx`
+Last updated: 2026-09-20
+
+| Property         | Class / Animation |
+| ---------------- | ----------------- |
+| Section Canvas   | `bg-surface-container-low` with tactile stone texture (`stone-background-1400.jpg` at 20% opacity, `mix-blend-multiply`), top/bottom hairline dividers, and warm gradient vignette |
+| Section Header   | Title: `font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-on-surface`, Subtitle: `font-sans text-sm sm:text-base text-on-surface-variant max-w-2xl` |
+| Card Chassis     | 100% opaque solid white backing with alabaster marble texture (`marble-texture-3-1.jpg` at 20% opacity), `rounded-2xl sm:rounded-3xl border border-outline-variant/35 shadow-[0_20px_50px_-12px_rgba(45,33,29,0.18)]`, top hairline gold highlight |
+| Composition      | Minimalist 3-column wide rectangular grid: Left (Editorial headline, narrative, procedure indicators, CTA button), Middle (Patient portrait photo in arched frame), Right (`BeforeAfterSlider`) |
+| GSAP Pinning     | `ScrollTrigger.create({ pin: true, pinSpacing: true, scrub: 1.2, start: "top top", end: () => "+=" + cards.length * 1.35 * vh })` with `matchMedia("(min-width: 1024px)")` |
+| Card Deck Scrub  | Initial dwell on Card 1, slow graceful transition from Card 1 to Card 2, active card slides in from `yPercent: 115 -> 0`, while previous cards scale to `1 - (i-prev)*0.035`, shift `y: -16px`, and dim to reveal stacked physical deck tabs |
+| Custom Scrollbar | 8px width, `#fcf9f6` track, `#c4a96a` pill thumb (`hover:bg-[#836a2c]`), `scrollbar-width: thin` |
+| Mobile Fallback  | Fluid natural vertical stacked list without viewport pinning for mobile ergonomics |
+
+---
+
+### BeforeAfterSlider (Split Comparison Frame)
+
+File: `features/transformations/components/before-after-slider.tsx`
+Last updated: 2026-09-20
+
+| Property         | Class / Animation |
+| ---------------- | ----------------- |
+| Outer Frame      | `relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden select-none cursor-ew-resize` with `touch-action: none` |
+| Split Technique  | CSS polygon clip-path: `clipPath: polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` |
+| Divider Line     | 2px solid `bg-white/95` with soft shadow `shadow-[0_0_8px_rgba(0,0,0,0.4)]` |
+| Gold Handle Pill | `w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary text-on-primary border-2 border-white/95 shadow-xl flex items-center justify-center` with `ChevronLeft` and `ChevronRight` |
+| Status Badges    | Glassmorphic pills: "BEFORE" (`bg-black/60 text-white backdrop-blur-md border border-white/15`), "AFTER" (`bg-primary/90 text-on-primary backdrop-blur-md border border-white/20`) |
+| Drag Engine      | Pointer capture (`onPointerDown`, `onPointerMove`, `onPointerUp`) clamping position between 2% and 98% without layout reflows |
+

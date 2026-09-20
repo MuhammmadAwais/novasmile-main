@@ -15,6 +15,7 @@ import {
   TreatmentShowcaseSection,
 } from "@/features/treatments";
 import { ServicesSection } from "@/features/services";
+import { TransformationsStackedSection } from "@/features/transformations";
 import { BookingModal, CallModal } from "@/features/booking";
 
 export default function Home() {
@@ -37,7 +38,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-surface text-on-surface overflow-x-hidden flex flex-col">
+    <main className="min-h-screen bg-surface text-on-surface flex flex-col">
       {/* Pinned Top Navigation Bar */}
       <Navbar
         onBookClick={() => handleBookVisit()}
@@ -83,6 +84,9 @@ export default function Home() {
           )
         }
       />
+
+      {/* 8. Clinical Proof: Interactive Before & After Stacking Cards Section */}
+      <TransformationsStackedSection onBookTreatment={handleBookVisit} />
 
       {/* Interactive Appointment Reservation Modal */}
       <BookingModal
