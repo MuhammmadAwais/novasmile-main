@@ -759,5 +759,77 @@ export const practiceData: PracticeConfig = {
       },
     ],
   },
+
+  /* Phase 7 — Patient Stories & Testimonials (Sticky Left + Horizontally Popping Portraits) */
+  testimonialsConfig: {
+    sectionIndex: "/05",
+    eyebrow: "PATIENT EXPERIENCES & VERIFIED CARE",
+    headlinePart1: "HEAR FROM",
+    highlightBadge: "HAPPY PATIENTS",
+    subtitle:
+      "Discover why our patients trust Novasmile Care for exceptional, anxiety-free dental medicine through their genuine experiences, unhurried care, and life-changing transformations.",
+    googleRating: 5.0,
+    googleReviewCount: "380+ Verified Reviews",
+    googleBadgeText: "Top Rated Bay Area Dental Clinic",
+    ctaText: "VIEW ALL REVIEWS +",
+    reviews: [
+      {
+        id: "rev-1",
+        author: "Annette Black",
+        location: "Mountain View, CA",
+        treatment: "Full-Mouth Reconstruction",
+        treatmentCategory: "Restorative Dentistry",
+        treatingDoctor: "Dr. Elena Vance & Dr. Ali Reza",
+        rating: 5,
+        date: "2 weeks ago",
+        photoUrl: "/review-person-1.avif",
+        verifiedGoogle: true,
+        quote:
+          "The team at Novasmile Care is phenomenal! As someone who postponed dental treatment for nearly a decade due to severe anxiety, their gentle bedside care made me feel completely relaxed and respected. The custom crowns look and feel completely indistinguishable from natural teeth.",
+      },
+      {
+        id: "rev-2",
+        author: "Sophia Lin",
+        location: "Palo Alto, CA",
+        treatment: "GLO Whitening & Porcelain Veneers",
+        treatmentCategory: "Cosmetic Smile Design",
+        treatingDoctor: "Dr. Elena Vance",
+        rating: 5,
+        date: "1 month ago",
+        photoUrl: "/review-person-2.webp",
+        verifiedGoogle: true,
+        quote:
+          "My teeth whitening and porcelain veneer experience was flawless. The digital 3D preview showed me exactly what my smile would look like before we even began. No sensitivity, perfectly translucent shading, and an exceptionally warm, spa-like clinic environment.",
+      },
+      {
+        id: "rev-3",
+        author: "Marcus Vance",
+        location: "San Francisco, CA",
+        treatment: "Same-Day CAD/CAM Crown & Implant",
+        treatmentCategory: "Biomimetic Surgery",
+        treatingDoctor: "Dr. Ali Reza",
+        rating: 5,
+        date: "3 weeks ago",
+        photoUrl: "/review-person-3.avif",
+        verifiedGoogle: true,
+        quote:
+          "Unbelievably precise technology. Having my permanent ceramic crown milled chairside in a single 90-minute appointment completely eliminated messy silicone impressions and annoying temporary caps. The bite is 100% natural and solid.",
+      },
+      {
+        id: "rev-4",
+        author: "David Henderson",
+        location: "Los Altos, CA",
+        treatment: "Invisalign Clear Aligners",
+        treatmentCategory: "Discreet Orthodontics",
+        treatingDoctor: "Dr. Priya Sharma",
+        rating: 5,
+        date: "2 months ago",
+        photoUrl: "/review-person-4.avif",
+        verifiedGoogle: true,
+        quote:
+          "Clear pricing, no surprise bills, and a clinical team that actually listens without lecturing. In just seven months, my crowded bite was completely aligned without anyone noticing I was wearing trays. Best investment in my health and confidence.",
+      },
+    ],
+  },
 };
 

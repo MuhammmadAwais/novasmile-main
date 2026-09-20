@@ -336,3 +336,29 @@ Last updated: 2026-09-20
 | Status Badges    | Glassmorphic pills: "BEFORE" (`bg-black/60 text-white backdrop-blur-md border border-white/15`), "AFTER" (`bg-primary/90 text-on-primary backdrop-blur-md border border-white/20`) |
 | Drag Engine      | Pointer capture (`onPointerDown`, `onPointerMove`, `onPointerUp`) clamping position between 2% and 98% without layout reflows |
 
+---
+
+### TestimonialsSection & TestimonialCard (Sticky Editorial & Popping Portraits)
+
+File: `features/testimonials/components/testimonials-section.tsx` & `features/testimonials/components/testimonial-card.tsx`
+Last updated: 2026-09-20
+
+| Property         | Class / Animation |
+| ---------------- | ----------------- |
+| Section Canvas   | `bg-surface-container-low` with tactile stone texture (`stone-background-1400.jpg` at 18% opacity, `mix-blend-multiply`), hairline border, and `overflow-x-clip` |
+| Sticky Column    | Desktop sticky container `lg:col-span-5 lg:sticky lg:top-28 self-start space-y-6 z-20` (pinned while right stream scrolls) |
+| Editorial Title  | Headline: `font-serif text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] text-[#201815] font-normal leading-[1.08] tracking-tight`, with warm ochre gold highlight badge `bg-[#836a2c] text-[#fcf9f6] px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-lg font-serif italic shadow-sm` and pulsing gold dot |
+| Google Trust Box | `relative overflow-hidden rounded-2xl border border-[#836a2c]/30 bg-[#fdfbf9] p-5 max-w-sm shadow-[0_12px_32px_-10px_rgba(45,33,29,0.12)]` with tactile alabaster marble plate (`marble-texture-3-1.jpg` at 30% opacity, `contrast(1.1) brightness(1.02)`) and `top-rated-icon.png` |
+| Action Button    | Outlined pill `border border-[#836a2c] bg-white/70 px-6 sm:px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#201815] hover:bg-[#836a2c] hover:text-[#fcf9f6] hover:shadow-md active:scale-95 transition-all duration-300` |
+| Card Chassis     | 100% solid opaque `#fdfbf9` backing with tactile alabaster marble plate (`marble-texture-3-1.jpg` at 35% opacity, `contrast(1.1) brightness(1.02)`, `mix-blend-multiply`), warm linen sheen overlay, `rounded-2xl sm:rounded-3xl border border-[#836a2c]/30 shadow-[0_14px_40px_-12px_rgba(45,33,29,0.12)] hover:shadow-[0_24px_55px_-12px_rgba(45,33,29,0.22)] hover:border-[#c4a96a]/85` |
+| Popping Portrait | Horizontally breaks outside left border: `absolute -left-6 sm:-left-10 md:-left-12 lg:-left-14 top-1/2 -translate-y-1/2 z-20` in arched frame (`rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white ring-4 ring-[#fcf9f6]/95 shadow-[0_16px_36px_-8px_rgba(45,33,29,0.3)]`) with mini gold verification badge |
+| Card Padding     | `p-6 sm:p-8 lg:p-10 pl-16 sm:pl-24 md:pl-28 lg:pl-32` to ensure generous clearance for popping portrait |
+| Star Rating      | 5 gold stars (`fill-[#c4a96a] text-[#c4a96a]`) + `5.0` mono score |
+| Card Typography  | Quote: `font-sans text-sm sm:text-base lg:text-[16.5px] text-[#2c221e] leading-relaxed italic`, Patient Name: `font-serif text-lg sm:text-xl font-medium text-[#201815]`, Treatment: `font-sans text-xs sm:text-[13px] text-[#836a2c] font-medium` |
+| Scroll Entrance  | Refined GSAP reveal with `once: true`: card enters with subtle ease (`y: 32 -> 0, opacity: 0 -> 1, duration: 0.65s, power2.out`), portrait slides horizontally (`x: -20 -> 0, scale: 0.95 -> 1, duration: 0.75s, power2.out`), no re-hiding on scroll up |
+| Marquee Ticker   | Full-width espresso ribbon (`bg-[#190f0c] text-[#fcf9f6] py-4 sm:py-5 border-y border-[#836a2c]/40`) with 10% marble texture, infinite `.animate-marquee-smooth`, moving sentence `SCHEDULE YOUR APPOINTMENT WITH OUR EXPERT TEAM TODAY`, and ochre gold circle `ArrowUpRight` pills |
+
+**Pattern notes:**
+Directly matches user-specified editorial layout with sticky desktop column, horizontally popping portraits, rich filtered marble texture, clean signature attribution (awkward inline badges removed), non-funky entrance reveals, and hospitality-grade infinite moving sentence marquee carousel.
+
+

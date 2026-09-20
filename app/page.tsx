@@ -16,6 +16,7 @@ import {
 } from "@/features/treatments";
 import { ServicesSection } from "@/features/services";
 import { TransformationsStackedSection } from "@/features/transformations";
+import { TestimonialsSection } from "@/features/testimonials";
 import { BookingModal, CallModal } from "@/features/booking";
 
 export default function Home() {
@@ -87,6 +88,11 @@ export default function Home() {
 
       {/* 8. Clinical Proof: Interactive Before & After Stacking Cards Section */}
       <TransformationsStackedSection onBookTreatment={handleBookVisit} />
+
+      {/* 9. Patient Stories & Verified Testimonials Section */}
+      <TestimonialsSection
+        onExploreReviews={() => handleBookVisit("General Consultation & Smile Assessment")}
+      />
 
       {/* Interactive Appointment Reservation Modal */}
       <BookingModal

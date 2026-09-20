@@ -29,6 +29,10 @@ export interface PatientTestimonial {
   date: string;
   quote: string;
   avatarInitial?: string;
+  photoUrl?: string;
+  treatmentCategory?: string;
+  treatingDoctor?: string;
+  verifiedGoogle?: boolean;
 }
 
 export interface AnnouncementConfig {
@@ -179,6 +183,19 @@ export interface TransformationsConfig {
   cases: TransformationCase[];
 }
 
+export interface TestimonialsConfig {
+  sectionIndex: string;
+  eyebrow: string;
+  headlinePart1: string;
+  highlightBadge: string;
+  subtitle: string;
+  googleRating: number;
+  googleReviewCount: string;
+  googleBadgeText: string;
+  ctaText: string;
+  reviews: PatientTestimonial[];
+}
+
 export interface PracticeConfig {
   id: string;
   name: string;
@@ -245,4 +262,5 @@ export interface PracticeConfig {
   treatmentShowcase?: TreatmentShowcaseConfig;
   servicesSuite?: ServicesSuiteConfig;
   transformations?: TransformationsConfig;
+  testimonialsConfig?: TestimonialsConfig;
 }
