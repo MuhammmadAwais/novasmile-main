@@ -1,47 +1,50 @@
-# Memory — Experience Pillars & Treatment Showcase Suite
+# Memory — Comprehensive Services Suite & Interactive Cursor System
 
-Last updated: 2026-09-19 21:15 PST
+Last updated: 2026-09-20 10:45 PST
 
 ## What was built
 
-- **`features/treatments/components/experience-pillars-section.tsx`**:
-  - 3-pillar clinic philosophy section matching `feature-section-top.png` (*Personalized Care*, *Financial Clarity*, *Comfort Add-Ons*) with official gold iconography (`dentist-chair-icon.png`, `safe-icon.png`, `stars-icons.png`), editorial serif headers, and subtle halo hover effects.
-- **`features/treatments/components/treatment-showcase-section.tsx`**:
-  - Full-bleed 50/50 architectural treatment showcase matching `features-section.png` with continuous high-res marble canvas (`marble-texture-3-1.jpg`), top integrated headline (*"your beautiful smile"*), and 3 alternating rows (*routine dental care*, *restorative procedures*, *cosmetic transformations*) with asymmetrical seam-hugging text alignments.
-- **`features/treatments/index.ts`**:
-  - Public barrel export for the treatments feature module.
+- **`components/ui/interactive-cursor.tsx`**:
+  - Global trailing bubble cursor with optical color inversion (`mix-blend-difference`), 60fps fluid lerp physics (`lerpFactor = 0.18`), hover scale/action text morphing (`EXPLORE`, `BOOK`), and automatic touch-screen disabling (`pointer: fine`). Mounted in `app/layout.tsx`.
+- **`features/services/components/services-top-pillars.tsx`**:
+  - 3 Department Pillars matching Screenshot 1 (*General*, *Cosmetic*, *Surgical*) using arched-top photography portals (`service-1.jfif`, `service-2.jfif`, `service-3.jfif`), tactile alabaster marble backgrounds (`marble-texture-3-1.jpg` at 35% opacity with linen gradient sheen), serif headers, and ochre outline buttons.
+- **`features/services/components/services-row-accordion.tsx`**:
+  - Full-screen width luxury architectural procedure section matching Reference Images 2 & 3.
+  - Displays 8 signature procedures with GSAP-powered word sliding (`power3.out`), smooth thumbnail portal width expansion (`0` to full frame), photo zoom (`scale: 1.3 -> 1.0`), signature floating circular halo dot indicator, clean single-line sans subtitles, dual CTAs (`Book Procedure` + `Clinical Details ↗`), and left/right geometric wireframe vector patterns.
+- **`features/services/components/services-section.tsx`**:
+  - Master container separating the warm linen top pillars (`max-w-7xl`) from the full-bleed dark procedure stage (`w-full`).
+- **`features/services/index.ts` & `features/index.ts`**:
+  - Public feature exports.
 - **`lib/types/practice.ts` & `content/practice-data.ts`**:
-  - Strict TypeScript models and complete turnkey data for `experiencePillars` and `treatmentShowcase`.
-- **`app/layout.tsx`**:
-  - Expanded `Plus_Jakarta_Sans` font weights (`300`, `400`, `500`, `600`, `700`, `800`) and added `suppressHydrationWarning`.
-- **`app/globals.css`**:
-  - Updated `--color-primary` from `#695216` to brand Deep Ochre Gold `#836a2c` and `--color-primary-container` to `#9c8037`.
+  - Strict TypeScript models (`ServicePillarItem`, `ServiceRowProcedure`, `ServicesSuiteConfig`) and 100% turnkey practice data for all 3 pillars and 8 procedures.
+- **`features/booking/components/booking-modal.tsx`**:
+  - Added `initialTreatment` prop support so clicking any procedure pre-selects it in the reservation drawer.
 - **`app/page.tsx`**:
-  - Mounted `<ExperiencePillarsSection />` and `<TreatmentShowcaseSection />` below `DentistTeamGrid` with client-hydration mounting safety.
+  - Mounted `<ServicesSection />` with dynamic treatment selection handler.
 - **`context/ui-registry.md` & `context/progress-tracker.md`**:
-  - Imprinted both new treatment components and synchronized milestone status.
+  - Imprinted updated visual patterns, GSAP animation specs, and synchronized milestone status.
 
 ## Decisions made
 
-- **Full-Bleed 50/50 Architectural Grid:** Implemented exact flush edge-to-edge photography columns and continuous marble background matching `features-section.png` rather than isolated bordered cards.
-- **Asymmetrical Seam Alignment:** Left marble panels use `text-right` / `items-end` to hug the central photograph seam; right marble panel uses `text-left` / `items-start`.
+- **Full-Bleed Stage Isolation:** Decoupled the dark procedure rows from the standard container bounds so it stretches 100vw edge-to-edge with top/bottom hairline borders.
+- **Hover-Only Activation with GSAP:** All 8 procedure rows remain sleek and collapsed by default; hovering triggers subpixel GSAP width expansion (`0px -> 260px/200px/150px`) with `power3.out`, sliding title words apart seamlessly without layout jumps.
+- **Clean Subtitle vs. Monospace Bullets:** Removed bulky yellow monospace text in favor of an understated single-line subtitle (`Studio | Category | Guarantee`) and dual pill CTAs.
+- **Tactile Marble Plate on Care Cards:** Layered `marble-texture-3-1.jpg` at 35% opacity with linen gradient sheen for tactile depth.
 - **Turnkey Personalization Invariant:** Zero practice copy hardcoded in components; 100% sourced from `content/practice-data.ts`.
-- **Hydration Safety Strategy:** Handled browser extension DOM tampering (e.g. Bitdefender, AI inspector) via mounting guard in `app/page.tsx`.
 
 ## Problems solved
 
-- **Browser Extension Hydration Failures:** Diagnosed third-party extensions injecting `bis_skin_checked="1"` and `data-ai-detector-processed="true"` into DOM before React hydration. Fixed via lifecycle mounting guard in `app/page.tsx`.
-- **Unstyled Font Fallbacks:** Discovered `Plus_Jakarta_Sans` lacked weights `300` and `800` in `layout.tsx`, causing `font-extrabold` and `font-extralight` to fail. Expanded font loader configuration.
-- **Muddy Button Palette:** Corrected dark olive-brown `#695216` to rich Deep Ochre Gold `#836a2c` in `@theme` tokens.
+- **Abrupt Layout Pop on Hover:** Replaced abrupt boolean DOM switches with continuous GSAP tweening (`ProcedureRowItem` context) so image width, photo zoom, halo pop, and details drawer interpolate smoothly.
+- **Mobile Ghost Cursor:** Prevented stuck trailing bubble artifacts on touch devices via `window.matchMedia('(pointer: fine)')` check.
 
 ## Current state
 
-- Production build (`npm run build`) compiles with 0 TypeScript/Next.js errors.
-- Dev server runs cleanly with 0 hydration warnings.
+- Production build (`npm run build`) compiles cleanly with 0 TypeScript/Next.js errors.
+- Dev server running smoothly with 0 hydration warnings.
 
 ## Next session starts with
 
-- Receive user's instruction on the next milestone (e.g., **Phase 6: Interactive Before & After Smile Transformation Slider** or **Phase 7: Custom Testimonials Section**).
+- Receive user's instruction on the next milestone (e.g., **Phase 6: Interactive Before & After Smile Transformation Slider** or **Phase 7: Patient Testimonials Section**).
 - Run `/architect` to align on requirements before writing code.
 
 ## Open questions
