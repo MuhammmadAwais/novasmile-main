@@ -14,16 +14,23 @@ import {
   ExperiencePillarsSection,
   TreatmentShowcaseSection,
 } from "@/features/treatments";
+import { ServicesSection } from "@/features/services";
 import { BookingModal, CallModal } from "@/features/booking";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [callOpen, setCallOpen] = useState(false);
+  const [selectedTreatment, setSelectedTreatment] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleBookVisit = (treatmentName?: string) => {
+    setSelectedTreatment(treatmentName);
+    setBookingOpen(true);
+  };
 
   if (!mounted) {
     return <main className="min-h-screen bg-surface text-on-surface" />;
@@ -33,13 +40,13 @@ export default function Home() {
     <main className="min-h-screen bg-surface text-on-surface overflow-x-hidden flex flex-col">
       {/* Pinned Top Navigation Bar */}
       <Navbar
-        onBookClick={() => setBookingOpen(true)}
+        onBookClick={() => handleBookVisit()}
         onCallClick={() => setCallOpen(true)}
       />
 
       {/* Hero Section matching reference (hero-section-reference.png) */}
       <HeroSection
-        onBookVisit={() => setBookingOpen(true)}
+        onBookVisit={() => handleBookVisit()}
         onCallNow={() => setCallOpen(true)}
       />
 
@@ -63,14 +70,25 @@ export default function Home() {
 
       {/* 6. Your Beautiful Smile - 3 Staggered Treatment Rows (features-section.png) */}
       <TreatmentShowcaseSection
-        onBookClick={() => setBookingOpen(true)}
-        onSelectCategory={() => setBookingOpen(true)}
+        onBookClick={() => handleBookVisit()}
+        onSelectCategory={() => handleBookVisit()}
+      />
+
+      {/* 7. Comprehensive Care Pillars & Signature Architectural Procedures Suite */}
+      <ServicesSection
+        onBookTreatment={handleBookVisit}
+        onSelectCategory={(categoryKey) =>
+          handleBookVisit(
+            `${categoryKey.charAt(0).toUpperCase() + categoryKey.slice(1)} Dentistry Consultation`
+          )
+        }
       />
 
       {/* Interactive Appointment Reservation Modal */}
       <BookingModal
         isOpen={bookingOpen}
         onClose={() => setBookingOpen(false)}
+        initialTreatment={selectedTreatment}
       />
 
       {/* Interactive Immediate Call & 24/7 Triage Modal */}

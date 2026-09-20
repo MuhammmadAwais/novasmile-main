@@ -242,6 +242,61 @@ Last updated: 2026-09-19
 **Pattern notes:**
 Directly matches reference design `features-section.png`. Features asymmetrical 58/42 column split, giving photography visual dominance while text sits cleanly balanced in the marble panel. Uses two-tone bold/light typography, right-aligned and left-aligned text blocks towards the seam, and warm ochre gold CTAs.
 
+---
 
+### InteractiveBubbleCursor
 
+File: `components/ui/interactive-cursor.tsx`
+Last updated: 2026-09-20
 
+| Property         | Class |
+| ---------------- | ----- |
+| Outer Bubble     | `rounded-full border border-white/80 bg-white/15 backdrop-blur-[0.5px] mix-blend-difference` |
+| Center Micro-Dot | `w-1.5 h-1.5 rounded-full bg-white mix-blend-difference` |
+| Bubble Sizes     | Resting: `w-11 h-11`, Hovered: `w-16 h-16` or `w-20 h-20` (with action text), Pressed: `w-8 h-8 scale-90` |
+| Animation Loop   | 60fps linear interpolation (`lerpFactor = 0.18`) via `requestAnimationFrame` |
+| Target Detection | Automatically expands and displays uppercase badges on `button, a, input, select, [data-cursor]` |
+| Accessibility    | Disabled on touch screens via `window.matchMedia('(pointer: fine)')` check |
+
+**Pattern notes:**
+Global floating luxury companion cursor. Inverts text, photo colors, and backgrounds dynamically without layout reflows or React re-render lag.
+
+---
+
+### ServicesTopPillars ("Comprehensive Care, One Convenient Location")
+
+File: `features/services/components/services-top-pillars.tsx`
+Last updated: 2026-09-20
+
+| Property         | Class |
+| ---------------- | ----- |
+| Background       | Cards: `bg-surface-container-lowest/60 backdrop-blur-xs rounded-2xl p-4 sm:p-5 border border-outline-variant/30 hover:border-primary/40 hover:shadow-lg` |
+| Arched Portal    | `w-full aspect-[4/3] rounded-t-[2.5rem] rounded-b-xl overflow-hidden bg-surface-container mb-6 shadow-sm border border-outline-variant/20` |
+| Typography       | Eyebrow: `text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#836a2c]`, Headline: `font-serif text-3xl sm:text-4xl lg:text-5xl text-[#201815]`, Card Title: `font-serif text-2xl sm:text-3xl text-[#201815]`, Body: `font-sans text-xs sm:text-[13px] text-[#4d4639]` |
+| CTA Button       | `border border-[#836a2c]/70 text-[#201815] hover:bg-[#836a2c] hover:border-[#836a2c] hover:text-[#fcf9f6] text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] py-3 px-6 rounded-sm transition-all` |
+| Layout Pattern   | 3-column responsive grid (`grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10`) |
+
+**Pattern notes:**
+Directly matches Screenshot 1. Arched portal photography with gentle warm sheen, authoritative serif headers, benefit narrative, and ochre outline buttons.
+
+---
+
+### ServicesRowAccordion (Architectural Split-Word Procedure Rows)
+
+File: `features/services/components/services-row-accordion.tsx`
+Last updated: 2026-09-20
+
+| Property         | Class |
+| ---------------- | ----- |
+| Section Width    | Full-screen width (`w-full border-t border-b border-white/10 overflow-hidden`) edge-to-edge |
+| Background       | Dark roasted espresso `bg-[#120b0a] text-[#fcf9f6]` with alabaster marble texture (`marble-texture-3-1.jpg`) at 7% opacity and ambient radial glow |
+| Left/Right Wireframes | Geometric polyline (left) and criss-cross diamond chevron (right) SVGs (`opacity-35 scale-100` on hover, `opacity-0 scale-95` idle) |
+| Row Interaction  | Idle: collapsed clean title. Hover: expands smoothly to show split title, inline photo with center dot halo, clean subtitle, and dual CTAs |
+| Split Title      | `font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-medium` split around embedded thumbnail portal (`h-16 sm:h-20 lg:h-24 w-32 sm:w-44 lg:w-56 border border-[#836a2c]/60 shadow-2xl`) |
+| Dot Halo Stamp   | Circular badge with center dot resting atop inline photo (`w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/50 bg-black/60`) |
+| Subtitle Text    | Clean single-line sans subtitle in `#d0c5b4]/85` (yellow monospace text removed) |
+| Dual CTAs        | Primary: `bg-[#fcf9f6] text-[#201815] hover:bg-[#c4a96a] text-xs font-semibold uppercase rounded-full py-3 px-6`, Secondary: `bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs rounded-full py-3 px-5` |
+| Index & Action   | Left: `font-mono text-[11px] sm:text-xs text-[#c4a96a]`, Right: `font-mono text-[11px] text-white/50 group-hover:text-white` with `ArrowUpRight` |
+
+**Pattern notes:**
+Directly matches Reference Images 2 & 3. Full-screen width architectural typography with zero initial expanded thumbnails. Moving cursor across rows reveals geometric wireframes on left/right and smoothly splits headlines to display the thumbnail portal with the signature circular dot indicator.

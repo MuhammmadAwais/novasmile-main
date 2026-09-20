@@ -7,16 +7,25 @@ import { practiceData } from "@/content/practice-data";
 export interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
+  initialTreatment?: string;
 }
 
-export function BookingModal({ isOpen, onClose }: BookingModalProps) {
+export function BookingModal({ isOpen, onClose, initialTreatment }: BookingModalProps) {
   const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [selectedTreatment, setSelectedTreatment] = useState("Comprehensive New Patient Exam & Clean");
+  const [selectedTreatment, setSelectedTreatment] = useState(
+    initialTreatment || "Comprehensive New Patient Exam & Clean"
+  );
   const [selectedLocation, setSelectedLocation] = useState("San Francisco");
   const [selectedDate, setSelectedDate] = useState("Tomorrow");
   const [selectedSlot, setSelectedSlot] = useState("10:00 AM");
   const [anxietyCare, setAnxietyCare] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  React.useEffect(() => {
+    if (initialTreatment) {
+      setSelectedTreatment(initialTreatment);
+    }
+  }, [initialTreatment]);
 
   if (!isOpen) return null;
 

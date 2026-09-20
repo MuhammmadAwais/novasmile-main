@@ -119,6 +119,42 @@ export interface TreatmentShowcaseConfig {
   items: TreatmentShowcaseItem[];
 }
 
+export interface ServicePillarItem {
+  id: string;
+  title: string;
+  categoryKey: "general" | "cosmetic" | "surgical";
+  description: string;
+  ctaText: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface ServiceRowProcedure {
+  id: string;
+  indexNumber: string;
+  titlePart1: string;
+  titlePart2: string;
+  category: string;
+  description: string;
+  specs: string;
+  turnaround: string;
+  comfortProtocol: string;
+  image: string;
+  imageAlt: string;
+  ctaText: string;
+}
+
+export interface ServicesSuiteConfig {
+  topEyebrow: string;
+  topHeadline: string;
+  topSubtitle: string;
+  pillars: ServicePillarItem[];
+  rowEyebrow: string;
+  rowHeadline: string;
+  rowSubtitle: string;
+  procedures: ServiceRowProcedure[];
+}
+
 export interface PracticeConfig {
   id: string;
   name: string;
@@ -183,4 +219,5 @@ export interface PracticeConfig {
   specialistTeam?: SpecialistTeamMember[];
   experiencePillars?: ExperiencePillarsConfig;
   treatmentShowcase?: TreatmentShowcaseConfig;
+  servicesSuite?: ServicesSuiteConfig;
 }

@@ -6,11 +6,12 @@ Update this file after every completed feature. Any AI agent reading this immedi
 
 ## Current Status
 
-**Phase:** Practice Features & Treatment Showcase Suite Complete
+**Phase:** Comprehensive Services Suite & Interactive Cursor System Complete
 **Last completed:**
-1. **The Experience (3 Value Pillars)** ([`experience-pillars-section.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/treatments/components/experience-pillars-section.tsx)) matching `feature-section-top.png` with gold icons (*Personalized Care*, *Financial Clarity*, *Comfort Add-Ons*).
-2. **Treatment Showcase ("Your Beautiful Smile")** ([`treatment-showcase-section.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/treatments/components/treatment-showcase-section.tsx)) matching `features-section.png` with warm marble background (`marble-texture-3-1.jpg`), high-fashion editorial two-tone typography, alternating rows for *Routine Dental Care*, *Restorative Procedures*, and *Cosmetic Transformations*, and warm ochre CTA buttons.
-**Next:** Visual Proof / Before & After Transformations or next section specified by the user.
+1. **Interactive Bubble Cursor** ([`interactive-cursor.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/components/ui/interactive-cursor.tsx)) featuring fluid 60fps lerp trailing physics, optical color inversion (`mix-blend-difference`), interactive scale/text morph on buttons, images, and cards, and touch-screen self-disabling.
+2. **Top Care Category Pillars** ([`services-top-pillars.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/services/components/services-top-pillars.tsx)) matching Screenshot 1 (*"Comprehensive care, one convenient location"*) with arched-top photography portals, authoritative serif headlines, and ochre-outlined action buttons.
+3. **Architectural Split-Title Procedure Rows** ([`services-row-accordion.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/services/components/services-row-accordion.tsx)) matching Screenshot 2 with dark roasted espresso background, subtle marble texture (`marble-texture-3-1.jpg`), 8 signature procedures (`/01` to `/08`) with split typography embedding inline glowing photos, procedure specification badges, and dual booking CTAs.
+**Next:** Phase 6: Visual Proof & Interactive Before & After Smile Transformation Slider.
 
 ---
 
@@ -32,9 +33,12 @@ Update this file after every completed feature. Any AI agent reading this immedi
 - [x] Lead Clinician Spotlight Carousel with index badge, star stamp & navigation (`our-top-dentist.png`)
 - [x] Specialist Team Interactive Grid with marble reveal hover state (`our-all-dentist.png`)
 
-### Phase 5 — Practice Features & Treatments Showcase
+### Phase 5 — Practice Features & Comprehensive Services Suite
 - [x] The Experience: 3 Value Pillars with Gold Iconography (`feature-section-top.png`)
 - [x] Treatment Showcase: 3 Staggered Treatment Rows with Marble Backdrop (`features-section.png`)
+- [x] Global Interactive Bubble Cursor with fluid lerp trailing and optical color inversion
+- [x] Top Care Category Pillars matching Screenshot 1 (`service-1.jfif`, `service-2.jfif`, `service-3.jfif`)
+- [x] Architectural Split-Word Procedure Rows matching Screenshot 2 (8 signature procedures)
 
 ### Phase 6 — Visual Proof & Modern Technology
 - [ ] Interactive Before & After Smile Transformation Slider
