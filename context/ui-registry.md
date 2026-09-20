@@ -270,14 +270,15 @@ Last updated: 2026-09-20
 
 | Property         | Class |
 | ---------------- | ----- |
-| Background       | Cards: `bg-surface-container-lowest/60 backdrop-blur-xs rounded-2xl p-4 sm:p-5 border border-outline-variant/30 hover:border-primary/40 hover:shadow-lg` |
-| Arched Portal    | `w-full aspect-[4/3] rounded-t-[2.5rem] rounded-b-xl overflow-hidden bg-surface-container mb-6 shadow-sm border border-outline-variant/20` |
+| Background       | Tactile alabaster marble plate (`marble-texture-3-1.jpg` at 35% opacity, `mix-blend-multiply`) layered over `bg-[#fdfbf8]` with linen sheen (`bg-gradient-to-b from-white/70 via-white/40 to-white/60`), `rounded-3xl p-5 sm:p-7 border border-[#836a2c]/20 hover:border-[#836a2c]/50 hover:shadow-2xl` |
+| Arched Portal    | `w-full aspect-[4/3] rounded-t-[2.5rem] rounded-b-xl overflow-hidden bg-surface-container mb-6 shadow-sm border border-outline-variant/30` |
 | Typography       | Eyebrow: `text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#836a2c]`, Headline: `font-serif text-3xl sm:text-4xl lg:text-5xl text-[#201815]`, Card Title: `font-serif text-2xl sm:text-3xl text-[#201815]`, Body: `font-sans text-xs sm:text-[13px] text-[#4d4639]` |
-| CTA Button       | `border border-[#836a2c]/70 text-[#201815] hover:bg-[#836a2c] hover:border-[#836a2c] hover:text-[#fcf9f6] text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] py-3 px-6 rounded-sm transition-all` |
+| CTA Button       | `border border-[#836a2c]/80 text-[#201815] bg-white/60 backdrop-blur-xs hover:bg-[#836a2c] hover:border-[#836a2c] hover:text-[#fcf9f6] text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] py-3.5 px-6 rounded-sm transition-all` |
 | Layout Pattern   | 3-column responsive grid (`grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10`) |
 
 **Pattern notes:**
-Directly matches Screenshot 1. Arched portal photography with gentle warm sheen, authoritative serif headers, benefit narrative, and ochre outline buttons.
+Directly matches Screenshot 1 elevated with tactile alabaster marble backgrounds. Features arched portal photography, subtle warm linen sheen, authoritative serif headers, benefit narrative, and ochre outline buttons.
+
 
 ---
 

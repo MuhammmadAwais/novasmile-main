@@ -14,7 +14,8 @@ interface ServicesTopPillarsProps {
  * ServicesTopPillars
  * Matches Screenshot 1 ("Comprehensive care, one convenient location"):
  * 3 Department Pillars (General, Cosmetic, Surgical) with arched-top photography,
- * authoritative serif titles, benefit copy, and ochre-outlined CTA buttons.
+ * authoritative serif titles, benefit copy, ochre-outlined CTA buttons,
+ * and high-definition tactile alabaster marble backgrounds.
  */
 export function ServicesTopPillars({
   onSelectCategory,
@@ -38,15 +39,27 @@ export function ServicesTopPillars({
         </p>
       </div>
 
-      {/* 3 Pillars Grid matching Screenshot 1 */}
+      {/* 3 Pillars Grid with Tactile Alabaster Marble Texture */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
         {config.pillars.map((pillar: ServicePillarItem) => (
           <div
             key={pillar.id}
-            className="flex flex-col group bg-surface-container-lowest/60 backdrop-blur-xs rounded-2xl p-4 sm:p-5 border border-outline-variant/30 hover:border-primary/40 hover:shadow-lg transition-all duration-500"
+            className="relative overflow-hidden flex flex-col justify-between group bg-[#fdfbf8] rounded-3xl p-5 sm:p-6 lg:p-7 border border-[#836a2c]/20 hover:border-[#836a2c]/50 hover:shadow-2xl transition-all duration-500 shadow-md"
           >
+            {/* 1. Alabaster Marble Texture Layer */}
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-[0.35] mix-blend-multiply pointer-events-none group-hover:opacity-[0.45] transition-opacity duration-700"
+              style={{ backgroundImage: `url('/marble-texture-3-1.jpg')` }}
+            />
+
+            {/* 2. Soft Ambient Linen Sheen */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/60 pointer-events-none" />
+
+            {/* 3. Subtle Warm Ochre Glow on Hover */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#836a2c]/10 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+
             {/* Arched Top Image Portal */}
-            <div className="relative w-full aspect-[4/3] rounded-t-[2.5rem] rounded-b-xl overflow-hidden bg-surface-container mb-6 shadow-sm border border-outline-variant/20">
+            <div className="relative z-10 w-full aspect-[4/3] rounded-t-[2.5rem] rounded-b-xl overflow-hidden bg-surface-container mb-6 shadow-sm border border-outline-variant/30 group-hover:border-primary/40 transition-colors">
               <Image
                 src={pillar.image}
                 alt={pillar.imageAlt}
@@ -59,7 +72,7 @@ export function ServicesTopPillars({
             </div>
 
             {/* Content Details */}
-            <div className="flex-1 flex flex-col justify-between">
+            <div className="relative z-10 flex-1 flex flex-col justify-between">
               <div>
                 <h3 className="font-serif text-2xl sm:text-3xl text-[#201815] font-medium mb-2.5">
                   {pillar.title}
@@ -81,7 +94,7 @@ export function ServicesTopPillars({
                       onBookClick(pillar.title + " Dentistry Consultation");
                     }
                   }}
-                  className="w-full sm:w-auto min-w-[200px] border border-[#836a2c]/70 text-[#201815] hover:bg-[#836a2c] hover:border-[#836a2c] hover:text-[#fcf9f6] text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] py-3 px-6 rounded-sm transition-all duration-300 shadow-xs hover:shadow-md active:scale-[0.98]"
+                  className="w-full sm:w-auto min-w-[200px] border border-[#836a2c]/80 text-[#201815] bg-white/60 backdrop-blur-xs hover:bg-[#836a2c] hover:border-[#836a2c] hover:text-[#fcf9f6] text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] py-3.5 px-6 rounded-sm transition-all duration-300 shadow-xs hover:shadow-md active:scale-[0.98]"
                 >
                   {pillar.ctaText}
                 </button>
