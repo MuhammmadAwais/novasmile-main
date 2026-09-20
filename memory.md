@@ -1,51 +1,41 @@
-# Memory — Phase 7 & 8: Testimonials, FAQs, Modern Comforts & App Section Architecture
+# Memory — Phase 8: Dream Smile Conversion CTA & Luxury Hospitality Footer
 
-Last updated: 2026-09-20 14:25 PST
+Last updated: 2026-09-20 15:20 PST
 
 ## What was built
 
-- **`features/testimonials/` (Patient Stories & Verified Testimonials Section)**:
-  - `components/testimonials-section.tsx`: Sticky editorial left-column with verified clinical rating summary, action button, and an infinite moving marquee ticker ribbon (`SCHEDULE YOUR APPOINTMENT WITH OUR EXPERT TEAM TODAY ↗`).
-  - `components/testimonial-card.tsx`: Vertical scrolling testimonial cards featuring filtered tactile alabaster marble texture (`marble-texture-3-1.jpg` with 35% opacity and multiply blend), horizontally pop-out patient avatar portals (`review-person-1.avif` to `review-person-4.avif`), procedure badge, verified patient badge, star ratings, and narrative quote.
-- **`features/faq/` (Frequently Asked Questions & Anxiety Alleviation Suite)**:
-  - `components/faq-section.tsx`: Two-line centered luxury headline (`ANSWERS TO YOUR COMMON DENTAL [QUESTIONS]`) with ambient radial gold glow, category breakdown, and consultation booking callout.
-  - `components/faq-item.tsx`: High-contrast expandable accordion tabs with dark roasted espresso marble backing (`download.webp` at 25% opacity), crisp gold chevrons, smooth 60fps CSS grid height expansion, and structured clinical answers.
-- **`features/comforts/` (Modern Comforts Section & Studio Showcase)**:
-  - `components/modern-comforts-section.tsx`: Editorial split layout with "It's all in the details" narrative, comfort pillars checkmarks, custom bottom-left geometric gold architectural corner ornament, and 4-slide luxury studio space carousel (`slide-1-1000.jpg` to `slide-4-1000.jpg`).
-  - `components/studio-carousel.tsx`: Interactive studio space carousel with thumbnail navigation and slide counter.
+- **`features/footer/components/dream-smile-cta.tsx` (Dream Smile Conversion CTA)**:
+  - Floating alabaster marble card (`bg-[#faf7f2]/95` with `marble-texture-3-1.jpg` plate at 25% opacity) sitting above clinic interior backdrop (`/cta-behind-bg.webp`) with tactile stone wash (`stone-background-1400.jpg`).
+  - Fluid script accent `"Ready"` (`EB Garamond` italic display) paired with `"for your dream smile?"`.
+  - Reassurance narrative addressing complex cases and specialist perspective.
+  - Focused, single primary consultation button: `"Book Your Smile Consultation ↗"` in roasted espresso `bg-[#231a16]` with gold hover accent, connected to `onBookClick()` opening the 3-step `BookingModal`.
+  - Natural smiling patient portrait (`/cta-person-img.webp`) without cluttering badges.
+  - Architectural floating negative margin (`-mb-28 sm:-mb-32 md:-mb-40 lg:-mb-48`) overlapping smoothly into the dark footer below.
+- **`features/footer/components/practice-footer.tsx` (Luxury Hospitality Practice Footer)**:
+  - Deep roasted espresso canvas (`bg-[#18110e] text-[#fcf9f6]`) layered with tactile dark marble plate (`/download.webp` at 14% opacity) and radial golden ambient glow.
+  - Upper buffer (`pt-36 sm:pt-44 md:pt-52 lg:pt-60`) hosting the overlapping CTA card seamlessly.
+  - Practice main logo (`/logo-main.png`) with `filter brightness-0 invert opacity-95 hover:opacity-100` rendering crisp neutral white on the dark canvas.
+  - 4-Column navigation architecture:
+    1. Brand & clinical philosophy statement.
+    2. Quick Links with interactive appointment booking trigger.
+    3. Clinical Services (Handcrafted Veneers, Implants, Invisalign, Crowns, Sedation, Emergency).
+    4. Studio Locations (San Francisco & Mountain View), concierge hours, and direct consultation reservation button.
+  - Legal & social bar with copyright, privacy, terms, accessibility, and circular social media buttons (X, LinkedIn, Instagram, Facebook).
+  - Monumental architectural display typography: `"NOVASMILE"` (`text-[13.5vw]` in `font-serif font-black uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[#836a2c]/[0.07]`) anchored at the absolute bottom.
 - **`app/page.tsx`**:
-  - Reordered sections for optimal patient conversion and aesthetic hierarchy:
-    1. `Navbar`
-    2. `HeroSection`
-    3. `TrustMetricsSection`
-    4. `SmileHookSection`
-    5. `DentistPromiseCard`
-    6. `DentistSpotlightCarousel`
-    7. `DentistTeamGrid`
-    8. `ExperiencePillarsSection`
-    9. `TreatmentShowcaseSection`
-    10. `ServicesSection`
-    11. `ModernComfortsSection`
-    12. `TransformationsStackedSection`
-    13. `TestimonialsSection`
-    14. `FAQSection`
-    15. `BookingModal` & `CallModal`
-- **`lib/types/practice.ts` & `content/practice-data.ts`**:
-  - TypeScript schemas and 100% turnkey clinical data for Testimonials, FAQ items, and Modern Comforts studio slides.
+  - Rendered `DreamSmileCta` and `PracticeFooter` after `FAQSection`.
+  - Connected `onBookClick` to `handleBookVisit()`.
+  - Cleaned up `CallModal` and artificial phone popup modal per user request; wired call triggers directly to native telephone protocol (`handleCall` -> `tel:+14155550192`).
+- **`content/practice-data.ts` & `lib/types/practice.ts`**:
+  - Typed configuration for `CtaSectionConfig` and `FooterConfig` preserving the Turnkey Personalization Invariant.
 - **`context/ui-registry.md` & `context/progress-tracker.md`**:
-  - Updated design registry and progress tracker with Testimonials, FAQ, and Modern Comforts specifications.
+  - Imprinted UI specifications and marked Phase 8 complete.
 
 ## Decisions made
 
-- **Architectural Flow Optimization:** Situated `ModernComfortsSection` between `ServicesSection` and `TransformationsStackedSection` to create a natural progression from clinical procedures -> ambient studio space & comfort -> clinical before/after proof -> patient testimonials -> FAQs.
-- **Tactile Material Filters & Luxury Dark Contrast:** Paired light linen background cards with alabaster marble texture (`marble-texture-3-1.jpg`), and FAQ active state with deep roasted espresso marble (`download.webp`) for crisp readability and visual drama.
-- **Sticky Editorial + Vertical Scroll Split:** Designed Testimonials section with a sticky left headline & rating block while the right column smoothly scrolls through patient cards.
-- **Turnkey Personalization Invariant:** Zero hardcoded review copy, FAQ questions, or comfort features in component files; all content consumed dynamically from `content/practice-data.ts`.
-
-## Problems solved
-
-- **Turbopack HMR DOM Reordering Reconciliation:** Handled DOM element unmounting cleanly when adjusting section sequences in `app/page.tsx`.
-- **Card Clutter Elimination:** Removed awkward badges, unneeded card grids, and `/05` prefixes to maintain a clean, high-end editorial aesthetic.
+- **Card Clutter Elimination:** Removed inline badges (`SPECIALIST CONSULTATION`, `Verified Transformation`), triage cardlet, and accreditation pills per user request for a cleaner, high-end editorial aesthetic.
+- **White Neutral Filtered Logo:** Used `filter brightness-0 invert` on `/logo-main.png` in the dark footer to transform blue/black ink into pure, crisp white for optical luxury harmony.
+- **Native Call Action Over Artificial Pop Modal:** Removed `CallModal` and mapped call buttons directly to native telephone dialing (`tel:` protocol).
 
 ## Current state
 
@@ -54,9 +44,4 @@ Last updated: 2026-09-20 14:25 PST
 
 ## Next session starts with
 
-- Receive instructions for final footer / contact section or global polish and animations review.
-- Run `/architect` before implementing new features.
-
-## Open questions
-
-- Desired layout or design references for the final practice footer & contact details section.
+- Global responsiveness testing, performance audit, and final polish review.
