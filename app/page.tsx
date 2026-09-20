@@ -17,6 +17,8 @@ import {
 import { ServicesSection } from "@/features/services";
 import { TransformationsStackedSection } from "@/features/transformations";
 import { TestimonialsSection } from "@/features/testimonials";
+import { FAQSection } from "@/features/faq";
+import { ModernComfortsSection } from "@/features/comforts";
 import { BookingModal, CallModal } from "@/features/booking";
 
 export default function Home() {
@@ -86,12 +88,23 @@ export default function Home() {
         }
       />
 
-      {/* 8. Clinical Proof: Interactive Before & After Stacking Cards Section */}
+      {/* 8. Modern Comforts: "It's All in the Details" Studio Space Showcase */}
+      <ModernComfortsSection
+        onBookClick={handleBookVisit}
+      />
+
+      {/* 9. Clinical Proof: Interactive Before & After Stacking Cards Section */}
       <TransformationsStackedSection onBookTreatment={handleBookVisit} />
 
-      {/* 9. Patient Stories & Verified Testimonials Section */}
+      {/* 10. Patient Stories & Verified Testimonials Section */}
       <TestimonialsSection
         onExploreReviews={() => handleBookVisit("General Consultation & Smile Assessment")}
+      />
+
+      {/* 11. Frequently Asked Questions (FAQ) Section with Contrasting Marble Tabs */}
+      <FAQSection
+        onBookClick={handleBookVisit}
+        onCallClick={() => setCallOpen(true)}
       />
 
       {/* Interactive Appointment Reservation Modal */}

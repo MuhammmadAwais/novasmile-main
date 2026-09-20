@@ -361,4 +361,52 @@ Last updated: 2026-09-20
 **Pattern notes:**
 Directly matches user-specified editorial layout with sticky desktop column, horizontally popping portraits, rich filtered marble texture, clean signature attribution (awkward inline badges removed), non-funky entrance reveals, and hospitality-grade infinite moving sentence marquee carousel.
 
+---
+
+### FAQSection & FaqItemCard (Bold Contrasting Marble Tabs & Accordion)
+
+File: `features/faq/components/faq-section.tsx` & `features/faq/components/faq-item.tsx`
+Last updated: 2026-09-20
+
+| Property         | Class / Animation |
+| ---------------- | ----------------- |
+| Section Canvas   | `bg-surface-container-low` with tactile stone texture (`stone-background-1400.jpg` at 18% opacity, `mix-blend-multiply`), top/bottom hairline borders, and `overflow-x-clip` |
+| Section Header   | Two-line centered editorial headline: Top: `font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-[#201815] font-normal tracking-tight uppercase`, Bottom: `DENTAL` + warm ochre gold badge `QUESTIONS` (`bg-[#836a2c] text-[#fcf9f6] px-4 sm:px-6 py-1 sm:py-1.5 rounded-lg font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-[50px] shadow-sm`) |
+| Resting Tab Card | 100% solid `#fdfbf9` backing with tactile alabaster marble plate (`marble-texture-3-1.jpg` at 30% opacity, `contrast(1.08) brightness(1.02)`, `mix-blend-multiply`), `rounded-xl sm:rounded-2xl border border-[#836a2c]/25 hover:border-[#836a2c]/60 shadow-[0_4px_18px_-4px_rgba(45,33,29,0.06)] hover:shadow-[0_10px_28px_-6px_rgba(45,33,29,0.12)] hover:-translate-y-0.5` |
+| Active Tab Card  | Rich, deep roasted espresso chassis (`bg-[#1c120e] text-[#fcf9f6]`) with high-contrast dark marble texture plate (`download.webp` at 25% opacity, `contrast(1.25) brightness(1.15)`, `mix-blend-screen`), glowing gold border `border-[#c4a96a] shadow-[0_18px_45px_-12px_rgba(45,33,29,0.35)] -translate-y-0.5` and top gold highlight rule |
+| Tab Left Icon    | Magnifying search icon: Resting: `w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/80 border border-[#836a2c]/30 text-[#836a2c]`, Active: `bg-[#836a2c] text-[#fcf9f6] shadow-sm` |
+| Question Text    | Resting: `font-sans text-base sm:text-lg lg:text-[19px] font-medium text-[#201815]`, Active: `font-serif text-[#ffefd1] font-normal text-lg sm:text-xl lg:text-[21px]` |
+| Right Chevron    | `w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 ease-out` (`rotate-180 text-[#c4a96a] bg-white/10` on active) |
+| Answer Reveal    | 60fps CSS grid row transition `grid-rows-[0fr] -> grid-rows-[1fr]` with `transition-all duration-300 ease-out` |
+| Answer Text      | `font-sans text-sm sm:text-base text-[#d8c7be] leading-relaxed pl-12 sm:pl-14` with quick clinician consultation link |
+| Scroll Entrance  | GSAP ScrollTrigger staggered fade-up on `[data-faq-item]` (`y: 28 -> 0, opacity: 0 -> 1, duration: 0.65s, stagger: 0.08s, ease: power2.out`, `once: true`) |
+| Concierge Bar    | Hairline-divided bottom reassurance card with phone and visit booking actions |
+
+**Pattern notes:**
+Directly matches user specification: two-line editorial header, bold high-contrast transformation between resting linen marble cards and active espresso marble plates with rich filters (`contrast(1.25) brightness(1.15)` on dark marble), and smooth GPU-accelerated grid expansion animations.
+
+---
+
+### ModernComfortsSection & StudioCarousel ("It's All in the Details" Studio Space Showcase)
+
+File: `features/comforts/components/modern-comforts-section.tsx` & `features/comforts/components/studio-carousel.tsx`
+Last updated: 2026-09-20
+
+| Property         | Class / Animation |
+| ---------------- | ----------------- |
+| Section Placement| Positioned between `ServicesSection` and `TransformationsStackedSection` for optimal narrative flow |
+| Section Canvas   | `bg-surface-container-low` with tactile stone texture (`stone-background-1400.jpg` at 18% opacity, `mix-blend-multiply`), top/bottom hairline borders, and `overflow-x-clip` |
+| Editorial Title  | Headline: `font-serif text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] text-[#201815] font-normal leading-[1.08] tracking-tight` ("It's all in the details"), without redundant eyebrows |
+| Corner Ornament  | Luxury geometric gold corner ornament in bottom-left (`stroke="#836a2c"` guide lines + `rect` square motif in `#fcf9f6`) directly matching reference screenshot |
+| Studio Carousel  | `relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#836a2c]/35 shadow-2xl` with crossfade between 4 spaces (`slide-1-1000.jpg` to `slide-4-1000.jpg`) |
+| Carousel Arrows  | Floating left/right glassmorphic navigation buttons: `w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-white/90 hover:bg-white text-[#201815] shadow-lg flex items-center justify-center transition-all hover:scale-105 active:scale-95` |
+| Slide Overlay    | Space tag badge, editorial space title in `EB Garamond`, subtitle description, and numeric counter pill (`01 / 04`) |
+| Thumbnail Strip  | 4-column miniature preview thumbnails below main viewport for instant selection |
+
+**Pattern notes:**
+Directly matches reference screenshot: clean editorial title "It's all in the details" without eyebrow tags, paired with the bottom-left gold geometric corner ornament and a 4-space interactive studio carousel positioned between Services and Smile Transformations.
+
+
+
+
 

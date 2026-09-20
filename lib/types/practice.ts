@@ -196,6 +196,60 @@ export interface TestimonialsConfig {
   reviews: PatientTestimonial[];
 }
 
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category?: string;
+}
+
+export interface FAQConfig {
+  headlinePart1: string;
+  headlinePart2: string;
+  highlightBadge: string;
+  subtitle?: string;
+  items: FAQItem[];
+}
+
+export interface StudioComfortSlide {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  tag: string;
+}
+
+export interface InsuranceNetworkItem {
+  id: string;
+  name: string;
+  type: string;
+  badge?: string;
+}
+
+export interface FinancingOptionItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  features: string[];
+  ctaText: string;
+}
+
+export interface ModernComfortsConfig {
+  headline: string;
+  description: string;
+  comfortPillars: string[];
+  slides: StudioComfortSlide[];
+  insuranceSection: {
+    eyebrow: string;
+    headline: string;
+    subtitle: string;
+    networks: InsuranceNetworkItem[];
+    financingOptions: FinancingOptionItem[];
+  };
+}
+
 export interface PracticeConfig {
   id: string;
   name: string;
@@ -263,4 +317,6 @@ export interface PracticeConfig {
   servicesSuite?: ServicesSuiteConfig;
   transformations?: TransformationsConfig;
   testimonialsConfig?: TestimonialsConfig;
+  faqConfig?: FAQConfig;
+  modernComfortsConfig?: ModernComfortsConfig;
 }

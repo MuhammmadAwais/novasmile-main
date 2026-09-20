@@ -831,5 +831,157 @@ export const practiceData: PracticeConfig = {
       },
     ],
   },
+
+  /* Phase 8 — Frequently Asked Questions (FAQ Section with Bold Contrasting Marble Tabs) */
+  faqConfig: {
+    headlinePart1: "ANSWERS TO YOUR COMMON",
+    headlinePart2: "DENTAL",
+    highlightBadge: "QUESTIONS",
+    subtitle:
+      "Everything you need to know about our unhurried approach, insurance clarity, anxiety protocols, and signature biological treatments.",
+    items: [
+      {
+        id: "faq-1",
+        question: "What are your payment options?",
+        answer:
+          "We believe premium healthcare should be transparent and predictable. We accept all major PPO dental plans and file claims directly on your behalf to maximize your benefits. For out-of-pocket costs and cosmetic procedures, we provide interest-free monthly financing through CareCredit® and Sunbit, as well as our bespoke In-House Wellness Membership plan with 15–20% fee courtesy.",
+        category: "Financial Clarity",
+      },
+      {
+        id: "faq-2",
+        question: "How often should I visit the dentist for cleanings?",
+        answer:
+          "For patients with optimal periodontal health, a comprehensive clinical hygiene visit every six months maintains enamel integrity and catches microscopic changes early. If you are managing active gum inflammation, orthodontic aligners, or biological implant reconstructions, our clinicians may recommend tailored 3- to 4-month supportive periodontal maintenance intervals.",
+        category: "Preventive Care",
+      },
+      {
+        id: "faq-3",
+        question: "What should I do during a dental emergency?",
+        answer:
+          "Contact our direct emergency concierge immediately at (415) 555-0199. We reserve dedicated daily priority blocks for same-day acute relief — whether treating severe pulpitis pain, a knocked-out tooth, or a fractured ceramic crown. If trauma occurs outside normal studio hours, our 24/7 clinical on-call triage provides immediate guidance.",
+        category: "Emergency Care",
+      },
+      {
+        id: "faq-4",
+        question: "Are dental x-rays safe for children and adults?",
+        answer:
+          "Yes, absolutely. Our studio utilizes ultra-low-dose Green CBCT 3D imaging and pediatric-certified digital sensors that emit up to 90% less radiation than conventional dental film. The ambient exposure of a full digital diagnostic series is lower than a standard domestic commercial flight, ensuring complete safety for developing children and expectant mothers.",
+        category: "Clinical Safety",
+      },
+      {
+        id: "faq-5",
+        question: "How long do professional teeth whitening results last?",
+        answer:
+          "With our in-office patented GLO™ Guided Light Optics technology, patients achieve 6 to 8 shades of enamel lift in just 32 minutes with zero clinical sensitivity. Results typically endure between 12 to 24 months depending on dietary habits (coffee, tea, red wine). Each in-office treatment includes a custom touch-up kit to keep your shade brilliantly maintained for life.",
+        category: "Cosmetic Dentistry",
+      },
+    ],
+  },
+
+  /* Phase 6 & 8 — Combined Modern Comforts & Insurance Transparency Section */
+  modernComfortsConfig: {
+    headline: "It's all in the details",
+    description:
+      "Your experience matters. From the clean, modern design of our studio to the calming little touches you never knew you needed — weighted blankets, warm essential oil towels, ceiling-mounted entertainment, and private garden views — we've designed our space to help you completely relax.",
+    comfortPillars: [
+      "Floor-to-ceiling private garden operatory views",
+      "Heated neck pillows & weighted sensory blankets",
+      "Noise-canceling Bose® headsets & ceiling streaming displays",
+      "Hospitality refreshment bar with organic herbal teas & warm towels",
+    ],
+    slides: [
+      {
+        id: "comfort-operatory",
+        title: "Zen Garden Operatories",
+        subtitle: "Tranquil Natural Light & Floor-to-Ceiling Greenery",
+        description:
+          "Our treatment suites face private Japanese zen gardens with natural daylight, ergonomic memory foam chairs, and ceiling-mounted streaming displays to ease clinical anxiety.",
+        image: "/slide-1-1000.jpg",
+        tag: "Private Garden View",
+      },
+      {
+        id: "comfort-beverage",
+        title: "Hospitality Refreshment Bar",
+        subtitle: "Artisanal Organic Beverages & Warm Accents",
+        description:
+          "Unwind before your appointment with freshly brewed herbal teas, sparkling water, espresso, and warm lavender essential oil towels crafted to transition your mindset from busy day to restorative sanctuary.",
+        image: "/slide-2-1000-1.jpg",
+        tag: "Hospitality Lounge",
+      },
+      {
+        id: "comfort-reception",
+        title: "Warm Architectural Reception",
+        subtitle: "Curved Slatted Cedar & Ambient Ring Chandeliers",
+        description:
+          "Say goodbye to sterile white waiting rooms. Our entrance is shaped by warm organic cedar slats, low-glare lighting, and serene ambient acoustics.",
+        image: "/slide-3-1000.jpg",
+        tag: "Concierge Welcome",
+      },
+      {
+        id: "comfort-foyer",
+        title: "Sunlit Glass Foyer",
+        subtitle: "Spacious Transitions & Anxiety-Free Arrival",
+        description:
+          "An expansive, light-filled entry foyer designed to make your arrival feel seamless, spacious, and unhurried from the very first step.",
+        image: "/slide-4-1000.jpg",
+        tag: "Studio Arrival",
+      },
+    ],
+    insuranceSection: {
+      eyebrow: "FINANCIAL TRANSPARENCY & PEACE OF MIND",
+      headline: "Insurance Optimization & Flexible Payment",
+      subtitle:
+        "We believe exceptional dentistry should be clear, honest, and accessible. We coordinate directly with your insurance provider and provide interest-free monthly payment plans.",
+      networks: [
+        { id: "net-delta", name: "Delta Dental Premier", type: "PPO Network" },
+        { id: "net-metlife", name: "MetLife Dental", type: "PPO Network" },
+        { id: "net-cigna", name: "Cigna Dental", type: "PPO Network" },
+        { id: "net-guardian", name: "Guardian Dental", type: "PPO Network" },
+        { id: "net-aetna", name: "Aetna Dental", type: "PPO Network" },
+        { id: "net-anthem", name: "Anthem BlueCross", type: "PPO Network" },
+      ],
+      financingOptions: [
+        {
+          id: "fin-insurance",
+          title: "Direct Insurance Optimization",
+          subtitle: "100% Paperwork Managed",
+          description:
+            "We accept all major PPO insurance plans. Our concierge verifies your exact coverage before your visit so you understand benefits with zero surprise out-of-pocket bills.",
+          features: [
+            "Complimentary Pre-Visit Verification",
+            "Electronic Claims Filing On Your Behalf",
+            "Maximized Annual Preventative Benefits",
+          ],
+          ctaText: "Check My Insurance",
+        },
+        {
+          id: "fin-monthly",
+          title: "0% APR Flexible Financing",
+          subtitle: "CareCredit® & Sunbit Plans",
+          description:
+            "Break comprehensive treatments, porcelain smile design, or dental implants into budget-friendly monthly installments with 0% interest promo terms.",
+          features: [
+            "Instant Digital Approval in Minutes",
+            "No Prepayment Penalties",
+            "Flexible Terms Up to 24 Months",
+          ],
+          ctaText: "Explore Monthly Plans",
+        },
+        {
+          id: "fin-membership",
+          title: "In-House Wellness Membership",
+          subtitle: "For Patients Without Insurance",
+          description:
+            "No insurance? No problem. Our studio membership provides 2 annual cleanings, all exams and digital x-rays, plus 15–20% fee courtesy on all restorative and cosmetic care.",
+          features: [
+            "Zero Waiting Periods or Deductibles",
+            "No Annual Maximum Coverage Caps",
+            "Includes Complimentary Lifetime Whitening",
+          ],
+          ctaText: "Join Wellness Club",
+        },
+      ],
+    },
+  },
 };
 
