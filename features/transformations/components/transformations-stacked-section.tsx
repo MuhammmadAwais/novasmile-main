@@ -191,17 +191,6 @@ export function TransformationsStackedSection({
             </div>
           ))}
         </div>
-
-        {/* BOTTOM SCROLL PROGRESS & HINT (Desktop only) */}
-        <div className="hidden lg:flex items-center justify-between mt-6 max-w-6xl mx-auto px-2 text-xs text-on-surface-variant/80 font-sans">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span>Scroll to unveil next patient journey</span>
-          </div>
-          <div className="tracking-widest uppercase text-[10.5px] font-medium text-on-surface-variant/70">
-            4 Documented Cases • 100% Real Patient Results
-          </div>
-        </div>
       </div>
     </section>
   );
