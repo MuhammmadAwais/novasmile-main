@@ -406,7 +406,41 @@ Last updated: 2026-09-20
 **Pattern notes:**
 Directly matches reference screenshot: clean editorial title "It's all in the details" without eyebrow tags, paired with the bottom-left gold geometric corner ornament and a 4-space interactive studio carousel positioned between Services and Smile Transformations.
 
+---
 
+### DreamSmileCta (Dream Smile Conversion CTA with Floating Overlap)
 
+File: `features/footer/components/dream-smile-cta.tsx`
+Last updated: 2026-09-20
 
+| Property         | Class / Description |
+| ---------------- | ------------------- |
+| Section Plate    | Full-width clinic sanctuary background (`/cta-behind-bg.webp`) with tactile stone wash (`stone-background-1400.jpg` at 15% opacity, `mix-blend-multiply`) and top/bottom gradient vignettes |
+| Floating Card    | `max-w-6xl mx-auto rounded-[28px] sm:rounded-[36px] md:rounded-[42px] overflow-hidden bg-[#faf7f2]/95 backdrop-blur-xl border border-[#836a2c]/25 shadow-[0_30px_70px_-15px_rgba(28,20,17,0.22)]` with tactile alabaster marble plate (`marble-texture-3-1.jpg` at 25% opacity, `mix-blend-multiply`) |
+| Overlap Margin   | Negative bottom margin `-mb-28 sm:-mb-32 md:-mb-40 lg:-mb-48` creating an architectural bridge floating directly into the dark footer below |
+| Headline Pairing | Elegant script accent `font-serif italic text-4xl sm:text-5xl md:text-6xl text-primary font-light tracking-wide` (`"Ready"`) paired with `"for your dream smile?"` in `font-serif text-3xl sm:text-4xl md:text-5xl text-[#231a16] font-normal tracking-tight` |
+| Specialist Copy  | Reassurance narrative focused on complex cases, restorative longevity, and clinical specialist perspective |
+| Primary Action   | Single focused button: `"Book Your Smile Consultation ↗"` in roasted espresso `bg-[#231a16] text-[#faf7f2] hover:bg-primary rounded-full px-8 py-4` opening the 3-step `BookingModal` |
+| Patient Portrait | Natural smiling woman portrait (`/cta-person-img.webp`) with clean natural crop, subtle warmth filter, and zero distracting badges |
 
+**Pattern notes:**
+Directly matches Reference Image 1 with clean editorial layout: script accent flourish, focused primary consultation CTA, and uninterrupted portrait.
+
+---
+
+### PracticeFooter (Hospitality Espresso Practice Footer & Monumental Watermark)
+
+File: `features/footer/components/practice-footer.tsx`
+Last updated: 2026-09-20
+
+| Property         | Class / Description |
+| ---------------- | ------------------- |
+| Background       | Deep roasted espresso canvas (`bg-[#18110e] text-[#fcf9f6]`) layered with tactile dark marble plate (`/download.webp` at 14% opacity, `mix-blend-luminosity`) and warm gold radial ambient glow |
+| Upper Buffer     | `pt-36 sm:pt-44 md:pt-52 lg:pt-60` to seamlessly accommodate the overlapping Dream Smile CTA card |
+| Brand Logo       | Practice main logo (`/logo-main.png`) with `filter brightness-0 invert opacity-95 hover:opacity-100` rendering crisp neutral white on the dark canvas |
+| 4-Column Grid    | Col 1: Brand & Philosophy; Col 2: Quick Links; Col 3: Clinical Services; Col 4: Studio Locations & Concierge Hours |
+| Social Icons     | Circular dark buttons `w-10 h-10 rounded-full bg-[#251b17] hover:bg-[#836a2c] text-[#fcf9f6] border border-[#836a2c]/30 flex items-center justify-center` matching Reference 2 |
+| Brand Watermark  | Monumental display typography: `"NOVASMILE"` at the absolute bottom (`text-[13.5vw] font-serif font-black uppercase text-[#836a2c]/[0.07] tracking-[0.22em] sm:tracking-[0.28em] select-none pointer-events-none`) |
+
+**Pattern notes:**
+Directly matches Reference 2: dark luxury footer architecture, 4-column navigation, circular social icons, and the monumental `"NOVASMILE"` display wordmark.

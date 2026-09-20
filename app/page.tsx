@@ -19,12 +19,13 @@ import { TransformationsStackedSection } from "@/features/transformations";
 import { TestimonialsSection } from "@/features/testimonials";
 import { FAQSection } from "@/features/faq";
 import { ModernComfortsSection } from "@/features/comforts";
-import { BookingModal, CallModal } from "@/features/booking";
+import { DreamSmileCta, PracticeFooter } from "@/features/footer";
+import { BookingModal } from "@/features/booking";
+import { practiceData } from "@/content/practice-data";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
-  const [callOpen, setCallOpen] = useState(false);
   const [selectedTreatment, setSelectedTreatment] = useState<string | undefined>(undefined);
 
   useEffect(() => {
@@ -36,6 +37,10 @@ export default function Home() {
     setBookingOpen(true);
   };
 
+  const handleCall = () => {
+    window.location.href = `tel:${practiceData.officePhone.replace(/[^0-9+]/g, "")}`;
+  };
+
   if (!mounted) {
     return <main className="min-h-screen bg-surface text-on-surface" />;
   }
@@ -45,13 +50,13 @@ export default function Home() {
       {/* Pinned Top Navigation Bar */}
       <Navbar
         onBookClick={() => handleBookVisit()}
-        onCallClick={() => setCallOpen(true)}
+        onCallClick={handleCall}
       />
 
       {/* Hero Section matching reference (hero-section-reference.png) */}
       <HeroSection
         onBookVisit={() => handleBookVisit()}
-        onCallNow={() => setCallOpen(true)}
+        onCallNow={handleCall}
       />
 
       {/* Clinical Milestone Stat Cards + Accredited Company/Partner Carousel (emergency-bar-section.png) */}
@@ -104,7 +109,17 @@ export default function Home() {
       {/* 11. Frequently Asked Questions (FAQ) Section with Contrasting Marble Tabs */}
       <FAQSection
         onBookClick={handleBookVisit}
-        onCallClick={() => setCallOpen(true)}
+        onCallClick={handleCall}
+      />
+
+      {/* 12. Dream Smile Conversion CTA with Floating Overlap */}
+      <DreamSmileCta
+        onBookClick={handleBookVisit}
+      />
+
+      {/* 13. Practice Footer & Studio Concierge Architecture */}
+      <PracticeFooter
+        onBookClick={handleBookVisit}
       />
 
       {/* Interactive Appointment Reservation Modal */}
@@ -113,12 +128,7 @@ export default function Home() {
         onClose={() => setBookingOpen(false)}
         initialTreatment={selectedTreatment}
       />
-
-      {/* Interactive Immediate Call & 24/7 Triage Modal */}
-      <CallModal
-        isOpen={callOpen}
-        onClose={() => setCallOpen(false)}
-      />
     </main>
   );
+
 }

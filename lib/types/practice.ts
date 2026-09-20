@@ -250,6 +250,41 @@ export interface ModernComfortsConfig {
   };
 }
 
+export interface CtaSectionConfig {
+  scriptAccent: string;
+  title: string;
+  reassuranceText: string;
+  primaryCtaText: string;
+  secondaryCtaText?: string;
+  phoneText?: string;
+  backgroundImage: string;
+  personImage: string;
+  badgeText?: string;
+}
+
+export interface FooterLinkItem {
+  label: string;
+  href: string;
+  badge?: string;
+}
+
+export interface SocialLinkItem {
+  platform: "instagram" | "linkedin" | "facebook" | "x" | "youtube";
+  href: string;
+  label: string;
+}
+
+export interface FooterConfig {
+  tagline: string;
+  accreditations: string[];
+  quickLinks: FooterLinkItem[];
+  treatmentLinks: FooterLinkItem[];
+  socialLinks: SocialLinkItem[];
+  copyright: string;
+  legalLinks: FooterLinkItem[];
+  watermarkText: string;
+}
+
 export interface PracticeConfig {
   id: string;
   name: string;
@@ -319,4 +354,7 @@ export interface PracticeConfig {
   testimonialsConfig?: TestimonialsConfig;
   faqConfig?: FAQConfig;
   modernComfortsConfig?: ModernComfortsConfig;
+  ctaSection?: CtaSectionConfig;
+  footer?: FooterConfig;
 }
+

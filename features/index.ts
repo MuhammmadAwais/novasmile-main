@@ -5,3 +5,7 @@ export * from "./dentists";
 export * from "./treatments";
 export * from "./services";
 export * from "./transformations";
+export * from "./testimonials";
+export * from "./faq";
+export * from "./comforts";
+export * from "./footer";

@@ -983,5 +983,59 @@ export const practiceData: PracticeConfig = {
       ],
     },
   },
+  ctaSection: {
+    scriptAccent: "Ready",
+    title: "for your dream smile?",
+    reassuranceText:
+      "Are you interested in dental Implants or cosmetic and reconstructive dentistry? Previous work failing? Have you been told your case is too complex? When your smile requires more than routine care, a dental specialist's perspective can make all the difference.",
+    primaryCtaText: "Book Your Smile Consultation",
+    secondaryCtaText: "Call Our Concierge",
+    phoneText: "+1 (415) 555-0192",
+    backgroundImage: "/cta-behind-bg.webp",
+    personImage: "/cta-person-img.webp",
+    badgeText: "SPECIALIST CONSULTATION",
+  },
+  footer: {
+    tagline:
+      "Thoughtful, modern dentistry designed around patient comfort, clinical precision, and enduring natural aesthetics.",
+    accreditations: [
+      "American Dental Association (ADA)",
+      "American Academy of Cosmetic Dentistry (AACD)",
+      "San Francisco Top Dentists 2026",
+      "Invisalign® Diamond Plus Provider",
+    ],
+    quickLinks: [
+      { label: "Our Story & Philosophy", href: "#our-story" },
+      { label: "The NovaSmile Experience", href: "#experience" },
+      { label: "Doctors & Specialists", href: "#doctors" },
+      { label: "Patient Transformations", href: "#transformations" },
+      { label: "Studio Comfort Amenities", href: "#comforts" },
+      { label: "Verified Reviews", href: "#reviews" },
+      { label: "Frequently Asked Questions", href: "#faq" },
+    ],
+    treatmentLinks: [
+      { label: "Handcrafted Porcelain Veneers", href: "#services" },
+      { label: "Full Arch Dental Implants", href: "#services" },
+      { label: "Invisalign® Clear Aligners", href: "#services" },
+      { label: "Biomimetic Ceramic Crowns", href: "#services" },
+      { label: "Zero-Anxiety Comfort Sedation", href: "#services" },
+      { label: "24/7 Same-Day Emergency Relief", href: "#emergency" },
+    ],
+    socialLinks: [
+      { platform: "x", href: "https://x.com", label: "X (Twitter)" },
+      { platform: "linkedin", href: "https://linkedin.com", label: "LinkedIn" },
+      { platform: "instagram", href: "https://instagram.com", label: "Instagram" },
+      { platform: "facebook", href: "https://facebook.com", label: "Facebook" },
+    ],
+    copyright: "© 2026 NovaSmile Dental Care. All rights reserved.",
+    legalLinks: [
+      { label: "Privacy Policy", href: "#privacy" },
+      { label: "Terms of Service", href: "#terms" },
+      { label: "ADA Accessibility Statement", href: "#accessibility" },
+      { label: "Notice of Non-Discrimination", href: "#nondiscrimination" },
+    ],
+    watermarkText: "NOVASMILE",
+  },
 };
+
 
