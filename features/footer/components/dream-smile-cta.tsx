@@ -1,7 +1,10 @@
 "use client";
 
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { practiceData } from "@/content/practice-data";
 
 interface DreamSmileCtaProps {
@@ -18,6 +21,33 @@ export function DreamSmileCta({ onBookClick }: DreamSmileCtaProps) {
     backgroundImage: "/cta-behind-bg.webp",
     personImage: "/cta-person-img.webp",
   };
+
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !cardRef.current) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cardRef.current,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.0,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: cardRef.current,
+            start: "top 88%",
+            once: true,
+          },
+        }
+      );
+    }, cardRef);
+
+    return () => ctx.revert();
+  }, []);
 
 
   return (
@@ -50,7 +80,10 @@ export function DreamSmileCta({ onBookClick }: DreamSmileCtaProps) {
 
         {/* Floating Overlapping CTA Card */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mb-28 sm:-mb-32 md:-mb-40 lg:-mb-48">
-          <div className="relative rounded-[28px] sm:rounded-[36px] md:rounded-[42px] overflow-hidden bg-[#faf7f2]/95 backdrop-blur-xl border border-[#836a2c]/25 shadow-[0_30px_70px_-15px_rgba(28,20,17,0.22)] transition-all duration-500 hover:shadow-[0_35px_80px_-12px_rgba(131,106,44,0.26)]">
+          <div
+            ref={cardRef}
+            className="relative rounded-[28px] sm:rounded-[36px] md:rounded-[42px] overflow-hidden bg-[#faf7f2]/95 backdrop-blur-xl border border-[#836a2c]/25 shadow-[0_30px_70px_-15px_rgba(28,20,17,0.22)] transition-all duration-500 hover:shadow-[0_35px_80px_-12px_rgba(131,106,44,0.26)]"
+          >
             {/* Tactile Alabaster Marble Texture Filter */}
             <div className="absolute inset-0 z-0 pointer-events-none opacity-25 mix-blend-multiply">
               <Image

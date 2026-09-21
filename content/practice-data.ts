@@ -361,7 +361,7 @@ export const practiceData: PracticeConfig = {
       ctaText: "About Us",
       badgeText: "Rated 5-Stars / Woman-Owned & Operated",
       badgeIcon: "/top-rated-icon.png",
-      photoUrl: "/top-rated-dentist-img.jfif",
+      photoUrl: "/top-rated-dentist-img.jpg",
     },
     {
       id: "dr-elena-vance",
@@ -517,7 +517,7 @@ export const practiceData: PracticeConfig = {
         description:
           "Everything you expect and then some. Cleanings, fillings, and x-rays are just the beginning.",
         ctaText: "ABOUT GENERAL DENTISTRY",
-        image: "/service-1.jfif",
+        image: "/service-1.jpg",
         imageAlt: "Lead dentist consulting with patient in modern serene treatment room",
       },
       {
@@ -527,7 +527,7 @@ export const practiceData: PracticeConfig = {
         description:
           "Discover your “wow!” factor. Invisalign, veneers, and in-office or take-home teeth whitening.",
         ctaText: "ABOUT COSMETIC DENTISTRY",
-        image: "/service-2.jfif",
+        image: "/service-2.jpg",
         imageAlt: "Cosmetic dentist reviewing digital smile preview with relaxed patient",
       },
       {
@@ -537,7 +537,7 @@ export const practiceData: PracticeConfig = {
         description:
           "We can fix anything. Our dentists repair damaged or lost teeth with cutting-edge implants and more.",
         ctaText: "ABOUT ORAL SURGERY",
-        image: "/service-3.jfif",
+        image: "/service-3.jpg",
         imageAlt: "Surgical dental specialist wearing loupes performing precise restorative procedure",
       },
     ],
@@ -617,7 +617,7 @@ export const practiceData: PracticeConfig = {
         specs: "iTero 3D Outcome Simulation • Removable Convenience • Average 6–9 Months",
         turnaround: "Express Aligners Available",
         comfortProtocol: "Laser-Trimmed Scalloped Margins • Zero Irritation",
-        image: "/invisalign-service box.jpg",
+        image: "/invisalign-service-box.jpg",
         imageAlt: "Clear Invisalign orthodontic aligner tray held by patient",
         ctaText: "Book Invisalign Scan",
       },

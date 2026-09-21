@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
 import { practiceData } from "@/content/practice-data";
 import { cn } from "@/lib/utils/cn";
 
@@ -12,9 +13,53 @@ export interface HeroSectionProps {
 
 export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
   const { hero } = practiceData;
+  const containerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !containerRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.fromTo(
+        ".hero-leaf",
+        { opacity: 0, scale: 0.88, rotate: -4 },
+        { opacity: 1, scale: 1, rotate: 0, duration: 1.4, delay: 0.1 }
+      )
+        .fromTo(
+          ".hero-tag",
+          { opacity: 0, x: -30 },
+          { opacity: 1, x: 0, duration: 0.8 },
+          "-=1.0"
+        )
+        .fromTo(
+          ".hero-headline",
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, duration: 1.0 },
+          "-=0.6"
+        )
+        .fromTo(
+          ".hero-subheading",
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0, duration: 0.8 },
+          "-=0.6"
+        )
+        .fromTo(
+          ".hero-btn",
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, stagger: 0.12, duration: 0.7 },
+          "-=0.5"
+        );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="relative w-full h-screen min-h-[720px] max-h-[1080px] overflow-hidden flex items-center bg-surface select-none">
+    <section
+      ref={containerRef}
+      className="relative w-full h-screen min-h-[720px] max-h-[1080px] overflow-hidden flex items-center bg-surface select-none"
+    >
       {/* 1. Main Background Photographic Plate */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -48,7 +93,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-24 sm:pt-28 pb-8">
         <div className="max-w-xl lg:max-w-2xl relative">
           {/* Delicate Botanical Zen Leaf Emblem Watermark (Matches Reference) */}
-          <div className="absolute -top-20 sm:-top-28 -left-6 sm:-left-10 pointer-events-none z-0">
+          <div className="hero-leaf absolute -top-20 sm:-top-28 -left-6 sm:-left-10 pointer-events-none z-0">
             <svg
               viewBox="0 0 120 190"
               fill="none"
@@ -90,7 +135,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
           </div>
 
           {/* Location Badge with Horizontal Rule */}
-          <div className="relative z-10 flex items-center gap-3 mb-5 sm:mb-6">
+          <div className="hero-tag relative z-10 flex items-center gap-3 mb-5 sm:mb-6">
             <span className="w-8 sm:w-10 h-[1.5px] bg-[#a68644]/70 rounded-full" />
             <span className="font-sans text-[11px] sm:text-xs font-semibold tracking-[0.18em] text-[#9b7b37] uppercase">
               {hero.locationTag}
@@ -98,14 +143,14 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
           </div>
 
           {/* Editorial Serif Headline */}
-          <h1 className="relative z-10 font-serif text-4xl sm:text-5xl lg:text-[62px] xl:text-[68px] text-[#2c221e] font-normal leading-[1.12] tracking-tight mb-5 sm:mb-6">
+          <h1 className="hero-headline relative z-10 font-serif text-4xl sm:text-5xl lg:text-[62px] xl:text-[68px] text-[#2c221e] font-normal leading-[1.12] tracking-tight mb-5 sm:mb-6">
             <span>{hero.headlinePart1}</span>
             <br />
             <span>{hero.headlinePart2}</span>
           </h1>
 
           {/* Calming Subheading */}
-          <p className="relative z-10 font-sans text-base sm:text-[17px] text-[#4d443e] leading-[1.65] max-w-lg mb-9 sm:mb-11 font-normal">
+          <p className="hero-subheading relative z-10 font-sans text-base sm:text-[17px] text-[#4d443e] leading-[1.65] max-w-lg mb-9 sm:mb-11 font-normal">
             Comprehensive dentistry in calm,
             <br className="hidden sm:inline" />{" "}
             well-designed spaces across the Bay Area.
@@ -117,7 +162,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
             <button
               onClick={onBookVisit}
               className={cn(
-                "bg-[#3f322e] hover:bg-[#29201d] text-[#fcf9f6]",
+                "hero-btn bg-[#3f322e] hover:bg-[#29201d] text-[#fcf9f6]",
                 "font-sans text-xs sm:text-[12px] font-semibold uppercase tracking-[0.14em]",
                 "px-8 sm:px-9 py-3.5 sm:py-4 rounded-full",
                 "transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0",
@@ -131,7 +176,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
             <button
               onClick={onCallNow}
               className={cn(
-                "border border-[#55423e]/40 hover:border-[#2c221e]",
+                "hero-btn border border-[#55423e]/40 hover:border-[#2c221e]",
                 "bg-[#fcf9f6]/40 hover:bg-[#fcf9f6]/95 backdrop-blur-xs text-[#2c221e]",
                 "font-sans text-xs sm:text-[12px] font-semibold uppercase tracking-[0.14em]",
                 "px-8 sm:px-9 py-3.5 sm:py-4 rounded-full",
@@ -142,6 +187,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
               {hero.secondaryCtaText}
             </button>
           </div>
+
         </div>
       </div>
     </section>

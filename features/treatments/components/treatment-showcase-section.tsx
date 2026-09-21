@@ -1,7 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { practiceData } from "@/content/practice-data";
 
 interface TreatmentShowcaseSectionProps {
@@ -16,6 +18,79 @@ export function TreatmentShowcaseSection({
   onBookClick,
 }: TreatmentShowcaseSectionProps) {
   const data = practiceData.treatmentShowcase;
+  const sectionRef = useRef<HTMLElement>(null);
+  const rowsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !sectionRef.current) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      // Header smooth reveal
+      gsap.fromTo(
+        "#treatment-showcase-heading",
+        { y: 35, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: "#treatment-showcase-heading",
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
+
+      // Staggered reveal for each treatment row
+      rowsRef.current.forEach((row, i) => {
+        if (!row) return;
+
+        const textCol = row.querySelector(".treatment-text-col");
+        const imgCol = row.querySelector(".treatment-img-col");
+
+        if (textCol) {
+          gsap.fromTo(
+            textCol,
+            { y: 30, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.85,
+              delay: 0.1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: row,
+                start: "top 80%",
+                once: true,
+              },
+            }
+          );
+        }
+
+        if (imgCol) {
+          gsap.fromTo(
+            imgCol,
+            { scale: 1.04, opacity: 0.8 },
+            {
+              scale: 1,
+              opacity: 1,
+              duration: 1.1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: row,
+                start: "top 80%",
+                once: true,
+              },
+            }
+          );
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   if (!data) return null;
 
@@ -29,6 +104,7 @@ export function TreatmentShowcaseSection({
 
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="treatment-showcase-heading"
       className={`relative w-full overflow-hidden bg-[#f4f1ec] text-on-surface ${className}`}
     >
@@ -70,12 +146,15 @@ export function TreatmentShowcaseSection({
           return (
             <div
               key={item.id}
+              ref={(el) => {
+                rowsRef.current[index] = el;
+              }}
               className="w-full grid grid-cols-1 lg:grid-cols-12 items-stretch"
             >
               {isImageRight ? (
                 <>
                   {/* Marble Text Column: Left Side (~41.7% width, col-span-5) */}
-                  <div className="relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[620px] xl:min-h-[680px] flex flex-col justify-center items-center lg:items-end text-center lg:text-right px-6 sm:px-10 lg:pl-8 lg:pr-8 xl:pl-12 xl:pr-10 py-12 lg:py-16 z-10 col-span-12 lg:col-span-5 order-1">
+                  <div className="treatment-text-col relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[620px] xl:min-h-[680px] flex flex-col justify-center items-center lg:items-end text-center lg:text-right px-6 sm:px-10 lg:pl-8 lg:pr-8 xl:pl-12 xl:pr-10 py-12 lg:py-16 z-10 col-span-12 lg:col-span-5 order-1">
                     <div className="w-full max-w-lg xl:max-w-xl flex flex-col items-center lg:items-end">
                       {/* Two-Tone Title in Site's EB Garamond Serif */}
                       <h3 className="mb-3 leading-none">
@@ -103,33 +182,63 @@ export function TreatmentShowcaseSection({
                     </div>
                   </div>
 
-                  {/* Image Column: Right Side (~58.3% width, col-span-7) */}
-                  <div className="relative w-full min-h-[400px] sm:min-h-[480px] lg:min-h-[620px] xl:min-h-[680px] overflow-hidden group col-span-12 lg:col-span-7 order-2">
+                  {/* Image Column: Right Side (~58.3% width, col-span-7) with Editorial Tactile Filters */}
+                  <div className="treatment-img-col relative w-full min-h-[400px] sm:min-h-[480px] lg:min-h-[620px] xl:min-h-[680px] overflow-hidden group col-span-12 lg:col-span-7 order-2 bg-[#2c221e]">
                     <Image
                       src={item.image}
                       alt={item.imageAlt}
                       fill
                       priority={index === 0}
                       sizes="(max-width: 1024px) 100vw, 58vw"
-                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="object-cover object-center filter contrast-[1.06] brightness-[0.97] saturate-[0.93] transition-transform duration-700 ease-out group-hover:scale-105"
                     />
+
+                    {/* Fine Tactile Analog Film Grain / Stone Texture Plate */}
+                    <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.20] mix-blend-overlay">
+                      <Image
+                        src="/stone-background-1400.jpg"
+                        alt=""
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 58vw"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Editorial Hospitality Warm Lens Tint & Edge Vignette */}
+                    <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#201815]/35 via-transparent to-[#201815]/15 mix-blend-multiply" />
+                    <div className="absolute inset-0 z-10 pointer-events-none bg-[#836a2c]/[0.05] mix-blend-color" />
                   </div>
                 </>
               ) : (
                 <>
-                  {/* Image Column: Left Side (~58.3% width, col-span-7) */}
-                  <div className="relative w-full min-h-[400px] sm:min-h-[480px] lg:min-h-[620px] xl:min-h-[680px] overflow-hidden group col-span-12 lg:col-span-7 order-2 lg:order-1">
+                  {/* Image Column: Left Side (~58.3% width, col-span-7) with Editorial Tactile Filters */}
+                  <div className="treatment-img-col relative w-full min-h-[400px] sm:min-h-[480px] lg:min-h-[620px] xl:min-h-[680px] overflow-hidden group col-span-12 lg:col-span-7 order-2 lg:order-1 bg-[#2c221e]">
                     <Image
                       src={item.image}
                       alt={item.imageAlt}
                       fill
                       sizes="(max-width: 1024px) 100vw, 58vw"
-                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="object-cover object-center filter contrast-[1.06] brightness-[0.97] saturate-[0.93] transition-transform duration-700 ease-out group-hover:scale-105"
                     />
+
+                    {/* Fine Tactile Analog Film Grain / Stone Texture Plate */}
+                    <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.20] mix-blend-overlay">
+                      <Image
+                        src="/stone-background-1400.jpg"
+                        alt=""
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 58vw"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Editorial Hospitality Warm Lens Tint & Edge Vignette */}
+                    <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#201815]/35 via-transparent to-[#201815]/15 mix-blend-multiply" />
+                    <div className="absolute inset-0 z-10 pointer-events-none bg-[#836a2c]/[0.05] mix-blend-color" />
                   </div>
 
                   {/* Marble Text Column: Right Side (~41.7% width, col-span-5) */}
-                  <div className="relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[620px] xl:min-h-[680px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-6 sm:px-10 lg:pr-8 lg:pl-8 xl:pr-12 xl:pl-10 py-12 lg:py-16 z-10 col-span-12 lg:col-span-5 order-1 lg:order-2">
+                  <div className="treatment-text-col relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[620px] xl:min-h-[680px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-6 sm:px-10 lg:pr-8 lg:pl-8 xl:pr-12 xl:pl-10 py-12 lg:py-16 z-10 col-span-12 lg:col-span-5 order-1 lg:order-2">
                     <div className="w-full max-w-lg xl:max-w-xl flex flex-col items-center lg:items-start">
                       {/* Two-Tone Title in Site's EB Garamond Serif */}
                       <h3 className="mb-3 leading-none">
@@ -165,3 +274,4 @@ export function TreatmentShowcaseSection({
     </section>
   );
 }
+

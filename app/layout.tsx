@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { EB_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { InteractiveBubbleCursor } from "@/components/ui/interactive-cursor";
+import { SmoothScroll } from "@/components/ui/smooth-scroll";
 
 const ebGaramond = EB_Garamond({
   variable: "--font-serif",
@@ -38,6 +39,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-full flex flex-col bg-surface text-on-surface font-sans selection:bg-secondary-container selection:text-on-secondary-container"
       >
+        <SmoothScroll />
         <InteractiveBubbleCursor />
         {children}
       </body>

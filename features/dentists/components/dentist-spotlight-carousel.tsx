@@ -114,7 +114,7 @@ export function DentistSpotlightCarousel() {
             <div className="lg:col-span-6 flex items-center justify-center">
               <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] max-h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md bg-surface-container">
                 <Image
-                  src={current.photoUrl || "/top-rated-dentist-img.jfif"}
+                  src={current.photoUrl || "/top-rated-dentist-img.jpg"}
                   alt={current.name}
                   fill
                   className="object-cover object-top transition-all duration-500 ease-out"

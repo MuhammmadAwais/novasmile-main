@@ -21,7 +21,7 @@ export function DentistPromiseCard() {
           <div
             className="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-60 mix-blend-overlay"
             style={{
-              backgroundImage: "url('/custom-graphic-blue.jfif')",
+              backgroundImage: "url('/custom-graphic-blue.jpg')",
               filter: "sepia(1) saturate(1.6) hue-rotate(340deg) brightness(0.7) contrast(1.2)",
             }}
           />

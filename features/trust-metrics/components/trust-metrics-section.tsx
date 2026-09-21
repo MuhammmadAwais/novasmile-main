@@ -1,18 +1,66 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { practiceData } from "@/content/practice-data";
 import { cn } from "@/lib/utils/cn";
 
 export function TrustMetricsSection() {
   const { milestones, affiliations } = practiceData;
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !sectionRef.current) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".trust-header",
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".trust-header",
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        ".milestone-card",
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".milestones-grid",
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   // Duplicate for seamless infinite marquee loop
   const marqueeItems = [...affiliations, ...affiliations];
 
   return (
-    <section className="relative w-full py-16 sm:py-24 select-none overflow-hidden bg-[#faf7f2] border-b border-outline-variant/30">
+    <section
+      ref={sectionRef}
+      className="relative w-full py-16 sm:py-24 select-none overflow-hidden bg-[#faf7f2] border-b border-outline-variant/30"
+    >
       {/* 1. Custom Marble & Stone Background Graphics (Tactile Wellness Aesthetic) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Natural Alabaster Marble Texture Layer */}
@@ -42,7 +90,7 @@ export function TrustMetricsSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
         {/* Section Pre-header */}
-        <div className="flex flex-col items-center text-center mb-10 sm:mb-14">
+        <div className="trust-header flex flex-col items-center text-center mb-10 sm:mb-14">
           <div className="flex items-center gap-2.5 mb-3">
             <span className="w-6 h-[1.5px] bg-[#836a2c]/70 rounded-full" />
             <span className="font-sans text-[11px] sm:text-xs font-semibold tracking-[0.2em] text-[#836a2c] uppercase">
@@ -56,12 +104,12 @@ export function TrustMetricsSection() {
         </div>
 
         {/* 2. Four Milestone Stat Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
+        <div className="milestones-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
           {milestones.map((item, idx) => (
             <div
               key={item.label}
               className={cn(
-                "relative overflow-hidden rounded-2xl p-6 sm:p-7 min-h-[160px] sm:min-h-[175px]",
+                "milestone-card relative overflow-hidden rounded-2xl p-6 sm:p-7 min-h-[160px] sm:min-h-[175px]",
                 "bg-[#2d211d] text-white",
                 "border border-[#836a2c]/25 hover:border-[#c4a96a]/60",
                 "flex flex-col justify-between",
@@ -69,6 +117,7 @@ export function TrustMetricsSection() {
                 "group cursor-default"
               )}
             >
+
               {/* Marble Texture Plate inside card */}
               <div
                 className="absolute inset-0 opacity-[0.14] mix-blend-screen pointer-events-none group-hover:opacity-[0.22] transition-opacity duration-300"

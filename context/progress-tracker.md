@@ -56,6 +56,10 @@ Update this file after every completed feature. Any AI agent reading this immedi
 - [x] 16 Practice Footer, Studio Locations & Monumental NOVASMILE Watermark
 
 ### Phase 9 — Verification & Polish
+- [x] Vercel Image Optimization Fix (Converted `.jfif` and spaced files to clean `.jpg` assets)
+- [x] Analog Film Grain & Hospitality Vignette Filter for "Your Beautiful Smile" Section
+- [x] Butter-Smooth Momentum Scrolling (Lenis + GSAP ticker synchronization)
+- [x] GSAP & ScrollTrigger Animations (Hero, Trust Metrics, Treatment Showcase, Dream Smile CTA)
 - [ ] 17 Responsiveness Testing, Performance Audit & `/imprint`
 
 
