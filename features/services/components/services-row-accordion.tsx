@@ -4,8 +4,13 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { ArrowUpRight, Calendar } from "lucide-react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { practiceData } from "@/content/practice-data";
 import { ServiceRowProcedure } from "@/lib/types/practice";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface ServicesRowAccordionProps {
   onBookTreatment?: (treatmentName?: string) => void;
@@ -366,11 +371,64 @@ export function ServicesRowAccordion({
 }: ServicesRowAccordionProps) {
   const config = practiceData.servicesSuite;
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const rowsContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      if (headerRef.current) {
+        gsap.fromTo(
+          headerRef.current.children,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: headerRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      if (rowsContainerRef.current) {
+        const rows = rowsContainerRef.current.children;
+        gsap.fromTo(
+          rows,
+          { y: 35, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.75,
+            stagger: 0.08,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: rowsContainerRef.current,
+              start: "top 80%",
+              once: true,
+            },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   if (!config) return null;
 
   return (
-    <div className="relative w-full bg-[#120b0a] text-[#fcf9f6] border-t border-b border-white/10 py-20 sm:py-28 lg:py-32 px-4 sm:px-8 lg:px-16 overflow-hidden">
+    <div
+      ref={sectionRef}
+      className="relative w-full bg-[#120b0a] text-[#fcf9f6] border-t border-b border-white/10 py-20 sm:py-28 lg:py-32 px-4 sm:px-8 lg:px-16 overflow-hidden"
+    >
       {/* 1. Alabaster Marble Texture Canvas Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.07] mix-blend-overlay pointer-events-none"
@@ -381,7 +439,7 @@ export function ServicesRowAccordion({
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#836a2c]/10 rounded-full blur-[160px] pointer-events-none" />
 
       {/* Section Header */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center mb-16 sm:mb-24">
+      <div ref={headerRef} className="relative z-10 max-w-4xl mx-auto text-center mb-16 sm:mb-24">
         <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight leading-[1.15]">
           {config.rowHeadline}
         </h2>
@@ -392,6 +450,7 @@ export function ServicesRowAccordion({
 
       {/* The 8 Full-Width Architectural Split-Word Procedure Rows */}
       <div
+        ref={rowsContainerRef}
         onMouseLeave={() => setHoveredId(null)}
         className="relative z-10 max-w-6xl xl:max-w-7xl mx-auto divide-y divide-white/10 border-t border-b border-white/10"
       >

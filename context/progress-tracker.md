@@ -59,7 +59,19 @@ Update this file after every completed feature. Any AI agent reading this immedi
 - [x] Vercel Image Optimization Fix (Converted `.jfif` and spaced files to clean `.jpg` assets)
 - [x] Analog Film Grain & Hospitality Vignette Filter for "Your Beautiful Smile" Section
 - [x] Butter-Smooth Momentum Scrolling (Lenis + GSAP ticker synchronization)
-- [x] GSAP & ScrollTrigger Animations (Hero, Trust Metrics, Treatment Showcase, Dream Smile CTA)
+- [x] Comprehensive GSAP ScrollTrigger Stagger Animations:
+  - Hero entrance timeline (watermark, badge, headlines, CTAs)
+  - Clinical Trust Metrics (header + 4 milestone stat cards)
+  - Smile Hook Section (left philosophy copy + right 3-column gallery staggered reveal and scrub parallax)
+  - Dentist Promise Card (container elevation, checkmarks stagger, clinician photo zoom, and rotating lifetime warranty seal bounce)
+  - Dentist Spotlight Carousel (card elevation, copy stagger, and clinician photo reveal)
+  - Specialist Clinicians Grid (header + 4 doctor cards stagger)
+  - Experience Value Pillars (header + 3 gold icon pillars stagger)
+  - Services Top Department Pillars (header + 3 arched image cards stagger + image settle)
+  - Services Architectural Procedure Rows (header + 8 procedure rows stagger)
+  - Modern Comforts (editorial narrative stagger, studio carousel slide-in, and geometric gold ornament reveal)
+  - Treatment Showcase (row copy and textured image frame reveals)
+  - Dream Smile CTA (floating card ScrollTrigger elevation)
 - [ ] 17 Responsiveness Testing, Performance Audit & `/imprint`
 
 

@@ -1,13 +1,91 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { practiceData } from "@/content/practice-data";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export function DentistSpotlightCarousel() {
   const spotlightList = practiceData.dentistSpotlight;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const photoRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Main card elevation and entrance
+      if (cardRef.current) {
+        gsap.fromTo(
+          cardRef.current,
+          { y: 45, opacity: 0, scale: 0.98 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.95,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: cardRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      // Text elements stagger
+      if (textRef.current) {
+        const textElements = textRef.current.children;
+        gsap.fromTo(
+          textElements,
+          { y: 25, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: cardRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      // Photo frame reveal
+      if (photoRef.current) {
+        gsap.fromTo(
+          photoRef.current,
+          { scale: 1.07, opacity: 0.7 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 1.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: cardRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   if (!spotlightList || spotlightList.length === 0) return null;
 
@@ -22,11 +100,14 @@ export function DentistSpotlightCarousel() {
   };
 
   return (
-    <section className="relative w-full py-12 sm:py-16 md:py-20 bg-surface text-on-surface">
+    <section ref={sectionRef} className="relative w-full py-12 sm:py-16 md:py-20 bg-surface text-on-surface">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Framed Card (matching our-top-dentist.png) */}
-        <div className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] border border-outline-variant/60 bg-surface-container-lowest overflow-hidden shadow-lg">
+        <div
+          ref={cardRef}
+          className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] border border-outline-variant/60 bg-surface-container-lowest overflow-hidden shadow-lg"
+        >
           
           {/* Inner Top Hairline Divider */}
           <div className="w-full h-px bg-outline-variant/40 mt-6 sm:mt-8 mx-auto" />
@@ -35,7 +116,7 @@ export function DentistSpotlightCarousel() {
             
             {/* Left Content Column */}
             <div className="lg:col-span-6 flex flex-col justify-between">
-              <div>
+              <div ref={textRef}>
                 {/* Index Pill Badge */}
                 <div className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-outline-variant text-on-surface-variant font-mono text-xs mb-6 sm:mb-8">
                   {current.indexNumber || `0${currentIndex + 1}`}
@@ -112,7 +193,10 @@ export function DentistSpotlightCarousel() {
 
             {/* Right Photo Column */}
             <div className="lg:col-span-6 flex items-center justify-center">
-              <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] max-h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md bg-surface-container">
+              <div
+                ref={photoRef}
+                className="relative w-full aspect-[4/5] sm:aspect-[3/4] max-h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md bg-surface-container"
+              >
                 <Image
                   src={current.photoUrl || "/top-rated-dentist-img.jpg"}
                   alt={current.name}

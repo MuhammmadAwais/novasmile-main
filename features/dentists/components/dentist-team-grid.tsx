@@ -1,21 +1,83 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { practiceData } from "@/content/practice-data";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export function DentistTeamGrid() {
   const team = practiceData.specialistTeam;
   const [activeCard, setActiveCard] = useState<string | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Header smooth reveal
+      if (headerRef.current) {
+        gsap.fromTo(
+          headerRef.current,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: headerRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      // Doctor cards staggered entrance
+      if (gridRef.current) {
+        const cards = gridRef.current.querySelectorAll("[data-doctor-card]");
+        gsap.fromTo(
+          cards,
+          { y: 55, opacity: 0, scale: 0.95 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.95,
+            stagger: 0.14,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: "top 82%",
+              once: true,
+            },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   if (!team || team.length === 0) return null;
 
   return (
-    <section id="specialist-team" className="relative w-full py-16 sm:py-24 md:py-28 bg-surface-container-lowest text-on-surface border-t border-outline-variant/30">
+    <section
+      ref={sectionRef}
+      id="specialist-team"
+      className="relative w-full py-16 sm:py-24 md:py-28 bg-surface-container-lowest text-on-surface border-t border-outline-variant/30"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <div ref={headerRef} className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <p className="font-sans text-xs sm:text-sm font-bold uppercase tracking-widest text-primary mb-3">
             Our Specialist Clinicians
           </p>
@@ -25,13 +87,14 @@ export function DentistTeamGrid() {
         </div>
 
         {/* 2x2 Interactive Team Grid matching our-all-dentist.png */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
           {team.map((member) => {
             const isHovered = activeCard === member.id;
 
             return (
               <div
                 key={member.id}
+                data-doctor-card
                 className="group relative aspect-square sm:aspect-[4/4.2] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg bg-surface-container cursor-pointer select-none"
                 onMouseEnter={() => setActiveCard(member.id)}
                 onMouseLeave={() => setActiveCard(null)}

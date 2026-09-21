@@ -1,9 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { practiceData } from "@/content/practice-data";
 import { ServicePillarItem } from "@/lib/types/practice";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface ServicesTopPillarsProps {
   onSelectCategory?: (categoryKey: "general" | "cosmetic" | "surgical") => void;
@@ -22,12 +28,85 @@ export function ServicesTopPillars({
   onBookClick,
 }: ServicesTopPillarsProps) {
   const config = practiceData.servicesSuite;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !containerRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Header reveal
+      if (headerRef.current) {
+        gsap.fromTo(
+          headerRef.current.children,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: headerRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      // 3 Pillar cards staggered entrance
+      if (gridRef.current) {
+        const cards = gridRef.current.querySelectorAll("[data-service-pillar]");
+        gsap.fromTo(
+          cards,
+          { y: 55, opacity: 0, scale: 0.95 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.95,
+            stagger: 0.16,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: "top 80%",
+              once: true,
+            },
+          }
+        );
+
+        // Images gentle settling
+        const images = gridRef.current.querySelectorAll("[data-service-image]");
+        gsap.fromTo(
+          images,
+          { scale: 1.08, opacity: 0.8 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 1.2,
+            stagger: 0.16,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: "top 80%",
+              once: true,
+            },
+          }
+        );
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   if (!config) return null;
 
   return (
-    <div className="w-full">
+    <div ref={containerRef} className="w-full">
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      <div ref={headerRef} className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
         <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#836a2c] mb-3 block">
           {config.topEyebrow}
         </span>
@@ -40,10 +119,11 @@ export function ServicesTopPillars({
       </div>
 
       {/* 3 Pillars Grid with Tactile Alabaster Marble Texture */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
         {config.pillars.map((pillar: ServicePillarItem) => (
           <div
             key={pillar.id}
+            data-service-pillar
             className="relative overflow-hidden flex flex-col justify-between group bg-[#fdfbf8] rounded-3xl p-5 sm:p-6 lg:p-7 border border-[#836a2c]/20 hover:border-[#836a2c]/50 hover:shadow-2xl transition-all duration-500 shadow-md"
           >
             {/* 1. Alabaster Marble Texture Layer */}
@@ -59,7 +139,10 @@ export function ServicesTopPillars({
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#836a2c]/10 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
 
             {/* Arched Top Image Portal */}
-            <div className="relative z-10 w-full aspect-[4/3] rounded-t-[2.5rem] rounded-b-xl overflow-hidden bg-surface-container mb-6 shadow-sm border border-outline-variant/30 group-hover:border-primary/40 transition-colors">
+            <div
+              data-service-image
+              className="relative z-10 w-full aspect-[4/3] rounded-t-[2.5rem] rounded-b-xl overflow-hidden bg-surface-container mb-6 shadow-sm border border-outline-variant/30 group-hover:border-primary/40 transition-colors"
+            >
               <Image
                 src={pillar.image}
                 alt={pillar.imageAlt}

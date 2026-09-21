@@ -1,9 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { practiceData } from "@/content/practice-data";
 import { StudioCarousel } from "./studio-carousel";
 import { Check } from "lucide-react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface ModernComfortsSectionProps {
   onBookClick?: (reason?: string) => void;
@@ -11,11 +17,85 @@ interface ModernComfortsSectionProps {
 
 export function ModernComfortsSection({ onBookClick }: ModernComfortsSectionProps) {
   const config = practiceData.modernComfortsConfig;
+  const sectionRef = useRef<HTMLElement>(null);
+  const leftColRef = useRef<HTMLDivElement>(null);
+  const rightColRef = useRef<HTMLDivElement>(null);
+  const ornamentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Left narrative stagger
+      if (leftColRef.current) {
+        const elements = leftColRef.current.querySelectorAll(":scope > h2, :scope > p, :scope > div:not([data-ornament])");
+        gsap.fromTo(
+          elements,
+          { x: -30, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.85,
+            stagger: 0.12,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: leftColRef.current,
+              start: "top 82%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      // Right carousel entrance
+      if (rightColRef.current) {
+        gsap.fromTo(
+          rightColRef.current,
+          { x: 40, opacity: 0, scale: 0.97 },
+          {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.95,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: rightColRef.current,
+              start: "top 80%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      // Corner geometric ornament
+      if (ornamentRef.current) {
+        gsap.fromTo(
+          ornamentRef.current,
+          { opacity: 0, scale: 0.85 },
+          {
+            opacity: 0.75,
+            scale: 1,
+            duration: 1,
+            delay: 0.35,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: leftColRef.current,
+              start: "top 80%",
+              once: true,
+            },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   if (!config) return null;
 
   return (
     <section
+      ref={sectionRef}
       id="comforts"
       className="relative w-full py-20 sm:py-28 lg:py-36 bg-surface-container-low border-t border-outline-variant/30 overflow-x-clip"
     >
@@ -40,7 +120,7 @@ export function ModernComfortsSection({ onBookClick }: ModernComfortsSectionProp
         {/* Split Layout: Editorial Narrative on Left, Studio Carousel on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Editorial Narrative matching Reference */}
-          <div className="lg:col-span-5 relative space-y-6 sm:space-y-8 pb-14 sm:pb-16 lg:pb-20">
+          <div ref={leftColRef} className="lg:col-span-5 relative space-y-6 sm:space-y-8 pb-14 sm:pb-16 lg:pb-20">
             {/* Editorial Headline directly matching Reference */}
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] text-[#201815] font-normal leading-[1.08] tracking-tight">
               {config.headline}
@@ -67,6 +147,8 @@ export function ModernComfortsSection({ onBookClick }: ModernComfortsSectionProp
 
             {/* Geometric Luxury Gold Corner Ornament (matching reference image bottom-left) */}
             <div
+              ref={ornamentRef}
+              data-ornament
               className="absolute -bottom-2 -left-2 sm:-left-4 pointer-events-none select-none"
               aria-hidden="true"
             >
@@ -101,7 +183,7 @@ export function ModernComfortsSection({ onBookClick }: ModernComfortsSectionProp
           </div>
 
           {/* Right Column: Studio Space Carousel with 4 Image Assets */}
-          <div className="lg:col-span-7">
+          <div ref={rightColRef} className="lg:col-span-7">
             <StudioCarousel slides={config.slides} />
           </div>
         </div>

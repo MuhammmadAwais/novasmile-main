@@ -1,21 +1,127 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Check, ShieldCheck } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { practiceData } from "@/content/practice-data";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export function DentistPromiseCard() {
   const promise = practiceData.dentistPromise;
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardContainerRef = useRef<HTMLDivElement>(null);
+  const photoRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Main card elevation and entrance
+      if (cardContainerRef.current) {
+        gsap.fromTo(
+          cardContainerRef.current,
+          { y: 50, opacity: 0, scale: 0.97 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: cardContainerRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      // Feature checkmarks stagger
+      if (featuresRef.current) {
+        const items = featuresRef.current.children;
+        gsap.fromTo(
+          items,
+          { x: -25, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: featuresRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      // Photo reveal
+      if (photoRef.current) {
+        gsap.fromTo(
+          photoRef.current,
+          { scale: 1.08, opacity: 0.7 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 1.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: photoRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      }
+
+      // Lifetime warranty seal pop and rotation
+      if (badgeRef.current) {
+        gsap.fromTo(
+          badgeRef.current,
+          { scale: 0.6, rotation: -25, opacity: 0 },
+          {
+            scale: 1,
+            rotation: 0,
+            opacity: 1,
+            duration: 0.9,
+            delay: 0.35,
+            ease: "back.out(1.8)",
+            scrollTrigger: {
+              trigger: cardContainerRef.current,
+              start: "top 80%",
+              once: true,
+            },
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   if (!promise) return null;
 
   return (
-    <section className="relative w-full py-12 sm:py-16 md:py-20 bg-surface text-on-surface overflow-visible">
+    <section
+      ref={sectionRef}
+      className="relative w-full py-12 sm:py-16 md:py-20 bg-surface text-on-surface overflow-visible"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Textured Card Container */}
-        <div className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#281d19]">
+        <div
+          ref={cardContainerRef}
+          className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#281d19]"
+        >
           
           {/* Filtered Custom Canvas Texture Layer */}
           <div
@@ -49,7 +155,7 @@ export function DentistPromiseCard() {
                 </p>
 
                 {/* 3 Checkmark Feature Points */}
-                <ul className="space-y-3.5 sm:space-y-4 mb-8 sm:mb-10 font-sans">
+                <ul ref={featuresRef} className="space-y-3.5 sm:space-y-4 mb-8 sm:mb-10 font-sans">
                   {promise.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3.5 text-white/95 text-base sm:text-lg">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 border border-primary/50 flex items-center justify-center text-primary-light">
@@ -71,7 +177,10 @@ export function DentistPromiseCard() {
 
               {/* Right Column: Clinician Team Photo & Floating Guarantee Stamp */}
               <div className="lg:col-span-6 relative">
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-surface-container aspect-[4/3] sm:aspect-[16/11]">
+                <div
+                  ref={photoRef}
+                  className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-surface-container aspect-[4/3] sm:aspect-[16/11]"
+                >
                   <Image
                     src={promise.image || "/our-dentist-top-img.jpg"}
                     alt="Novasmile Care Lead Dentists"
@@ -84,7 +193,10 @@ export function DentistPromiseCard() {
                 </div>
 
                 {/* Floating Lifetime Warranty Circular Seal Badge */}
-                <div className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:-right-5 md:-bottom-10 md:-right-6 w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full bg-surface-container-lowest text-on-surface shadow-2xl p-2.5 sm:p-3 border-2 border-primary/40 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300 z-20">
+                <div
+                  ref={badgeRef}
+                  className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:-right-5 md:-bottom-10 md:-right-6 w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full bg-surface-container-lowest text-on-surface shadow-2xl p-2.5 sm:p-3 border-2 border-primary/40 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300 z-20"
+                >
                   <div className="w-full h-full rounded-full border border-dashed border-primary/40 flex flex-col items-center justify-center p-2 sm:p-3">
                     <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-primary mb-1" />
                     <span className="font-sans text-[9px] sm:text-[11px] font-bold uppercase tracking-wider text-primary">
