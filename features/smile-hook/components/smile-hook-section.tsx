@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,8 +15,10 @@ export function SmileHookSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     if (typeof window === "undefined" || !sectionRef.current) return;
 
     const ctx = gsap.context(() => {
@@ -149,61 +151,71 @@ export function SmileHookSection() {
           </div>
 
           {/* Right Column: 3-Column Staggered Image Gallery */}
+          {/* Mounted guard: prevents browser-extension DOM mutations causing hydration mismatch */}
           <div ref={galleryRef} className="lg:col-span-6">
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5 items-center">
-              
-              {/* Image 1: Shade Matching (Offset Downward) */}
-              <div data-hook-col="1" className="relative flex flex-col pt-8 sm:pt-12 group">
-                <div
-                  data-hook-card
-                  className="relative aspect-[9/18] sm:aspect-[9/19] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-surface-container shadow-md transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1"
-                >
-                  <Image
-                    src={config.galleryImages[0]?.src || "/your-smile-1.webp"}
-                    alt={config.galleryImages[0]?.alt || "Dental veneer shade matching"}
-                    fill
-                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                    sizes="(max-width: 768px) 33vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              </div>
+            {mounted ? (
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5 items-center">
 
-              {/* Image 2: Doctor Consultation (Offset Centered) */}
-              <div data-hook-col="2" className="relative flex flex-col -translate-y-2 sm:-translate-y-4 group">
-                <div
-                  data-hook-card
-                  className="relative aspect-[9/18] sm:aspect-[9/19] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-surface-container shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-1"
-                >
-                  <Image
-                    src={config.galleryImages[1]?.src || "/your-smile-2.webp"}
-                    alt={config.galleryImages[1]?.alt || "Specialist patient consultation"}
-                    fill
-                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                    sizes="(max-width: 768px) 33vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Image 1: Shade Matching (Offset Downward) */}
+                <div data-hook-col="1" className="relative flex flex-col pt-8 sm:pt-12 group">
+                  <div
+                    data-hook-card
+                    className="relative aspect-[9/18] sm:aspect-[9/19] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-surface-container shadow-md transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1"
+                  >
+                    <Image
+                      src={config.galleryImages[0]?.src || "/your-smile-1.webp"}
+                      alt={config.galleryImages[0]?.alt || "Dental veneer shade matching"}
+                      fill
+                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      sizes="(max-width: 768px) 33vw, 20vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
                 </div>
-              </div>
 
-              {/* Image 3: In-House Dental Lab Artistry (Offset Top) */}
-              <div data-hook-col="3" className="relative flex flex-col pt-4 sm:pt-6 group">
-                <div
-                  data-hook-card
-                  className="relative aspect-[9/18] sm:aspect-[9/19] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-surface-container shadow-md transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1"
-                >
-                  <Image
-                    src={config.galleryImages[2]?.src || "/your-smile-3.webp"}
-                    alt={config.galleryImages[2]?.alt || "In-house dental lab precision craft"}
-                    fill
-                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                    sizes="(max-width: 768px) 33vw, 20vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Image 2: Doctor Consultation (Offset Centered) */}
+                <div data-hook-col="2" className="relative flex flex-col -translate-y-2 sm:-translate-y-4 group">
+                  <div
+                    data-hook-card
+                    className="relative aspect-[9/18] sm:aspect-[9/19] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-surface-container shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-1"
+                  >
+                    <Image
+                      src={config.galleryImages[1]?.src || "/your-smile-2.webp"}
+                      alt={config.galleryImages[1]?.alt || "Specialist patient consultation"}
+                      fill
+                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      sizes="(max-width: 768px) 33vw, 20vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
                 </div>
-              </div>
 
-            </div>
+                {/* Image 3: In-House Dental Lab Artistry (Offset Top) */}
+                <div data-hook-col="3" className="relative flex flex-col pt-4 sm:pt-6 group">
+                  <div
+                    data-hook-card
+                    className="relative aspect-[9/18] sm:aspect-[9/19] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-surface-container shadow-md transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1"
+                  >
+                    <Image
+                      src={config.galleryImages[2]?.src || "/your-smile-3.webp"}
+                      alt={config.galleryImages[2]?.alt || "In-house dental lab precision craft"}
+                      fill
+                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      sizes="(max-width: 768px) 33vw, 20vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </div>
+
+              </div>
+            ) : (
+              /* SSR placeholder — same height as the gallery, invisible to users */
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5 items-center" aria-hidden>
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="relative aspect-[9/18] sm:aspect-[9/19] w-full rounded-xl sm:rounded-2xl bg-surface-container" />
+                ))}
+              </div>
+            )}
           </div>
 
         </div>
