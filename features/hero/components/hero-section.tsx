@@ -14,6 +14,11 @@ export interface HeroSectionProps {
 export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
   const { hero } = practiceData;
   const containerRef = useRef<HTMLElement>(null);
+  const [mounted, setMounted] = React.useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined" || !containerRef.current) return;
@@ -61,16 +66,18 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
       className="relative w-full h-screen min-h-[720px] max-h-[1080px] overflow-hidden flex items-center bg-surface select-none"
     >
       {/* 1. Main Background Photographic Plate */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/zen-hero-room.avif"
-          alt="Modern Zen Dental Operatory Studio"
-          fill
-          priority
-          className="object-cover object-[72%_center] lg:object-[70%_center]"
-          sizes="100vw"
-          quality={95}
-        />
+      <div className="absolute inset-0 z-0" suppressHydrationWarning>
+        {mounted && (
+          <Image
+            src="/zen-hero-room.avif"
+            alt="Modern Zen Dental Operatory Studio"
+            fill
+            priority
+            className="object-cover object-[72%_center] lg:object-[70%_center]"
+            sizes="100vw"
+            quality={95}
+          />
+        )}
 
         {/* 2. Soft Tactile Stone Texture Overlay (Warm Craft Detail) */}
         <div
