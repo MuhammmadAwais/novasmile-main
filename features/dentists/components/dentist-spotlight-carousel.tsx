@@ -162,6 +162,7 @@ export function DentistSpotlightCarousel() {
                       src={current.badgeIcon || "/top-rated-icon.png"}
                       alt={current.badgeText || "Rated 5-Stars"}
                       fill
+                      sizes="(max-width: 640px) 64px, 80px"
                       className="object-contain animate-spin-slow opacity-85 hover:opacity-100 transition-opacity"
                     />
                   </div>

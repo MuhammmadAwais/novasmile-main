@@ -72,6 +72,7 @@ Update this file after every completed feature. Any AI agent reading this immedi
   - Modern Comforts (editorial narrative stagger, studio carousel slide-in, and geometric gold ornament reveal)
   - Treatment Showcase (row copy and textured image frame reveals)
   - Dream Smile CTA (floating card ScrollTrigger elevation)
+- [x] Hydration Mismatch & Image Warning Recovery (Removed artificial mount blocker in `app/page.tsx`, added Next.js `qualities: [75, 90, 95]`, and `sizes` to carousel star badge)
 - [ ] 17 Responsiveness Testing, Performance Audit & `/imprint`
 
 

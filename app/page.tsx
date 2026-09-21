@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { HeroSection } from "@/features/hero";
 import { TrustMetricsSection } from "@/features/trust-metrics";
@@ -24,13 +24,8 @@ import { BookingModal } from "@/features/booking";
 import { practiceData } from "@/content/practice-data";
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [selectedTreatment, setSelectedTreatment] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleBookVisit = (treatmentName?: string) => {
     setSelectedTreatment(treatmentName);
@@ -41,12 +36,11 @@ export default function Home() {
     window.location.href = `tel:${practiceData.officePhone.replace(/[^0-9+]/g, "")}`;
   };
 
-  if (!mounted) {
-    return <main className="min-h-screen bg-surface text-on-surface" />;
-  }
-
   return (
-    <main className="min-h-screen bg-surface text-on-surface flex flex-col">
+    <main
+      suppressHydrationWarning
+      className="min-h-screen bg-surface text-on-surface flex flex-col"
+    >
       {/* Pinned Top Navigation Bar */}
       <Navbar
         onBookClick={() => handleBookVisit()}
