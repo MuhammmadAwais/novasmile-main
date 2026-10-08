@@ -19,9 +19,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Novasmile Care — Modern Dental Care, Thoughtfully Delivered",
+  title: "Dunn Dental Care — Premier Dentistry & Seamless Care in San Antonio, TX",
   description:
-    "Comprehensive dentistry in calm, well-designed spaces across San Francisco and Mountain View. Experience anxiety-free dental wellness.",
+    "Comprehensive general dentistry, specialized restorative care, and seamless digital booking in San Antonio, TX. Experience unhurried, anxiety-free dental wellness.",
 };
 
 export default function RootLayout({
