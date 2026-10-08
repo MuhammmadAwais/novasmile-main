@@ -40,14 +40,15 @@ export function Navbar({ onBookClick, onCallClick }: NavbarProps) {
           href="/"
           className="flex items-center group transition-transform duration-200 hover:scale-[1.01]"
         >
-          <div className="relative h-11 sm:h-14 w-48 sm:w-60 flex items-center">
+          <div className="relative h-11 sm:h-14 w-52 sm:w-64 flex items-center" suppressHydrationWarning>
             <Image
               src="/logo-main.png"
               alt={practiceData.name}
               fill
               priority
               className="object-contain object-left"
-              sizes="(max-width: 640px) 200px, 250px"
+              sizes="(max-width: 640px) 210px, 260px"
+              suppressHydrationWarning
             />
           </div>
         </Link>
