@@ -18,7 +18,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
       {/* 1. Main Background Photographic Plate */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/hero-bg.jfif"
+          src="/images/hero/hero-bg.jpg"
           alt="Modern Zen Dental Operatory Studio"
           fill
           priority
