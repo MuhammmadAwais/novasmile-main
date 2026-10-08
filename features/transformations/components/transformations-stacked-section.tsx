@@ -139,7 +139,7 @@ export function TransformationsStackedSection({
       {/* TACTILE STONE TEXTURE CANVAS OVERLAY */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <Image
-          src="/stone-background-1400.jpg"
+          src="/images/textures/stone-background-1400.jpg"
           alt="Tactile Stone Background Texture"
           fill
           sizes="100vw"

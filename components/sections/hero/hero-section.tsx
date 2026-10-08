@@ -18,7 +18,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
       {/* 1. Main Background Photographic Plate */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/zen-hero-room.avif"
+          src="/images/hero/hero-bg.jfif"
           alt="Modern Zen Dental Operatory Studio"
           fill
           priority
@@ -31,7 +31,8 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
         <div
           className="absolute inset-0 opacity-[0.05] mix-blend-multiply pointer-events-none"
           style={{
-            backgroundImage: "url('/stone-background-1400.jpg')",
+            backgroundImage:
+              "url('/images/textures/stone-background-1400.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -111,8 +112,8 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
           {/* Calming Subheading */}
           <p className="relative z-10 font-sans text-base sm:text-[17px] text-[#4d443e] leading-[1.65] max-w-lg mb-9 sm:mb-11 font-normal">
             Comprehensive dentistry in calm,
-            <br className="hidden sm:inline" />{" "}
-            well-designed spaces across the Bay Area.
+            <br className="hidden sm:inline" /> well-designed spaces across the
+            Bay Area.
           </p>
 
           {/* Dual CTAs (Matches Reference Shape & Tone) */}
@@ -125,7 +126,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
                 "font-sans text-xs sm:text-[12px] font-semibold uppercase tracking-[0.14em]",
                 "px-8 sm:px-9 py-3.5 sm:py-4 rounded-full",
                 "transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0",
-                "cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#836a2c]/40"
+                "cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#836a2c]/40",
               )}
             >
               {hero.primaryCtaText}
@@ -140,7 +141,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
                 "font-sans text-xs sm:text-[12px] font-semibold uppercase tracking-[0.14em]",
                 "px-8 sm:px-9 py-3.5 sm:py-4 rounded-full",
                 "transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0",
-                "cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#836a2c]/40"
+                "cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#836a2c]/40",
               )}
             >
               {hero.secondaryCtaText}

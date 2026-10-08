@@ -43,27 +43,32 @@ export const practiceData: PracticeConfig = {
           {
             label: "Preventative & Hygiene",
             href: "#preventative",
-            description: "Gentle cleanings, exams & biomimetic cavity prevention",
+            description:
+              "Gentle cleanings, exams & biomimetic cavity prevention",
           },
           {
             label: "Cosmetic & Veneers",
             href: "#cosmetic",
-            description: "Handcrafted porcelain veneers & natural smile enhancements",
+            description:
+              "Handcrafted porcelain veneers & natural smile enhancements",
           },
           {
             label: "Invisalign & Clear Aligners",
             href: "#invisalign",
-            description: "Discreet orthodontic alignment tailored to your facial symmetry",
+            description:
+              "Discreet orthodontic alignment tailored to your facial symmetry",
           },
           {
             label: "Dental Implants",
             href: "#implants",
-            description: "Precision-guided, permanent titanium & ceramic restoration",
+            description:
+              "Precision-guided, permanent titanium & ceramic restoration",
           },
           {
             label: "Comfort Sedation",
             href: "#sedation",
-            description: "Zero-anxiety appointments with mindful sedation options",
+            description:
+              "Zero-anxiety appointments with mindful sedation options",
           },
         ],
       },
@@ -80,17 +85,20 @@ export const practiceData: PracticeConfig = {
           {
             label: "Comfort Amenities",
             href: "#amenities",
-            description: "Noise-canceling headphones, warm blankets & warm teas",
+            description:
+              "Noise-canceling headphones, warm blankets & warm teas",
           },
           {
             label: "Insurance & Financing",
             href: "#financing",
-            description: "Transparent coverage, 0% APR plans & direct PPO billing",
+            description:
+              "Transparent coverage, 0% APR plans & direct PPO billing",
           },
           {
             label: "Patient Stories",
             href: "#reviews",
-            description: "Real reviews and smile transformations from our community",
+            description:
+              "Real reviews and smile transformations from our community",
           },
         ],
       },
@@ -121,12 +129,25 @@ export const practiceData: PracticeConfig = {
     stateProvince: "TX",
     postalCode: "78236",
     mapCoordinates: { lat: 29.3850859, lng: -98.6243533 },
-    directionsTip: "Conveniently located on Truemper St with dedicated wheelchair-accessible parking.",
+    directionsTip:
+      "Conveniently located on Truemper St with dedicated wheelchair-accessible parking.",
   },
   hours: [
-    { dayRange: "Monday – Friday", hours: "7:00 AM – 4:30 PM", isOpenToday: true },
-    { dayRange: "Sick Call & Walk-In Urgent Relief", hours: "7:30–9:30 AM & 12:30–1:30 PM", isOpenToday: true },
-    { dayRange: "Saturday – Sunday", hours: "Closed (Emergency On-Call)", isOpenToday: false },
+    {
+      dayRange: "Monday – Friday",
+      hours: "7:00 AM – 4:30 PM",
+      isOpenToday: true,
+    },
+    {
+      dayRange: "Sick Call & Walk-In Urgent Relief",
+      hours: "7:30–9:30 AM & 12:30–1:30 PM",
+      isOpenToday: true,
+    },
+    {
+      dayRange: "Saturday – Sunday",
+      hours: "Closed (Emergency On-Call)",
+      isOpenToday: false,
+    },
   ],
   leadDentist: {
     name: "Dr. Benjamin W. Dunn, DDS",
@@ -141,7 +162,7 @@ export const practiceData: PracticeConfig = {
     bio: "Dr. Dunn leads Dunn Dental Care to provide unhurried, precision dental medicine — combining state-of-the-art diagnostics with accessible, anxiety-free patient care.",
     personalPhilosophy:
       "Dentistry shouldn't involve long waits and unanswered calls. When clinical mastery meets seamless scheduling, every patient gets the prompt, gentle care they deserve.",
-    photoUrl: "/zen-hero-room.avif",
+    photoUrl: "/images/hero/hero-bg.jfif",
   },
   trustMetrics: {
     googleRating: 5.0,
@@ -182,7 +203,7 @@ export const practiceData: PracticeConfig = {
       subtitle: "Accredited Member in Good Standing",
       category: "association",
       acronym: "ADA",
-      logoUrl: "/company1-icon.png",
+      logoUrl: "/images/icons/company1-icon.png",
     },
     {
       id: "tda-partner",
@@ -190,7 +211,7 @@ export const practiceData: PracticeConfig = {
       subtitle: "Charter Member Society",
       category: "association",
       acronym: "TDA",
-      logoUrl: "/company2-icon.png",
+      logoUrl: "/images/icons/company2-icon.png",
     },
     {
       id: "invisalign-partner",
@@ -198,7 +219,7 @@ export const practiceData: PracticeConfig = {
       subtitle: "Top 1% Global Clear Aligner Provider",
       category: "technology",
       acronym: "INVISALIGN",
-      logoUrl: "/company3-icon.png",
+      logoUrl: "/images/icons/company3-icon.png",
     },
     {
       id: "solea-partner",
@@ -206,7 +227,7 @@ export const practiceData: PracticeConfig = {
       subtitle: "Anesthesia-Free CO2 Laser Technology",
       category: "technology",
       acronym: "SOLEA",
-      logoUrl: "/company4-icon.png",
+      logoUrl: "/images/icons/company4-icon.png",
     },
     {
       id: "spear-partner",
@@ -214,7 +235,7 @@ export const practiceData: PracticeConfig = {
       subtitle: "Advanced Restorative Interdisciplinary Care",
       category: "specialty",
       acronym: "SPEAR",
-      logoUrl: "/company-5-icon.png",
+      logoUrl: "/images/icons/company-5-icon.png",
     },
     {
       id: "delta-partner",
@@ -222,7 +243,7 @@ export const practiceData: PracticeConfig = {
       subtitle: "Direct Electronic PPO Billing",
       category: "insurance",
       acronym: "DELTA",
-      logoUrl: "/safe-icon.png",
+      logoUrl: "/images/icons/safe-icon.png",
     },
     {
       id: "cigna-partner",
@@ -230,7 +251,7 @@ export const practiceData: PracticeConfig = {
       subtitle: "In-Network Preferred Provider",
       category: "insurance",
       acronym: "CIGNA",
-      logoUrl: "/safe-icon.png",
+      logoUrl: "/images/icons/safe-icon.png",
     },
     {
       id: "metlife-partner",
@@ -238,7 +259,7 @@ export const practiceData: PracticeConfig = {
       subtitle: "Direct Claims Processing",
       category: "insurance",
       acronym: "METLIFE",
-      logoUrl: "/safe-icon.png",
+      logoUrl: "/images/icons/safe-icon.png",
     },
   ],
 
@@ -303,17 +324,17 @@ export const practiceData: PracticeConfig = {
       "We treat patients across San Antonio and South Texas requiring restorative care, urgent relief, or cosmetic smile transformations.",
     galleryImages: [
       {
-        src: "/your-smile-1.webp",
+        src: "/images/smile-hook/your-smile-1.webp",
         alt: "Custom porcelain shade matching and cosmetic veneer perfection",
         caption: "Precision Shade Matching",
       },
       {
-        src: "/your-smile-2.webp",
+        src: "/images/smile-hook/your-smile-2.webp",
         alt: "Specialist consultation and unhurried patient care",
         caption: "Unhurried Specialist Care",
       },
       {
-        src: "/your-smile-3.webp",
+        src: "/images/smile-hook/your-smile-3.webp",
         alt: "Master in-house dental laboratory ceramic craftsmanship",
         caption: "In-House Digital Lab",
       },
@@ -332,7 +353,7 @@ export const practiceData: PracticeConfig = {
     ],
     quote:
       "Our word is our worth. We promise to do it right, timely, and for a fair price.",
-    image: "/our-dentist-top-img.jpg",
+    image: "/images/dentists/our-dentist-top-img.jpg",
     warrantySealText: {
       title: "Lifetime Warranty",
       description: "If it breaks, we fix it at no cost to you.",
@@ -350,8 +371,8 @@ export const practiceData: PracticeConfig = {
       bio: "Jennifer knows the ins and outs of patient care and exactly how to make your visit feel seamless. Quick with a kind word, a steady hand, and reassuring guidance, she ensures you never feel rushed or stressed.",
       ctaText: "About Us",
       badgeText: "Rated 5-Stars / Patient Concierge",
-      badgeIcon: "/top-rated-icon.png",
-      photoUrl: "/top-rated-dentist-img.jpg",
+      badgeIcon: "/images/icons/top-rated-icon.png",
+      photoUrl: "/images/dentists/top-rated-dentist-img.jpg",
     },
     {
       id: "dr-benjamin-dunn",
@@ -362,8 +383,8 @@ export const practiceData: PracticeConfig = {
       bio: "With over 18 years perfecting restorative dentistry and biocompatible ceramic artistry, Dr. Dunn combines clinical mastery with an unhurried, empathetic bedside presence that puts even the most anxious patients completely at ease.",
       ctaText: "Meet Dr. Dunn",
       badgeText: "Board Certified / Top Dentist 2026",
-      badgeIcon: "/top-rated-icon.png",
-      photoUrl: "/our-dentists-2.webp",
+      badgeIcon: "/images/icons/top-rated-icon.png",
+      photoUrl: "/images/dentists/our-dentists-2.webp",
     },
     {
       id: "dr-ali-reza",
@@ -374,8 +395,8 @@ export const practiceData: PracticeConfig = {
       bio: "Specializing in 3D-guided implantology, bone reconstruction, and minimally invasive microsurgical periodontal therapy, Dr. Reza provides the precision foundations that ensure lifetime restoration longevity.",
       ctaText: "Meet Dr. Reza",
       badgeText: "Diplomate ABO / 5-Star Rated",
-      badgeIcon: "/top-rated-icon.png",
-      photoUrl: "/our-dentists-1.webp",
+      badgeIcon: "/images/icons/top-rated-icon.png",
+      photoUrl: "/images/dentists/our-dentists-1.webp",
     },
   ],
 
@@ -387,8 +408,8 @@ export const practiceData: PracticeConfig = {
       credentials: "MDS, MSc",
       specialty: "San Antonio Periodontist & Dental Implant Specialist",
       bio: "University-trained with a Master of Science (MSc) in Periodontology, Dr. Reza is a specialist in periodontal and implant-supportive surgery. He provides the precision care behind strong, stable foundations, supporting implant success and protecting long-term oral health.",
-      photoUrl: "/our-dentists-1.webp",
-      marbleBg: "/marble-texture-3-1.jpg",
+      photoUrl: "/images/dentists/our-dentists-1.webp",
+      marbleBg: "/images/textures/marble-texture-3-1.jpg",
     },
     {
       id: "spec-2",
@@ -396,8 +417,8 @@ export const practiceData: PracticeConfig = {
       credentials: "DDS, FAGD",
       specialty: "Clinical Director & Biomimetic Restorative Surgeon",
       bio: "Leading clinician focused on conservative, tooth-preserving restorations. Utilizing 3D guided CAD/CAM ceramic milling, Dr. Dunn ensures natural strength, biocompatibility, and immaculate aesthetic harmony.",
-      photoUrl: "/our-dentists-2.webp",
-      marbleBg: "/marble-texture-3-1.jpg",
+      photoUrl: "/images/dentists/our-dentists-2.webp",
+      marbleBg: "/images/textures/marble-texture-3-1.jpg",
     },
     {
       id: "spec-3",
@@ -405,8 +426,8 @@ export const practiceData: PracticeConfig = {
       credentials: "DDS, FAGD",
       specialty: "Biomimetic Restorative Surgeon",
       bio: "Focused on conservative, tooth-preserving restorations. Utilizing 3D guided CAD/CAM ceramic milling, Dr. Vance ensures natural strength, biocompatibility, and immaculate aesthetic harmony.",
-      photoUrl: "/our-dentists-3.webp",
-      marbleBg: "/marble-texture-3-1.jpg",
+      photoUrl: "/images/dentists/our-dentists-3.webp",
+      marbleBg: "/images/textures/marble-texture-3-1.jpg",
     },
     {
       id: "spec-4",
@@ -414,8 +435,8 @@ export const practiceData: PracticeConfig = {
       credentials: "DDS, MS Ortho",
       specialty: "Orthodontics & Facial Symmetry Specialist",
       bio: "Orthodontic specialist focusing on discreet clear aligner biomechanics and airway-centered arch development. Passionate about crafting radiant smiles that harmonize with natural facial proportions.",
-      photoUrl: "/our-dentists-4.webp",
-      marbleBg: "/marble-texture-3-1.jpg",
+      photoUrl: "/images/dentists/our-dentists-4.webp",
+      marbleBg: "/images/textures/marble-texture-3-1.jpg",
     },
   ],
 
@@ -426,21 +447,21 @@ export const practiceData: PracticeConfig = {
     pillars: [
       {
         id: "exp-1",
-        icon: "/dentist-chair-icon.png",
+        icon: "/images/icons/dentist-chair-icon.png",
         title: "Personalized Care",
         description:
           "We get to know your story — your habits, history, goals, and what makes you feel comfortable in the chair. Our approach is thoughtful and rooted in long-term wellness (not short-term fixes).",
       },
       {
         id: "exp-2",
-        icon: "/safe-icon.png",
+        icon: "/images/icons/safe-icon.png",
         title: "Financial Clarity",
         description:
           "We accept insurance, review benefits before your visit, and handle all the paperwork. No insurance? Ask us about flexible financing options and our in-house membership plan.",
       },
       {
         id: "exp-3",
-        icon: "/stars-icons.png",
+        icon: "/images/icons/stars-icons.png",
         title: "Comfort Add-Ons",
         description:
           "Our comfort menu is designed for those who appreciate a little extra TLC: weighted blankets, earbuds, warm towels, sedation options, and more.",
@@ -452,7 +473,7 @@ export const practiceData: PracticeConfig = {
   treatmentShowcase: {
     headlinePart1: "your",
     headlinePart2: "beautiful smile",
-    marbleBg: "/marble-texture-3-1.jpg",
+    marbleBg: "/images/textures/marble-texture-3-1.jpg",
     items: [
       {
         id: "feat-routine",
@@ -462,8 +483,9 @@ export const practiceData: PracticeConfig = {
           "Clean and healthy has never been this easy — or this enjoyable. We're your entire family's partner in dental health.",
         ctaText: "explore general dentistry",
         categoryKey: "general",
-        image: "/features-1.jpg",
-        imageAlt: "Lead dentist reviewing 3D dental model with smiling patient during routine checkup",
+        image: "/images/treatments/features-1.jpg",
+        imageAlt:
+          "Lead dentist reviewing 3D dental model with smiling patient during routine checkup",
         imagePosition: "right",
       },
       {
@@ -474,8 +496,9 @@ export const practiceData: PracticeConfig = {
           "With advanced training and a focus on full-mouth reconstruction, our doctors provide premier care for those dealing with damaged or missing teeth.",
         ctaText: "explore surgical dentistry",
         categoryKey: "surgical",
-        image: "/features-2.jpg",
-        imageAlt: "Restorative dental specialist wearing surgical loupes performing delicate tooth restoration",
+        image: "/images/treatments/features-2.jpg",
+        imageAlt:
+          "Restorative dental specialist wearing surgical loupes performing delicate tooth restoration",
         imagePosition: "left",
       },
       {
@@ -486,8 +509,9 @@ export const practiceData: PracticeConfig = {
           "See what's possible through veneers, GLO whitening, or clear aligners. We're a certified Invisalign provider and have designed thousands of confident smiles.",
         ctaText: "explore cosmetic dentistry",
         categoryKey: "cosmetic",
-        image: "/features-3.jpg",
-        imageAlt: "Cosmetic dentist photographing radiant aesthetic smile transformation result",
+        image: "/images/treatments/features-3.jpg",
+        imageAlt:
+          "Cosmetic dentist photographing radiant aesthetic smile transformation result",
         imagePosition: "right",
       },
     ],
@@ -507,8 +531,9 @@ export const practiceData: PracticeConfig = {
         description:
           "Everything you expect and then some. Cleanings, fillings, and x-rays are just the beginning.",
         ctaText: "ABOUT GENERAL DENTISTRY",
-        image: "/service-1.jpg",
-        imageAlt: "Lead dentist consulting with patient in modern serene treatment room",
+        image: "/images/services/service-1.jpg",
+        imageAlt:
+          "Lead dentist consulting with patient in modern serene treatment room",
       },
       {
         id: "serv-cosmetic",
@@ -517,8 +542,9 @@ export const practiceData: PracticeConfig = {
         description:
           "Discover your “wow!” factor. Invisalign, veneers, and in-office or take-home teeth whitening.",
         ctaText: "ABOUT COSMETIC DENTISTRY",
-        image: "/service-2.jpg",
-        imageAlt: "Cosmetic dentist reviewing digital smile preview with relaxed patient",
+        image: "/images/services/service-2.jpg",
+        imageAlt:
+          "Cosmetic dentist reviewing digital smile preview with relaxed patient",
       },
       {
         id: "serv-surgical",
@@ -527,8 +553,9 @@ export const practiceData: PracticeConfig = {
         description:
           "We can fix anything. Our dentists repair damaged or lost teeth with cutting-edge implants and more.",
         ctaText: "ABOUT ORAL SURGERY",
-        image: "/service-3.jpg",
-        imageAlt: "Surgical dental specialist wearing loupes performing precise restorative procedure",
+        image: "/images/services/service-3.jpg",
+        imageAlt:
+          "Surgical dental specialist wearing loupes performing precise restorative procedure",
       },
     ],
     rowEyebrow: "SIGNATURE PROCEDURES",
@@ -544,10 +571,11 @@ export const practiceData: PracticeConfig = {
         category: "Biomimetic Restoration",
         description:
           "Precision CAD/CAM ceramic crowns digitally designed and milled chairside in a single visit, eliminating messy impressions and fragile temporary caps.",
-        specs: "Same-Day 3D Milling • E-Max Lithium Disilicate • 15-Year Clinical Guarantee",
+        specs:
+          "Same-Day 3D Milling • E-Max Lithium Disilicate • 15-Year Clinical Guarantee",
         turnaround: "Single Visit (90 Mins)",
         comfortProtocol: "Digital Impression Only • Zero Gag Reflex",
-        image: "/dental-crown-service-box.jpg",
+        image: "/images/services/dental-crown-service-box.jpg",
         imageAlt: "Precision milled ceramic dental crown ready for placement",
         ctaText: "Book Crown Consultation",
       },
@@ -559,10 +587,11 @@ export const practiceData: PracticeConfig = {
         category: "Surgical Implantology",
         description:
           "Permanent, bio-integrated titanium and zirconia root replacements surgically anchored by our board-certified specialist to restore 100% natural bite force.",
-        specs: "3D Guided CBCT Navigation • Biocompatible Zirconia/Titanium • 99.4% Success Rate",
+        specs:
+          "3D Guided CBCT Navigation • Biocompatible Zirconia/Titanium • 99.4% Success Rate",
         turnaround: "Same-Day Temporary Placement",
         comfortProtocol: "Twilight Sedation Available • Zero Pain Guarantee",
-        image: "/dental-implants-service-box.jpg",
+        image: "/images/services/dental-implants-service-box.jpg",
         imageAlt: "Bio-integrated dental implant fixture and crown restoration",
         ctaText: "Book Implant Consultation",
       },
@@ -574,10 +603,11 @@ export const practiceData: PracticeConfig = {
         category: "Comprehensive Reconstruction",
         description:
           "Complete structural and aesthetic restoration uniting neuromuscular jaw alignment, bite elevation, and artisan ceramics for severe wear or trauma.",
-        specs: "Multi-Specialist Coordination • Airway-Centered Alignment • Lifetime Warranty",
+        specs:
+          "Multi-Specialist Coordination • Airway-Centered Alignment • Lifetime Warranty",
         turnaround: "Phased Bespoke Plan",
         comfortProtocol: "Dedicated Concierge Nursing • Full Anxiety Protocol",
-        image: "/full-mouth-rehab-before-and-after.jpeg",
+        image: "/images/services/full-mouth-rehab-before-and-after.jpeg",
         imageAlt: "Before and after full mouth oral rehabilitation comparison",
         ctaText: "Book Rehabilitation Assessment",
       },
@@ -589,10 +619,11 @@ export const practiceData: PracticeConfig = {
         category: "Aesthetic Brightening",
         description:
           "Patented Guided Light Optics combining gentle warming heat and blue LED light to lift up to 8 shades in just 32 minutes without clinical post-treatment sensitivity.",
-        specs: "32-Minute In-Office Treatment • Dual Heat & Light Technology • Zero Zingers",
+        specs:
+          "32-Minute In-Office Treatment • Dual Heat & Light Technology • Zero Zingers",
         turnaround: "Instant Same-Day Results",
         comfortProtocol: "Enamel-Safe Formulation • No Post-Op Dehydration",
-        image: "/glo-whitening-service-box.jpg",
+        image: "/images/services/glo-whitening-service-box.jpg",
         imageAlt: "GLO professional in-office whitening treatment",
         ctaText: "Book GLO Whitening",
       },
@@ -604,10 +635,11 @@ export const practiceData: PracticeConfig = {
         category: "Discreet Orthodontics",
         description:
           "Custom-molded SmartTrack clear aligners designed through high-resolution iTero digital scans to guide teeth into ideal harmony without wires or brackets.",
-        specs: "iTero 3D Outcome Simulation • Removable Convenience • Average 6–9 Months",
+        specs:
+          "iTero 3D Outcome Simulation • Removable Convenience • Average 6–9 Months",
         turnaround: "Express Aligners Available",
         comfortProtocol: "Laser-Trimmed Scalloped Margins • Zero Irritation",
-        image: "/invisalign-service-box.jpg",
+        image: "/images/services/invisalign-service-box.jpg",
         imageAlt: "Clear Invisalign orthodontic aligner tray held by patient",
         ctaText: "Book Invisalign Scan",
       },
@@ -619,10 +651,11 @@ export const practiceData: PracticeConfig = {
         category: "Microscopic Endodontics",
         description:
           "Conservative endodontic therapy utilizing high-magnification surgical microscopes to gently clean infected root canals and preserve your natural tooth structure.",
-        specs: "Surgical Microscope Guidance • Ultrasonic Decontamination • Same-Day Sealing",
+        specs:
+          "Surgical Microscope Guidance • Ultrasonic Decontamination • Same-Day Sealing",
         turnaround: "Single Visit (60 Mins)",
         comfortProtocol: "Gentle Wand Anesthesia • Pain-Free Guarantee",
-        image: "/root-canals-service-box.jpg",
+        image: "/images/services/root-canals-service-box.jpg",
         imageAlt: "Modern microscopic gentle endodontic procedure",
         ctaText: "Book Gentle Root Canal",
       },
@@ -634,11 +667,13 @@ export const practiceData: PracticeConfig = {
         category: "Minimally Invasive Dentistry",
         description:
           "Revolutionary computer-guided CO2 dental laser that vaporizes enamel decay soundlessly without needles, drills, vibrations, or post-treatment facial numbness.",
-        specs: "9.3 Micron CO2 Laser • 100% Drill-Free • Multi-Quadrant in 1 Visit",
+        specs:
+          "9.3 Micron CO2 Laser • 100% Drill-Free • Multi-Quadrant in 1 Visit",
         turnaround: "30 Mins (No Wait for Numbing)",
         comfortProtocol: "No Shots • No Drills • Walk Out Smiling",
-        image: "/solea-laser-filling-service-box.jpg",
-        imageAlt: "Solea computerized dental laser system for painless cavity treatment",
+        image: "/images/services/solea-laser-filling-service-box.jpg",
+        imageAlt:
+          "Solea computerized dental laser system for painless cavity treatment",
         ctaText: "Book Solea Laser Filling",
       },
       {
@@ -649,10 +684,11 @@ export const practiceData: PracticeConfig = {
         category: "Cosmetic Smile Design",
         description:
           "Ultra-thin, master-ceramist layered porcelain laminates hand-finished to emulate natural tooth translucency, correcting chips, spacing, and discoloration permanently.",
-        specs: "Hand-Layered Feldspathic Porcelain • Minimal Tooth Prep • 15+ Year Durability",
+        specs:
+          "Hand-Layered Feldspathic Porcelain • Minimal Tooth Prep • 15+ Year Durability",
         turnaround: "2 Appointments (Digital Preview First)",
         comfortProtocol: "Temporary Try-In Stage • Completely Reversible Trial",
-        image: "/veneer_service-box.jpg",
+        image: "/images/services/veneer_service-box.jpg",
         imageAlt: "Handcrafted porcelain veneer smile transformation",
         ctaText: "Book Veneer Consultation",
       },
@@ -676,11 +712,11 @@ export const practiceData: PracticeConfig = {
           "Years of wear had left their mark. The solution? A complete reimagining. Custom crowns delivered what this patient deserved all along: a highly functional smile that looks flawless.",
         treatment: "Custom Ceramic Crowns & Full Rehabilitation",
         ctaText: "Explore Crowns",
-        patientImage: "/person-1.avif",
+        patientImage: "/images/transformations/person-1.avif",
         patientAlt: "Patient smiling radiantly after full mouth reconstruction",
         patientName: "Aria M.",
-        beforeImage: "/person-1-before.webp",
-        afterImage: "/person-1-after.webp",
+        beforeImage: "/images/transformations/person-1-before.webp",
+        afterImage: "/images/transformations/person-1-after.webp",
         clinicalStats: [
           { label: "Procedure", value: "Custom Crowns" },
           { label: "Primary Goal", value: "Aesthetics & Bite Stability" },
@@ -696,15 +732,18 @@ export const practiceData: PracticeConfig = {
           "After an injury resulted in a fractured front tooth, this patient was concerned about both the appearance and stability of their anterior teeth. A traditional dental bridge was used to restore the area, bringing back natural esthetics, symmetry, and strength.",
         treatment: "Traditional Dental Bridge & Esthetic Restoration",
         ctaText: "Explore Bridges & Implants",
-        patientImage: "/person-2.avif",
+        patientImage: "/images/transformations/person-2.avif",
         patientAlt: "Patient restored confident smile after front tooth trauma",
         patientName: "David K.",
-        beforeImage: "/person-2-before.jpg",
-        afterImage: "/person-2-after.jpg",
+        beforeImage: "/images/transformations/person-2-before.jpg",
+        afterImage: "/images/transformations/person-2-after.jpg",
         clinicalStats: [
           { label: "Procedure", value: "Dental Bridge" },
           { label: "Indication", value: "Anterior Fracture / Trauma" },
-          { label: "Clinical Outcome", value: "Natural Symmetry & High Strength" },
+          {
+            label: "Clinical Outcome",
+            value: "Natural Symmetry & High Strength",
+          },
         ],
       },
       {
@@ -716,15 +755,19 @@ export const practiceData: PracticeConfig = {
           "Severe dental trauma, advanced periodontal challenges, and failing teeth left him in persistent pain. With fixed upper and lower restorations, we rebuilt stability, comfort, and function. Today, he can chew confidently and smile freely without discomfort.",
         treatment: "Fixed Upper & Lower Implant-Supported Restorations",
         ctaText: "Explore Full Reconstruction",
-        patientImage: "/person-3.avif",
-        patientAlt: "Patient smiling comfortably after prosthodontic trauma reconstruction",
+        patientImage: "/images/transformations/person-3.avif",
+        patientAlt:
+          "Patient smiling comfortably after prosthodontic trauma reconstruction",
         patientName: "Robert H.",
-        beforeImage: "/person-3-before.webp",
-        afterImage: "/person-3-after.webp",
+        beforeImage: "/images/transformations/person-3-before.webp",
+        afterImage: "/images/transformations/person-3-after.webp",
         clinicalStats: [
           { label: "Procedure", value: "Fixed Dentures" },
           { label: "Indication", value: "Severe Tooth Loss & Trauma" },
-          { label: "Clinical Outcome", value: "Pain-Free Comfort & Confident Chewing" },
+          {
+            label: "Clinical Outcome",
+            value: "Pain-Free Comfort & Confident Chewing",
+          },
         ],
       },
       {
@@ -736,11 +779,12 @@ export const practiceData: PracticeConfig = {
           "She came to us with missing permanent teeth from birth, retained baby teeth, and spacing that made everyday function a real concern. With a carefully coordinated plan using crowns and implant-supported bridges, we restored balance, comfort, and a natural look.",
         treatment: "Crowns, Implant Crowns & Implant-Supported Bridge",
         ctaText: "Explore Bridges",
-        patientImage: "/person-4.avif",
-        patientAlt: "Patient smiling with restored harmony after congenital spacing reconstruction",
+        patientImage: "/images/transformations/person-4.avif",
+        patientAlt:
+          "Patient smiling with restored harmony after congenital spacing reconstruction",
         patientName: "Elena R.",
-        beforeImage: "/person-4-before.webp",
-        afterImage: "/person-4-after.webp",
+        beforeImage: "/images/transformations/person-4-before.webp",
+        afterImage: "/images/transformations/person-4-after.webp",
         clinicalStats: [
           { label: "Procedure", value: "Implant Bridge & Crowns" },
           { label: "Indication", value: "Congenitally Missing Teeth" },
@@ -772,7 +816,7 @@ export const practiceData: PracticeConfig = {
         treatingDoctor: "Dr. Benjamin W. Dunn",
         rating: 5,
         date: "2 weeks ago",
-        photoUrl: "/review-person-1.avif",
+        photoUrl: "/images/testimonials/review-person-1.avif",
         verifiedGoogle: true,
         quote:
           "The team at Dunn Dental Care is phenomenal! The staff was very friendly and they fixed my dental problem in under an hour. Online booking was seamless and eliminated all the stress of waiting.",
@@ -786,7 +830,7 @@ export const practiceData: PracticeConfig = {
         treatingDoctor: "Dr. Benjamin W. Dunn",
         rating: 5,
         date: "1 month ago",
-        photoUrl: "/review-person-2.webp",
+        photoUrl: "/images/testimonials/review-person-2.webp",
         verifiedGoogle: true,
         quote:
           "My teeth whitening and porcelain veneer experience was flawless. The digital 3D preview showed me exactly what my smile would look like before we even began. No sensitivity and an exceptionally warm clinic environment.",
@@ -800,7 +844,7 @@ export const practiceData: PracticeConfig = {
         treatingDoctor: "Dr. Ali Reza",
         rating: 5,
         date: "3 weeks ago",
-        photoUrl: "/review-person-3.avif",
+        photoUrl: "/images/testimonials/review-person-3.avif",
         verifiedGoogle: true,
         quote:
           "Unbelievably precise technology. Having my permanent ceramic crown placed in a single appointment completely eliminated messy silicone impressions. The bite is 100% natural and solid.",
@@ -814,7 +858,7 @@ export const practiceData: PracticeConfig = {
         treatingDoctor: "Dr. Priya Sharma",
         rating: 5,
         date: "2 months ago",
-        photoUrl: "/review-person-4.avif",
+        photoUrl: "/images/testimonials/review-person-4.avif",
         verifiedGoogle: true,
         quote:
           "Clear pricing, no surprise bills, and a clinical team that actually listens without lecturing. In just seven months, my crowded bite was completely aligned without anyone noticing I was wearing trays.",
@@ -886,7 +930,7 @@ export const practiceData: PracticeConfig = {
         subtitle: "Tranquil Natural Light & Floor-to-Ceiling Greenery",
         description:
           "Our treatment suites face private Japanese zen gardens with natural daylight, ergonomic memory foam chairs, and ceiling-mounted streaming displays to ease clinical anxiety.",
-        image: "/slide-1-1000.jpg",
+        image: "/images/comforts/slide-1-1000.jpg",
         tag: "Private Garden View",
       },
       {
@@ -895,7 +939,7 @@ export const practiceData: PracticeConfig = {
         subtitle: "Artisanal Organic Beverages & Warm Accents",
         description:
           "Unwind before your appointment with freshly brewed herbal teas, sparkling water, espresso, and warm lavender essential oil towels crafted to transition your mindset from busy day to restorative sanctuary.",
-        image: "/slide-2-1000-1.jpg",
+        image: "/images/comforts/slide-2-1000-1.jpg",
         tag: "Hospitality Lounge",
       },
       {
@@ -904,7 +948,7 @@ export const practiceData: PracticeConfig = {
         subtitle: "Curved Slatted Cedar & Ambient Ring Chandeliers",
         description:
           "Say goodbye to sterile waiting rooms. Our entrance is shaped by warm organic cedar slats, low-glare lighting, and serene ambient acoustics.",
-        image: "/slide-3-1000.jpg",
+        image: "/images/comforts/slide-3-1000.jpg",
         tag: "Concierge Welcome",
       },
       {
@@ -913,7 +957,7 @@ export const practiceData: PracticeConfig = {
         subtitle: "Spacious Transitions & Anxiety-Free Arrival",
         description:
           "An expansive, light-filled entry foyer designed to make your arrival feel seamless, spacious, and unhurried from the very first step.",
-        image: "/slide-4-1000.jpg",
+        image: "/images/comforts/slide-4-1000.jpg",
         tag: "Studio Arrival",
       },
     ],
@@ -981,8 +1025,8 @@ export const practiceData: PracticeConfig = {
     primaryCtaText: "Book Your Smile Consultation",
     secondaryCtaText: "Call Our Office",
     phoneText: "+1 (210) 292-0123",
-    backgroundImage: "/cta-behind-bg.webp",
-    personImage: "/cta-person-img.webp",
+    backgroundImage: "/images/cta/cta-behind-bg.webp",
+    personImage: "/images/cta/cta-person-img.webp",
     badgeText: "SPECIALIST CONSULTATION",
   },
   footer: {
@@ -1014,7 +1058,11 @@ export const practiceData: PracticeConfig = {
     socialLinks: [
       { platform: "x", href: "https://x.com", label: "X (Twitter)" },
       { platform: "linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-      { platform: "instagram", href: "https://instagram.com", label: "Instagram" },
+      {
+        platform: "instagram",
+        href: "https://instagram.com",
+        label: "Instagram",
+      },
       { platform: "facebook", href: "https://facebook.com", label: "Facebook" },
     ],
     copyright: "© 2026 Dunn Dental Care. All rights reserved.",

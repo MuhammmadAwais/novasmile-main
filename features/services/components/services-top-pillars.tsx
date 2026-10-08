@@ -129,7 +129,7 @@ export function ServicesTopPillars({
             {/* 1. Alabaster Marble Texture Layer */}
             <div
               className="absolute inset-0 bg-cover bg-center opacity-[0.35] mix-blend-multiply pointer-events-none group-hover:opacity-[0.45] transition-opacity duration-700"
-              style={{ backgroundImage: `url('/marble-texture-3-1.jpg')` }}
+              style={{ backgroundImage: `url('/images/textures/marble-texture-3-1.jpg')` }}
             />
 
             {/* 2. Soft Ambient Linen Sheen */}

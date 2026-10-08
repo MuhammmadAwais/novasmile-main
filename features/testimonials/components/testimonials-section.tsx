@@ -84,7 +84,7 @@ export function TestimonialsSection({ onExploreReviews }: TestimonialsSectionPro
       <div
         className="pointer-events-none absolute inset-0 opacity-18 mix-blend-multiply"
         style={{
-          backgroundImage: `url('/stone-background-1400.jpg')`,
+          backgroundImage: `url('/images/textures/stone-background-1400.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -124,7 +124,7 @@ export function TestimonialsSection({ onExploreReviews }: TestimonialsSectionPro
               <div
                 className="pointer-events-none absolute inset-0 opacity-30 mix-blend-multiply rounded-2xl"
                 style={{
-                  backgroundImage: `url('/marble-texture-3-1.jpg')`,
+                  backgroundImage: `url('/images/textures/marble-texture-3-1.jpg')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   filter: "contrast(1.1) brightness(1.02)",
@@ -139,7 +139,7 @@ export function TestimonialsSection({ onExploreReviews }: TestimonialsSectionPro
               <div className="relative z-10 flex items-center gap-3.5">
                 <div className="relative w-12 h-12 rounded-xl bg-white flex items-center justify-center border border-[#836a2c]/30 shadow-xs overflow-hidden shrink-0">
                   <Image
-                    src="/top-rated-icon.png"
+                    src="/images/icons/top-rated-icon.png"
                     alt="Top rated clinic seal"
                     width={38}
                     height={38}
@@ -200,7 +200,7 @@ export function TestimonialsSection({ onExploreReviews }: TestimonialsSectionPro
         <div
           className="pointer-events-none absolute inset-0 opacity-10 mix-blend-screen"
           style={{
-            backgroundImage: `url('/marble-texture-3-1.jpg')`,
+            backgroundImage: `url('/images/textures/marble-texture-3-1.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

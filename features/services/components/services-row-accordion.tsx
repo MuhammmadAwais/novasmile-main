@@ -432,7 +432,7 @@ export function ServicesRowAccordion({
       {/* 1. Alabaster Marble Texture Canvas Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.07] mix-blend-overlay pointer-events-none"
-        style={{ backgroundImage: `url('/marble-texture-3-1.jpg')` }}
+        style={{ backgroundImage: `url('/images/textures/marble-texture-3-1.jpg')` }}
       />
 
       {/* Ambient Ochre Radial Glow */}

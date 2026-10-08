@@ -159,7 +159,7 @@ export function DentistSpotlightCarousel() {
                   {/* Rotating Circular Stamp / Star Icon */}
                   <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                     <Image
-                      src={current.badgeIcon || "/top-rated-icon.png"}
+                      src={current.badgeIcon || "/images/icons/top-rated-icon.png"}
                       alt={current.badgeText || "Rated 5-Stars"}
                       fill
                       sizes="(max-width: 640px) 64px, 80px"
@@ -199,7 +199,7 @@ export function DentistSpotlightCarousel() {
                 className="relative w-full aspect-[4/5] sm:aspect-[3/4] max-h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md bg-surface-container"
               >
                 <Image
-                  src={current.photoUrl || "/top-rated-dentist-img.jpg"}
+                  src={current.photoUrl || "/images/dentists/top-rated-dentist-img.jpg"}
                   alt={current.name}
                   fill
                   className="object-cover object-top transition-all duration-500 ease-out"

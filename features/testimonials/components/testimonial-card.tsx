@@ -22,7 +22,7 @@ export function TestimonialCard({ testimonial, index }: TestimonialCardProps) {
       <div
         className="pointer-events-none absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden opacity-35 mix-blend-multiply"
         style={{
-          backgroundImage: `url('/marble-texture-3-1.jpg')`,
+          backgroundImage: `url('/images/textures/marble-texture-3-1.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "contrast(1.1) brightness(1.02)",

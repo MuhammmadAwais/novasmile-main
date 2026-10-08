@@ -127,7 +127,7 @@ export function DentistPromiseCard() {
           <div
             className="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-60 mix-blend-overlay"
             style={{
-              backgroundImage: "url('/custom-graphic-blue.jpg')",
+              backgroundImage: "url('/images/textures/custom-graphic-blue.jpg')",
               filter: "sepia(1) saturate(1.6) hue-rotate(340deg) brightness(0.7) contrast(1.2)",
             }}
           />
@@ -183,7 +183,7 @@ export function DentistPromiseCard() {
                   className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-surface-container aspect-[4/3] sm:aspect-[16/11]"
                 >
                   <Image
-                    src={promise.image || "/our-dentist-top-img.jpg"}
+                    src={promise.image || "/images/dentists/our-dentist-top-img.jpg"}
                     alt={`${practiceData.name} Lead Clinicians`}
                     fill
                     className="object-cover object-center"

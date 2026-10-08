@@ -18,8 +18,8 @@ export function DreamSmileCta({ onBookClick }: DreamSmileCtaProps) {
     reassuranceText:
       "Are you interested in dental Implants or cosmetic and reconstructive dentistry? Previous work failing? Have you been told your case is too complex? When your smile requires more than routine care, a dental specialist's perspective can make all the difference.",
     primaryCtaText: "Book Your Smile Consultation",
-    backgroundImage: "/cta-behind-bg.webp",
-    personImage: "/cta-person-img.webp",
+    backgroundImage: "/images/cta/cta-behind-bg.webp",
+    personImage: "/images/cta/cta-person-img.webp",
   };
 
   const cardRef = useRef<HTMLDivElement>(null);
@@ -68,7 +68,7 @@ export function DreamSmileCta({ onBookClick }: DreamSmileCtaProps) {
           {/* Tactile Stone & Ambient Tint Layer */}
           <div className="absolute inset-0 bg-[#fbf9f5]/55 backdrop-blur-[2px]" />
           <Image
-            src="/stone-background-1400.jpg"
+            src="/images/textures/stone-background-1400.jpg"
             alt=""
             fill
             sizes="100vw"
@@ -88,7 +88,7 @@ export function DreamSmileCta({ onBookClick }: DreamSmileCtaProps) {
             {/* Tactile Alabaster Marble Texture Filter */}
             <div className="absolute inset-0 z-0 pointer-events-none opacity-25 mix-blend-multiply">
               <Image
-                src="/marble-texture-3-1.jpg"
+                src="/images/textures/marble-texture-3-1.jpg"
                 alt=""
                 fill
                 sizes="(max-width: 1200px) 100vw, 1200px"

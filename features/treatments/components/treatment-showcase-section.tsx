@@ -196,7 +196,7 @@ export function TreatmentShowcaseSection({
                     {/* Fine Tactile Analog Film Grain / Stone Texture Plate */}
                     <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.20] mix-blend-overlay">
                       <Image
-                        src="/stone-background-1400.jpg"
+                        src="/images/textures/stone-background-1400.jpg"
                         alt=""
                         fill
                         sizes="(max-width: 1024px) 100vw, 58vw"
@@ -224,7 +224,7 @@ export function TreatmentShowcaseSection({
                     {/* Fine Tactile Analog Film Grain / Stone Texture Plate */}
                     <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.20] mix-blend-overlay">
                       <Image
-                        src="/stone-background-1400.jpg"
+                        src="/images/textures/stone-background-1400.jpg"
                         alt=""
                         fill
                         sizes="(max-width: 1024px) 100vw, 58vw"

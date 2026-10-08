@@ -56,7 +56,7 @@ export function PracticeFooter({ onBookClick }: PracticeFooterProps) {
       {/* Tactile Roasted Espresso Marble & Lighting Depth */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
-          src="/download.webp"
+          src="/images/textures/download.webp"
           alt=""
           fill
           sizes="100vw"
@@ -77,7 +77,7 @@ export function PracticeFooter({ onBookClick }: PracticeFooterProps) {
               <Link href="/" className="inline-block mb-6 group">
                 <div className="relative h-11 sm:h-13 w-48 sm:w-56 flex items-center">
                   <Image
-                    src="/logo-main.png"
+                    src="/images/brand/logo-main.png"
                     alt={practiceData.name}
                     fill
                     sizes="(max-width: 640px) 200px, 240px"

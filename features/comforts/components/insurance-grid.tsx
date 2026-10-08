@@ -54,7 +54,7 @@ export function InsuranceGrid({ insuranceConfig, onBookClick }: InsuranceGridPro
             <div
               className="pointer-events-none absolute inset-0 opacity-25 mix-blend-multiply rounded-2xl sm:rounded-3xl"
               style={{
-                backgroundImage: `url('/marble-texture-3-1.jpg')`,
+                backgroundImage: `url('/images/textures/marble-texture-3-1.jpg')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 filter: "contrast(1.08) brightness(1.02)",

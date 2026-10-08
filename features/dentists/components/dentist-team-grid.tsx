@@ -132,7 +132,7 @@ export function DentistTeamGrid() {
                   <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: `url('${member.marbleBg || "/marble-texture-3-1.jpg"}')`,
+                      backgroundImage: `url('${member.marbleBg || "/images/textures/marble-texture-3-1.jpg"}')`,
                     }}
                   />
                   

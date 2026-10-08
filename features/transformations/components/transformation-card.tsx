@@ -31,7 +31,7 @@ export const TransformationCard = React.forwardRef<HTMLDivElement, Transformatio
         {/* 100% OPAQUE SOLID BASE & TACTILE ALABASTER MARBLE TEXTURE */}
         <div className="absolute inset-0 bg-white pointer-events-none z-0">
           <Image
-            src="/marble-texture-3-1.jpg"
+            src="/images/textures/marble-texture-3-1.jpg"
             alt=""
             fill
             sizes="(max-width: 1200px) 100vw, 1200px"

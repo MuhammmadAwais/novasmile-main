@@ -19,7 +19,7 @@ export function TrustMetricsSection() {
         <div
           className="absolute inset-0 opacity-[0.07] mix-blend-multiply"
           style={{
-            backgroundImage: "url('/marble-texture-3-1.jpg')",
+            backgroundImage: "url('/images/textures/marble-texture-3-1.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -29,7 +29,7 @@ export function TrustMetricsSection() {
         <div
           className="absolute inset-0 opacity-[0.04] mix-blend-overlay"
           style={{
-            backgroundImage: "url('/stone-background-1400.jpg')",
+            backgroundImage: "url('/images/textures/stone-background-1400.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -73,7 +73,7 @@ export function TrustMetricsSection() {
               <div
                 className="absolute inset-0 opacity-[0.14] mix-blend-screen pointer-events-none group-hover:opacity-[0.22] transition-opacity duration-300"
                 style={{
-                  backgroundImage: "url('/download.webp')",
+                  backgroundImage: "url('/images/textures/download.webp')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}

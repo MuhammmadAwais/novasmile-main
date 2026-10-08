@@ -103,7 +103,7 @@ export function ModernComfortsSection({ onBookClick }: ModernComfortsSectionProp
       <div
         className="pointer-events-none absolute inset-0 opacity-18 mix-blend-multiply"
         style={{
-          backgroundImage: `url('/stone-background-1400.jpg')`,
+          backgroundImage: `url('/images/textures/stone-background-1400.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

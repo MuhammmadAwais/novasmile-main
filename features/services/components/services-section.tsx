@@ -26,7 +26,7 @@ export function ServicesSection({
         {/* Alabaster Marble Backdrop Texture */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-[0.06] mix-blend-multiply pointer-events-none"
-          style={{ backgroundImage: `url('/marble-texture-3-1.jpg')` }}
+          style={{ backgroundImage: `url('/images/textures/marble-texture-3-1.jpg')` }}
         />
 
         {/* Decorative Warm Ochre Fog Gradients */}

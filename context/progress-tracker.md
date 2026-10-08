@@ -9,7 +9,7 @@ Update this file after every completed feature. Any AI agent reading this immedi
 **Phase:** Dream Smile CTA & Luxury Hospitality Footer Complete
 **Last completed:**
 1. **Dream Smile Conversion CTA** ([`dream-smile-cta.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/footer/components/dream-smile-cta.tsx)) with floating alabaster marble card, script `"Ready"` flourish, smiling patient portrait, and focused consultation CTA overlapping into the dark footer.
-2. **Luxury Hospitality Practice Footer** ([`practice-footer.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/footer/components/practice-footer.tsx)) featuring filtered white `/logo-main.png`, 4-column practice navigation architecture, circular social channels, and monumental `"NOVASMILE"` bottom display watermark.
+2. **Luxury Hospitality Practice Footer** ([`practice-footer.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/footer/components/practice-footer.tsx)) featuring filtered white `/images/brand/logo-main.png`, 4-column practice navigation architecture, circular social channels, and monumental `"NOVASMILE"` bottom display watermark.
 **Next:** Phase 9 Global Verification & Polish.
 
 ---

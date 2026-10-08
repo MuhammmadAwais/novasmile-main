@@ -163,7 +163,7 @@ export function SmileHookSection() {
                     className="relative aspect-[9/18] sm:aspect-[9/19] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-surface-container shadow-md transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1"
                   >
                     <Image
-                      src={config.galleryImages[0]?.src || "/your-smile-1.webp"}
+                      src={config.galleryImages[0]?.src || "/images/smile-hook/your-smile-1.webp"}
                       alt={config.galleryImages[0]?.alt || "Dental veneer shade matching"}
                       fill
                       className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
@@ -180,7 +180,7 @@ export function SmileHookSection() {
                     className="relative aspect-[9/18] sm:aspect-[9/19] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-surface-container shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-1"
                   >
                     <Image
-                      src={config.galleryImages[1]?.src || "/your-smile-2.webp"}
+                      src={config.galleryImages[1]?.src || "/images/smile-hook/your-smile-2.webp"}
                       alt={config.galleryImages[1]?.alt || "Specialist patient consultation"}
                       fill
                       className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
@@ -197,7 +197,7 @@ export function SmileHookSection() {
                     className="relative aspect-[9/18] sm:aspect-[9/19] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-surface-container shadow-md transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-1"
                   >
                     <Image
-                      src={config.galleryImages[2]?.src || "/your-smile-3.webp"}
+                      src={config.galleryImages[2]?.src || "/images/smile-hook/your-smile-3.webp"}
                       alt={config.galleryImages[2]?.alt || "In-house dental lab precision craft"}
                       fill
                       className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"

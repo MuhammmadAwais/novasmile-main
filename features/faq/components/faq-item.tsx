@@ -27,7 +27,7 @@ export function FaqItemCard({ item, isOpen, onToggle, onBookTreatment }: FaqItem
           isOpen ? "opacity-0" : "opacity-30"
         }`}
         style={{
-          backgroundImage: `url('/marble-texture-3-1.jpg')`,
+          backgroundImage: `url('/images/textures/marble-texture-3-1.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "contrast(1.08) brightness(1.02)",
@@ -41,7 +41,7 @@ export function FaqItemCard({ item, isOpen, onToggle, onBookTreatment }: FaqItem
           isOpen ? "opacity-25" : "opacity-0"
         }`}
         style={{
-          backgroundImage: `url('/download.webp')`,
+          backgroundImage: `url('/images/textures/download.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "contrast(1.25) brightness(1.15)",

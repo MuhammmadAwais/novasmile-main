@@ -42,7 +42,7 @@ export function Navbar({ onBookClick, onCallClick }: NavbarProps) {
         >
           <div className="relative h-11 sm:h-14 w-52 sm:w-64 flex items-center" suppressHydrationWarning>
             <Image
-              src="/logo-main.png"
+              src="/images/brand/logo-main.png"
               alt={practiceData.name}
               fill
               priority
