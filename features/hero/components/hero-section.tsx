@@ -69,13 +69,14 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
       <div className="absolute inset-0 z-0" suppressHydrationWarning>
         {mounted && (
           <Image
-            src="/images/hero/hero-bg.jfif"
+            src="/images/hero/hero-bg.jpg"
             alt="Modern Zen Dental Operatory Studio"
             fill
             priority
             className="object-cover object-[72%_center] lg:object-[70%_center]"
             sizes="100vw"
             quality={95}
+            suppressHydrationWarning
           />
         )}
 
