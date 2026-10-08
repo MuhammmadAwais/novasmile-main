@@ -15,7 +15,9 @@ export function BookingModal({ isOpen, onClose, initialTreatment }: BookingModal
   const [selectedTreatment, setSelectedTreatment] = useState(
     initialTreatment || "Comprehensive New Patient Exam & Clean"
   );
-  const [selectedLocation, setSelectedLocation] = useState("San Francisco");
+  const [selectedLocation, setSelectedLocation] = useState(
+    practiceData.locations[0]?.city || "San Antonio"
+  );
   const [selectedDate, setSelectedDate] = useState("Tomorrow");
   const [selectedSlot, setSelectedSlot] = useState("10:00 AM");
   const [anxietyCare, setAnxietyCare] = useState(false);
@@ -69,7 +71,7 @@ export function BookingModal({ isOpen, onClose, initialTreatment }: BookingModal
             </div>
             <h3 className="font-serif text-3xl text-[#2c221e] mb-3">Reservation Received</h3>
             <p className="font-sans text-sm text-[#4d4639] max-w-sm mx-auto mb-6 leading-relaxed">
-              Thank you for trusting Novasmile Care. Our patient care concierge will confirm your appointment at our {selectedLocation} studio shortly.
+              Thank you for trusting {practiceData.name}. Our patient care team will confirm your appointment at our {selectedLocation} office shortly.
             </p>
             <div className="bg-surface-container-low rounded-xl p-4 text-left mb-6 text-xs text-[#4d4639] space-y-1.5 border border-outline-variant/20">
               <div className="flex justify-between">

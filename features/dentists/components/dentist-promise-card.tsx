@@ -176,18 +176,20 @@ export function DentistPromiseCard() {
               </div>
 
               {/* Right Column: Clinician Team Photo & Floating Guarantee Stamp */}
-              <div className="lg:col-span-6 relative">
+              <div className="lg:col-span-6 relative" suppressHydrationWarning>
                 <div
                   ref={photoRef}
+                  suppressHydrationWarning
                   className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-surface-container aspect-[4/3] sm:aspect-[16/11]"
                 >
                   <Image
                     src={promise.image || "/our-dentist-top-img.jpg"}
-                    alt="Novasmile Care Lead Dentists"
+                    alt={`${practiceData.name} Lead Clinicians`}
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     priority
+                    suppressHydrationWarning
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
                 </div>

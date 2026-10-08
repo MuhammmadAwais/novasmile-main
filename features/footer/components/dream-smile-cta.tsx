@@ -58,11 +58,12 @@ export function DreamSmileCta({ onBookClick }: DreamSmileCtaProps) {
         <div className="absolute inset-0 z-0">
           <Image
             src={cta.backgroundImage}
-            alt="NovaSmile Modern Clinic Sanctuary"
+            alt={`${practiceData.name} Modern Clinic Sanctuary`}
             fill
             sizes="100vw"
             className="object-cover object-center filter brightness-[0.98] contrast-[1.02]"
             priority
+            suppressHydrationWarning
           />
           {/* Tactile Stone & Ambient Tint Layer */}
           <div className="absolute inset-0 bg-[#fbf9f5]/55 backdrop-blur-[2px]" />
