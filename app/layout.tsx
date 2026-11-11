@@ -19,9 +19,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Dunn Dental Care — Premier Dentistry & Seamless Care in San Antonio, TX",
+  title: "Mr. Dentist — Family, Cosmetic & Implant Dentistry in San Antonio, TX",
   description:
-    "Comprehensive general dentistry, specialized restorative care, and seamless digital booking in San Antonio, TX. Experience unhurried, anxiety-free dental wellness.",
+    "Veteran-led family, cosmetic, and restorative dental care by Dr. Medhat G. Bader, DMD at 6338 Old Pearsall Rd, Suite 105, San Antonio, TX. Same-day cleanings, walk-ins, and anxiety-free care.",
 };
 
 export default function RootLayout({

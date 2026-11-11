@@ -37,7 +37,7 @@ export function TestimonialsCarousel() {
             A serene, anxiety-free departure from conventional dentistry.
           </h2>
           <p className="font-sans text-sm sm:text-base text-[#5e4f49] mt-3 max-w-lg">
-            Read authentic stories from patients across San Francisco and Mountain View who chose unhurried, hospitality-grade wellness.
+            Read authentic stories from families across San Antonio who chose honest, gentle, and unhurried dental care at {practiceData.name}.
           </p>
         </div>
 

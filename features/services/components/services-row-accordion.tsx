@@ -315,7 +315,7 @@ function ProcedureRowItem({
         >
           {/* Clean Subtitle matching Reference 3 */}
           <p className="font-sans text-xs sm:text-sm text-[#d0c5b4]/85 tracking-wide mt-4 text-center">
-            San Francisco & Mountain View Studios | {proc.category} | Lifetime Clinical Care
+            {practiceData.locations[0]?.city || "San Antonio"} Studio | {proc.category} | {proc.turnaround}
           </p>
 
           {/* Dual Action CTAs matching Reference Image 3 */}

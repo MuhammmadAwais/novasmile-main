@@ -69,8 +69,8 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
       <div className="absolute inset-0 z-0" suppressHydrationWarning>
         {mounted && (
           <Image
-            src="/images/hero/hero-bg.jpg"
-            alt="Modern Zen Dental Operatory Studio"
+            src="/images/hero/mr-dentist-hero-bg.jpg"
+            alt="Mr. Dentist Operatory Studio in San Antonio"
             fill
             priority
             className="object-cover object-[72%_center] lg:object-[70%_center]"
@@ -160,9 +160,7 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
 
           {/* Calming Subheading */}
           <p className="hero-subheading relative z-10 font-sans text-base sm:text-[17px] text-[#4d443e] leading-[1.65] max-w-lg mb-9 sm:mb-11 font-normal">
-            Comprehensive dentistry in calm,
-            <br className="hidden sm:inline" /> well-designed spaces across the
-            Bay Area.
+            {hero.subheading}
           </p>
 
           {/* Dual CTAs (Matches Reference Shape & Tone) */}

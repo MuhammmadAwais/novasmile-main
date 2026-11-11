@@ -13,7 +13,7 @@ export interface BookingModalProps {
 export function BookingModal({ isOpen, onClose, initialTreatment }: BookingModalProps) {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [selectedTreatment, setSelectedTreatment] = useState(
-    initialTreatment || "Comprehensive New Patient Exam & Clean"
+    initialTreatment || "Same-Day New Patient Exam & Cleaning"
   );
   const [selectedLocation, setSelectedLocation] = useState(
     practiceData.locations[0]?.city || "San Antonio"
@@ -32,14 +32,14 @@ export function BookingModal({ isOpen, onClose, initialTreatment }: BookingModal
   if (!isOpen) return null;
 
   const treatments = [
-    "Comprehensive New Patient Exam & Clean",
-    "Cosmetic Smile Makeover Consultation",
-    "Invisalign Clear Aligner Assessment",
-    "Dental Implant Consultation",
-    "Same-Day Emergency Relief",
+    "Same-Day New Patient Exam & Cleaning",
+    "Toothache / Walk-In Emergency Relief",
+    "Dental Implant & Crown Consultation",
+    "Porcelain Veneers & Teeth Whitening",
+    "Wisdom Teeth & Gentle Extraction",
   ];
 
-  const timeSlots = ["9:00 AM", "10:00 AM", "11:30 AM", "2:00 PM", "3:30 PM", "4:45 PM"];
+  const timeSlots = ["10:00 AM", "11:15 AM", "1:00 PM", "2:30 PM", "4:00 PM", "5:15 PM"];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

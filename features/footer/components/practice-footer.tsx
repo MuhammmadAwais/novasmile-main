@@ -42,13 +42,13 @@ export function PracticeFooter({ onBookClick }: PracticeFooterProps) {
       { platform: "instagram", href: "https://instagram.com", label: "Instagram" },
       { platform: "facebook", href: "https://facebook.com", label: "Facebook" },
     ],
-    copyright: "© 2026 NovaSmile Dental Care. All rights reserved.",
+    copyright: "© 2026 Mr. Dentist (San Antonio, TX). All rights reserved.",
     legalLinks: [
       { label: "Privacy Policy", href: "#privacy" },
       { label: "Terms of Service", href: "#terms" },
       { label: "ADA Accessibility Statement", href: "#accessibility" },
     ],
-    watermarkText: "NOVASMILE",
+    watermarkText: "MR. DENTIST",
   };
 
   return (
@@ -73,15 +73,15 @@ export function PracticeFooter({ onBookClick }: PracticeFooterProps) {
           {/* Column 1: Brand & Clinical Accreditations */}
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
-              {/* Practice Main Logo with White / Neutral Filter */}
+              {/* Practice Main Logo */}
               <Link href="/" className="inline-block mb-6 group">
                 <div className="relative h-11 sm:h-13 w-48 sm:w-56 flex items-center">
                   <Image
-                    src="/images/brand/logo-main.png"
+                    src="/images/brand/mr-dentist-logo.png"
                     alt={practiceData.name}
                     fill
                     sizes="(max-width: 640px) 200px, 240px"
-                    className="object-contain object-left filter brightness-0 invert opacity-95 transition-opacity duration-200 group-hover:opacity-100"
+                    className="object-contain object-left opacity-95 transition-opacity duration-200 group-hover:opacity-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
                   />
                 </div>
               </Link>
@@ -248,7 +248,7 @@ export function PracticeFooter({ onBookClick }: PracticeFooterProps) {
         {/* Monumental Architectural Brand Watermark (Matching Reference 2 LOTUSFI style) */}
         <div className="relative w-full select-none pointer-events-none overflow-hidden pt-4 sm:pt-6">
           <div className="text-center font-serif font-black uppercase text-[#836a2c]/[0.07] text-[13.5vw] leading-[0.8] tracking-[0.22em] sm:tracking-[0.28em] whitespace-nowrap">
-            {footer.watermarkText || "NOVASMILE"}
+            {footer.watermarkText || "MR. DENTIST"}
           </div>
         </div>
       </div>

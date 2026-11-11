@@ -137,7 +137,7 @@ export function DreamSmileCta({ onBookClick }: DreamSmileCtaProps) {
               <div className="lg:col-span-5 relative min-h-[320px] sm:min-h-[400px] lg:min-h-[480px] w-full overflow-hidden bg-[#e5e0d8]/30">
                 <Image
                   src={cta.personImage}
-                  alt="NovaSmile Dream Smile Patient"
+                  alt={`${practiceData.name} Smiling Patient`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover object-[center_15%] filter contrast-[1.03] brightness-[1.01] transition-transform duration-700 hover:scale-105"

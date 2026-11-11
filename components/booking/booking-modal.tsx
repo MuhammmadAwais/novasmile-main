@@ -11,8 +11,10 @@ interface BookingModalProps {
 
 export function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [selectedTreatment, setSelectedTreatment] = useState("Comprehensive New Patient Exam & Clean");
-  const [selectedLocation, setSelectedLocation] = useState("San Francisco");
+  const [selectedTreatment, setSelectedTreatment] = useState("Same-Day Exam & Teeth Cleaning");
+  const [selectedLocation, setSelectedLocation] = useState(
+    practiceData.locations[0]?.city || "San Antonio"
+  );
   const [selectedDate, setSelectedDate] = useState("Tomorrow");
   const [selectedSlot, setSelectedSlot] = useState("10:00 AM");
   const [anxietyCare, setAnxietyCare] = useState(false);
@@ -21,14 +23,14 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
   if (!isOpen) return null;
 
   const treatments = [
-    "Comprehensive New Patient Exam & Clean",
-    "Cosmetic Smile Makeover Consultation",
-    "Invisalign Clear Aligner Assessment",
-    "Dental Implant Consultation",
-    "Same-Day Emergency Relief",
+    "Same-Day Exam & Teeth Cleaning",
+    "Cosmetic Smile & Veneers Consultation",
+    "Dental Implants, Crowns & Bridges",
+    "Wisdom Teeth & Gentle Extractions",
+    "Same-Day Emergency / Toothache Relief",
   ];
 
-  const timeSlots = ["9:00 AM", "10:00 AM", "11:30 AM", "2:00 PM", "3:30 PM", "4:45 PM"];
+  const timeSlots = ["10:00 AM", "11:30 AM", "1:00 PM", "2:30 PM", "4:00 PM", "5:15 PM"];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,7 +62,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             </div>
             <h3 className="font-serif text-3xl text-[#2c221e] mb-3">Reservation Received</h3>
             <p className="font-sans text-sm text-[#4d4639] max-w-sm mx-auto mb-6 leading-relaxed">
-              Thank you for trusting Novasmile Care. Our patient care concierge will confirm your appointment at our {selectedLocation} studio shortly.
+              Thank you for trusting {practiceData.name}. Our patient care concierge will confirm your appointment at our {selectedLocation} studio shortly.
             </p>
             <div className="bg-surface-container-low rounded-xl p-4 text-left mb-6 text-xs text-[#4d4639] space-y-1.5 border border-outline-variant/20">
               <div className="flex justify-between">

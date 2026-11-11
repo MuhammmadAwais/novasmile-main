@@ -437,10 +437,10 @@ Last updated: 2026-09-20
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Background      | Deep roasted espresso canvas (`bg-[#18110e] text-[#fcf9f6]`) layered with tactile dark marble plate (`/images/textures/download.webp` at 14% opacity, `mix-blend-luminosity`) and warm gold radial ambient glow    |
 | Upper Buffer    | `pt-36 sm:pt-44 md:pt-52 lg:pt-60` to seamlessly accommodate the overlapping Dream Smile CTA card                                                                                                                  |
-| Brand Logo      | Practice main logo (`/images/brand/logo-main.png`) with `filter brightness-0 invert opacity-95 hover:opacity-100` rendering crisp neutral white on the dark canvas                                                 |
+| Brand Logo      | Practice 3D metallic logo (`/images/brand/mr-dentist-logo.png`) with natural 3D gold & blue depth and subtle elevation shadow (`drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]`)                                       |
 | 4-Column Grid   | Col 1: Brand & Philosophy; Col 2: Quick Links; Col 3: Clinical Services; Col 4: Studio Locations & Concierge Hours                                                                                                 |
 | Social Icons    | Circular dark buttons `w-10 h-10 rounded-full bg-[#251b17] hover:bg-[#836a2c] text-[#fcf9f6] border border-[#836a2c]/30 flex items-center justify-center` matching Reference 2                                     |
-| Brand Watermark | Monumental display typography: `"NOVASMILE"` at the absolute bottom (`text-[13.5vw] font-serif font-black uppercase text-[#836a2c]/[0.07] tracking-[0.22em] sm:tracking-[0.28em] select-none pointer-events-none`) |
+| Brand Watermark | Monumental display typography: `"MR. DENTIST"` at the absolute bottom (`text-[13.5vw] font-serif font-black uppercase text-[#836a2c]/[0.07] tracking-[0.22em] sm:tracking-[0.28em] select-none pointer-events-none`) |
 
 **Pattern notes:**
-Directly matches Reference 2: dark luxury footer architecture, 4-column navigation, circular social icons, and the monumental `"NOVASMILE"` display wordmark.
+Directly matches Reference 2: dark luxury footer architecture, 4-column navigation, circular social icons, and the monumental `"MR. DENTIST"` display wordmark.

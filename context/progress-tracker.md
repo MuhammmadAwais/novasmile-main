@@ -6,11 +6,11 @@ Update this file after every completed feature. Any AI agent reading this immedi
 
 ## Current Status
 
-**Phase:** Dream Smile CTA & Luxury Hospitality Footer Complete
+**Phase:** Mr. Dentist (San Antonio, TX) Deep Extraction & Turnkey Re-Branding Complete
 **Last completed:**
-1. **Dream Smile Conversion CTA** ([`dream-smile-cta.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/footer/components/dream-smile-cta.tsx)) with floating alabaster marble card, script `"Ready"` flourish, smiling patient portrait, and focused consultation CTA overlapping into the dark footer.
-2. **Luxury Hospitality Practice Footer** ([`practice-footer.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/footer/components/practice-footer.tsx)) featuring filtered white `/images/brand/logo-main.png`, 4-column practice navigation architecture, circular social channels, and monumental `"NOVASMILE"` bottom display watermark.
-**Next:** Phase 9 Global Verification & Polish.
+1. **Mr. Dentist Extraction Dossier** ([`context/mr-dentist/extracted-data.md`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/context/mr-dentist/extracted-data.md)) with Google Maps Place Preview payload, NexHealth broken booking diagnostic (`HTTP 404`), 15+ verbatim patient reviews, and 23 visual assets (`context/mr-dentist/logo/` & `context/mr-dentist/images/`).
+2. **Mr. Dentist Website Re-Branding** ([`content/practice-data.ts`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/content/practice-data.ts), [`app/layout.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/app/layout.tsx), [`navbar.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/components/layout/navbar.tsx), [`practice-footer.tsx`](file:///c:/Users/Prime/OneDrive/Documents/Office/Office%20Projects/novasmile/features/footer/components/practice-footer.tsx)) featuring the color-decontaminated 3D Gold & Blue **Mr. Dentist** logo (`/images/brand/logo-main.png`), **Dr. Medhat G. Bader, DMD** & San Antonio specialist team, verbatim 5-star reviews, Old Pearsall Rd location & hours, and `"MR. DENTIST"` footer watermark.
+**Next:** Live cold-call demo presentation & optional visual refinements.
 
 ---
 

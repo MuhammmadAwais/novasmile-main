@@ -1,0 +1,17 @@
+[
+  {
+    "endpoint": "https://nexhealth.info/institutions/mr-dentist",
+    "status": 404,
+    "response": "{\"code\":false,\"data\":null,\"description\":[],\"error\":[\"Institution record with id = mr-dentist not found\"]}"
+  },
+  {
+    "endpoint": "https://nexhealth.info/appts/mr-dentist?lid=350543",
+    "status": 404,
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <title>404 Not Found | NexHealth</title>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <style>\n  html {\n    height: 100%;\n    overflow: hidden;\n  }\n\n  body {\n    height: 100%;\n    overflow: hidden;\n\n    background-color: #fff;\n    color: #1a1e23;\n    font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif;\n    margin: 0;\n  }\n\n  main {\n    margin: 2rem;\n    height: 90%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n  }\n\n  a {\n    color: #1ae5c2;\n    display: inline-block;\n    text-decoration: none;\n  }\n\n  a:hover {\n    filter: brightness(0.9);\n  }\n\n  h1 {\n    font-size: 2.25rem;\n  }\n\n  img#logo {\n    min-height: 80px;\n    max-width: 300px;\n  }\n\n  div#content {\n    max-width: 100%;\n    margin: auto;\n  }\n\n  img#hat {\n    max-width: 100%;\n  }\n\n  .button {\n    height: auto;\n    padding: 10px 24px;\n    border-radius: 6px;\n    backgroun"
+  },
+  {
+    "endpoint": "https://nexhealth.info/v2/online_booking/institutions/mr-dentist?lid=350543",
+    "status": 404,
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <title>404 Not Found | NexHealth</title>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <style>\n  html {\n    height: 100%;\n    overflow: hidden;\n  }\n\n  body {\n    height: 100%;\n    overflow: hidden;\n\n    background-color: #fff;\n    color: #1a1e23;\n    font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Inter,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif;\n    margin: 0;\n  }\n\n  main {\n    margin: 2rem;\n    height: 90%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n  }\n\n  a {\n    color: #1ae5c2;\n    display: inline-block;\n    text-decoration: none;\n  }\n\n  a:hover {\n    filter: brightness(0.9);\n  }\n\n  h1 {\n    font-size: 2.25rem;\n  }\n\n  img#logo {\n    min-height: 80px;\n    max-width: 300px;\n  }\n\n  div#content {\n    max-width: 100%;\n    margin: auto;\n  }\n\n  img#hat {\n    max-width: 100%;\n  }\n\n  .button {\n    height: auto;\n    padding: 10px 24px;\n    border-radius: 6px;\n    backgroun"
+  }
+]

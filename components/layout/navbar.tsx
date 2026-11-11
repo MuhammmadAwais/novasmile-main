@@ -42,11 +42,11 @@ export function Navbar({ onBookClick, onCallClick }: NavbarProps) {
         >
           <div className="relative h-11 sm:h-14 w-52 sm:w-64 flex items-center" suppressHydrationWarning>
             <Image
-              src="/images/brand/logo-main.png"
+              src="/images/brand/mr-dentist-logo.png"
               alt={practiceData.name}
               fill
               priority
-              className="object-contain object-left"
+              className="object-contain object-left drop-shadow-[0_1px_1.5px_rgba(28,20,17,0.22)]"
               sizes="(max-width: 640px) 210px, 260px"
               suppressHydrationWarning
             />
