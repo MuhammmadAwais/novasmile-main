@@ -3,6 +3,13 @@ import type { PracticeConfig } from "@/lib/types/practice";
 export const practiceData: PracticeConfig = {
   id: "mr-dentist-san-antonio",
   name: "Mr. Dentist",
+  /**
+   * Developer Palette Switch:
+   * - "blue-gold": Mr. Dentist Cerulean Blue (#1488cc) + Metallic Gold (#836a2c) + Deep Navy (#0c2338)
+   * - "original": Original Warm Ochre Gold (#836a2c) + Roasted Espresso (#281d19 / #18110e)
+   * Changing this single key or setting NEXT_PUBLIC_BRAND_THEME flips the entire site's palette with zero runtime overhead.
+   */
+  brandTheme: "blue-gold",
   tagline: "Comprehensive, compassionate family & cosmetic dentistry in San Antonio.",
   emergencyHotline: "+1 (210) 623-3900",
   officePhone: "+1 (210) 541-4132",

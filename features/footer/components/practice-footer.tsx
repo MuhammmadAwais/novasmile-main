@@ -52,8 +52,8 @@ export function PracticeFooter({ onBookClick }: PracticeFooterProps) {
   };
 
   return (
-    <footer className="relative w-full bg-[#18110e] text-[#fcf9f6] overflow-hidden pt-36 sm:pt-44 md:pt-52 lg:pt-60 pb-8 sm:pb-12 border-t border-[#836a2c]/20">
-      {/* Tactile Roasted Espresso Marble & Lighting Depth */}
+    <footer className="relative w-full bg-brand-darker text-[#fcf9f6] overflow-hidden pt-36 sm:pt-44 md:pt-52 lg:pt-60 pb-8 sm:pb-12 border-t border-[#836a2c]/20">
+      {/* Tactile Marble & Lighting Depth */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
           src="/images/textures/download.webp"
@@ -62,9 +62,9 @@ export function PracticeFooter({ onBookClick }: PracticeFooterProps) {
           sizes="100vw"
           className="object-cover opacity-[0.14] mix-blend-luminosity filter contrast-125"
         />
-        {/* Soft Radial Ambient Gold Glow */}
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-radial-gradient from-[#836a2c]/20 via-[#836a2c]/5 to-transparent blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-radial-gradient from-[#836a2c]/10 via-transparent to-transparent blur-2xl pointer-events-none" />
+        {/* Soft Radial Ambient Brand & Gold Glow */}
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-radial-gradient from-brand-accent/20 via-[#836a2c]/10 to-transparent blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-radial-gradient from-[#836a2c]/12 via-transparent to-transparent blur-2xl pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,7 +218,7 @@ export function PracticeFooter({ onBookClick }: PracticeFooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-10 h-10 rounded-full bg-[#251b17] hover:bg-[#836a2c] text-[#fcf9f6] border border-[#836a2c]/30 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-md cursor-pointer group"
+                className="w-10 h-10 rounded-full bg-brand-dark hover:bg-brand-accent text-[#fcf9f6] border border-[#836a2c]/30 flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-md cursor-pointer group"
               >
                 {social.platform === "x" && (
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">

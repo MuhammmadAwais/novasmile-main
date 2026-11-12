@@ -136,8 +136,8 @@ export function DentistTeamGrid() {
                     }}
                   />
                   
-                  {/* Roasted Espresso & Mineral Tint Overlay */}
-                  <div className="absolute inset-0 bg-[#251b17]/88 backdrop-blur-[2px]" />
+                  {/* Brand Dark & Mineral Tint Overlay */}
+                  <div className="absolute inset-0 bg-brand-dark/88 backdrop-blur-[2px]" />
 
                   {/* Content Container */}
                   <div className="relative z-10 flex flex-col items-center text-center text-white h-full justify-center">
@@ -148,7 +148,7 @@ export function DentistTeamGrid() {
                     </h3>
 
                     {/* Credentials */}
-                    <p className="font-sans text-xs sm:text-sm font-semibold tracking-wider text-primary-light uppercase mb-1">
+                    <p className="font-sans text-xs sm:text-sm font-semibold tracking-wider text-brand-accent-light uppercase mb-1">
                       {member.credentials}
                     </p>
 

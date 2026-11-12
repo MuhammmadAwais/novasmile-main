@@ -95,7 +95,7 @@ export function BookingModal({ isOpen, onClose, initialTreatment }: BookingModal
             </div>
             <button
               onClick={handleReset}
-              className="bg-[#3b2d29] hover:bg-[#201815] text-[#fcf9f6] text-xs font-semibold uppercase tracking-wider px-8 py-3 rounded-full transition-all"
+              className="bg-brand-cta hover:bg-brand-cta-hover text-[#fcf9f6] text-xs font-semibold uppercase tracking-wider px-8 py-3 rounded-full transition-all"
             >
               Done
             </button>
@@ -189,7 +189,7 @@ export function BookingModal({ isOpen, onClose, initialTreatment }: BookingModal
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="w-full bg-[#3b2d29] hover:bg-[#201815] text-[#fcf9f6] text-xs font-semibold uppercase tracking-wider py-3.5 rounded-full transition-all"
+                    className="w-full bg-brand-cta hover:bg-brand-cta-hover text-[#fcf9f6] text-xs font-semibold uppercase tracking-wider py-3.5 rounded-full transition-all"
                   >
                     Continue To Schedule
                   </button>
@@ -271,7 +271,7 @@ export function BookingModal({ isOpen, onClose, initialTreatment }: BookingModal
                   <button
                     type="button"
                     onClick={() => setStep(3)}
-                    className="flex-1 bg-[#3b2d29] hover:bg-[#201815] text-[#fcf9f6] text-xs font-semibold uppercase tracking-wider py-3.5 rounded-full transition-all"
+                    className="flex-1 bg-brand-cta hover:bg-brand-cta-hover text-[#fcf9f6] text-xs font-semibold uppercase tracking-wider py-3.5 rounded-full transition-all"
                   >
                     Patient Details
                   </button>
@@ -336,7 +336,7 @@ export function BookingModal({ isOpen, onClose, initialTreatment }: BookingModal
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 bg-[#3b2d29] hover:bg-[#201815] text-[#fcf9f6] text-xs font-semibold uppercase tracking-wider py-3.5 rounded-full transition-all shadow-md"
+                    className="flex-1 bg-brand-cta hover:bg-brand-cta-hover text-[#fcf9f6] text-xs font-semibold uppercase tracking-wider py-3.5 rounded-full transition-all shadow-md"
                   >
                     Confirm Visit
                   </button>

@@ -126,7 +126,7 @@ export function SmileHookSection() {
             {/* Display Headline */}
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight text-on-surface leading-[1.08] mb-4">
               <span className="block">{config.headlinePart1}</span>
-              <span className="block text-primary font-normal">{config.headlinePart2}</span>
+              <span className="block text-brand-accent font-normal">{config.headlinePart2}</span>
             </h2>
 
             {/* Subtitle */}

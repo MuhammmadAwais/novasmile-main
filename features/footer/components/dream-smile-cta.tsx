@@ -124,7 +124,7 @@ export function DreamSmileCta({ onBookClick }: DreamSmileCtaProps) {
                   <button
                     type="button"
                     onClick={() => onBookClick?.("Comprehensive Smile Consultation")}
-                    className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#231a16] text-[#faf7f2] hover:bg-primary font-sans font-medium text-sm sm:text-base transition-all duration-300 shadow-[0_8px_20px_-4px_rgba(35,26,22,0.35)] hover:shadow-[0_12px_28px_-4px_rgba(131,106,44,0.4)] hover:scale-[1.02] cursor-pointer group active:scale-[0.98]"
+                    className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-brand-cta text-[#faf7f2] hover:bg-brand-cta-hover font-sans font-medium text-sm sm:text-base transition-all duration-300 shadow-[0_8px_20px_-4px_rgba(12,35,56,0.35)] hover:shadow-[0_12px_28px_-4px_rgba(131,106,44,0.4)] hover:scale-[1.02] cursor-pointer group active:scale-[0.98]"
                   >
                     <span>{cta.primaryCtaText}</span>
                     <ArrowUpRight className="w-4 h-4 text-[#e2c37b] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

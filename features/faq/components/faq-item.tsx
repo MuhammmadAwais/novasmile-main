@@ -17,7 +17,7 @@ export function FaqItemCard({ item, isOpen, onToggle, onBookTreatment }: FaqItem
       data-faq-item
       className={`group relative w-full rounded-xl sm:rounded-2xl transition-all duration-300 ease-out overflow-hidden ${
         isOpen
-          ? "bg-[#1c120e] text-[#fcf9f6] border border-[#c4a96a] shadow-[0_18px_45px_-12px_rgba(45,33,29,0.35)] -translate-y-0.5"
+          ? "bg-brand-dark text-[#fcf9f6] border border-[#c4a96a] shadow-[0_18px_45px_-12px_rgba(12,35,56,0.35)] -translate-y-0.5"
           : "bg-[#fdfbf9] text-[#201815] border border-[#836a2c]/25 hover:border-[#836a2c]/60 shadow-[0_4px_18px_-4px_rgba(45,33,29,0.06)] hover:shadow-[0_10px_28px_-6px_rgba(45,33,29,0.12)] hover:-translate-y-0.5"
       }`}
     >
@@ -69,7 +69,7 @@ export function FaqItemCard({ item, isOpen, onToggle, onBookTreatment }: FaqItem
           <div
             className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors duration-300 ${
               isOpen
-                ? "bg-[#836a2c] text-[#fcf9f6] shadow-sm"
+                ? "bg-brand-accent text-[#fcf9f6] shadow-sm"
                 : "bg-white/80 border border-[#836a2c]/30 text-[#836a2c] group-hover:border-[#836a2c]/60 group-hover:text-[#201815]"
             }`}
           >
@@ -80,7 +80,7 @@ export function FaqItemCard({ item, isOpen, onToggle, onBookTreatment }: FaqItem
             className={`font-sans text-base sm:text-lg lg:text-[19px] transition-colors duration-200 tracking-tight ${
               isOpen
                 ? "font-serif text-[#ffefd1] font-normal sm:text-xl lg:text-[21px]"
-                : "font-medium text-[#201815] group-hover:text-[#836a2c]"
+                : "font-medium text-[#201815] group-hover:text-brand-accent"
             }`}
           >
             {item.question}
@@ -107,7 +107,7 @@ export function FaqItemCard({ item, isOpen, onToggle, onBookTreatment }: FaqItem
       >
         <div className="overflow-hidden">
           <div className="pt-4 border-t border-white/15 space-y-3">
-            <p className="font-sans text-sm sm:text-base text-[#d8c7be] leading-relaxed pl-12 sm:pl-14">
+            <p className="font-sans text-sm sm:text-base text-brand-on-dark-muted leading-relaxed pl-12 sm:pl-14">
               {item.answer}
             </p>
 

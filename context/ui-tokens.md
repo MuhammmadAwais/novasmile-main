@@ -38,6 +38,37 @@ Tailwind v4 automatically generates utility classes from these variables:
 ```css
 @import "tailwindcss";
 
+:root,
+[data-brand-theme="blue-gold"] {
+  --brand-dark: #0c2338;
+  --brand-darker: #071624;
+  --brand-cta: #0d6da8;
+  --brand-cta-hover: #095280;
+  --brand-accent: #1488cc;
+  --brand-accent-light: #38aae8;
+  --brand-on-dark-muted: #bfd8eb;
+}
+
+[data-brand-theme="original"] {
+  --brand-dark: #281d19;
+  --brand-darker: #18110e;
+  --brand-cta: #30231e;
+  --brand-cta-hover: #1f1613;
+  --brand-accent: #836a2c;
+  --brand-accent-light: #c4a96a;
+  --brand-on-dark-muted: #d8c7be;
+}
+
+@theme inline {
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-darker: var(--brand-darker);
+  --color-brand-cta: var(--brand-cta);
+  --color-brand-cta-hover: var(--brand-cta-hover);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-light: var(--brand-accent-light);
+  --color-brand-on-dark-muted: var(--brand-on-dark-muted);
+}
+
 @theme {
   /* Typography Families */
   --font-serif: "EB Garamond", serif;

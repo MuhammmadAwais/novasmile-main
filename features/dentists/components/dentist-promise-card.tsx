@@ -120,22 +120,21 @@ export function DentistPromiseCard() {
         {/* Main Textured Card Container */}
         <div
           ref={cardContainerRef}
-          className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#281d19]"
+          className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl bg-brand-dark"
         >
           
           {/* Filtered Custom Canvas Texture Layer */}
           <div
-            className="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-60 mix-blend-overlay"
+            className="absolute inset-0 z-0 bg-cover bg-center pointer-events-none opacity-35 mix-blend-overlay"
             style={{
               backgroundImage: "url('/images/textures/custom-graphic-blue.jpg')",
-              filter: "sepia(1) saturate(1.6) hue-rotate(340deg) brightness(0.7) contrast(1.2)",
             }}
           />
 
-          {/* Warm Roasted Espresso & Ochre Ambient Gradients */}
-          <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#241915]/95 via-[#2e201b]/90 to-[#1e1411]/95" />
-          <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary/15 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
+          {/* Ambient Brand Dark & Accent Gradients */}
+          <div className="absolute inset-0 z-0 bg-gradient-to-br from-brand-dark/95 via-brand-dark/90 to-brand-darker/95" />
+          <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-accent/15 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-primary/15 blur-3xl pointer-events-none" />
 
           {/* Inner Rounded Hairline Frame (matching reference) */}
           <div className="relative z-10 m-3.5 sm:m-6 md:m-8 rounded-[1.5rem] sm:rounded-[2rem] border border-white/20 p-6 sm:p-10 lg:p-12">
@@ -158,7 +157,7 @@ export function DentistPromiseCard() {
                 <ul ref={featuresRef} className="space-y-3.5 sm:space-y-4 mb-8 sm:mb-10 font-sans">
                   {promise.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3.5 text-white/95 text-base sm:text-lg">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 border border-primary/50 flex items-center justify-center text-primary-light">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-accent/25 border border-brand-accent-light/60 flex items-center justify-center text-brand-accent-light">
                         <Check className="w-3.5 h-3.5 stroke-[2.5]" />
                       </div>
                       <span className="font-medium tracking-wide">{feature}</span>

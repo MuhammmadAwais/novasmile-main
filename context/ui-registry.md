@@ -24,11 +24,13 @@ After building any component — run `/imprint` or append to this file with the 
 | **Display Title**    | `font-serif text-4xl sm:text-5xl lg:text-6xl text-on-surface font-normal tracking-tight`                                                                                   |
 | **Section Title**    | `font-serif text-3xl sm:text-4xl text-on-surface font-normal`                                                                                                              |
 | **Card (Elevated)**  | `bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-6 sm:p-8 shadow-sm`                                                                             |
-| **Card (Subtle)**    | `bg-surface-container-low border border-outline-variant/20 rounded-lg p-6`                                                                                                 |
+| **Card (Dark Plate)**| `bg-brand-dark text-white border border-[#836a2c]/25 hover:border-brand-accent-light/60 rounded-2xl p-6 sm:p-7 shadow-md`                                                   |
+| **Canvas (Deep Dark)**| `bg-brand-darker text-[#fcf9f6] border-t border-[#836a2c]/20`                                                                                                              |
 | **Button (Primary)** | `bg-primary text-on-primary hover:bg-primary-container rounded-md px-6 py-3 font-medium text-sm transition-all duration-200`                                               |
+| **Button (Brand CTA)**| `bg-brand-cta hover:bg-brand-cta-hover text-[#fcf9f6] rounded-full px-8 py-3.5 font-semibold text-xs uppercase tracking-[0.14em] transition-all`                            |
 | **Button (Outline)** | `border border-primary text-primary hover:bg-secondary-container/20 rounded-md px-6 py-3 font-medium text-sm transition-all`                                               |
 | **Badge (Default)**  | `bg-surface-container text-on-surface-variant text-xs font-medium px-3 py-1 rounded-full`                                                                                  |
-| **Badge (Accent)**   | `bg-secondary-container/40 text-primary border border-secondary/30 text-xs font-semibold px-3 py-1 rounded-full`                                                           |
+| **Badge (Accent)**   | `bg-brand-accent text-[#fcf9f6] px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-lg font-serif italic shadow-sm`                                                                      |
 | **Input / Select**   | `bg-surface-container-lowest border border-outline-variant/50 rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-primary focus:ring-3 focus:ring-secondary/25` |
 
 ---
@@ -48,9 +50,9 @@ Last updated: 2026-09-19
 | Text — primary   | `text-[#2e2320]` (nav links)                                                   |
 | Text — secondary | `text-[#6b5c56]` (dropdown descriptions)                                       |
 | Spacing          | `py-5 sm:py-6 px-6 sm:px-12 lg:px-16`                                          |
-| Hover state      | `hover:text-primary transition-colors duration-150`                            |
+| Hover state      | `hover:text-brand-accent transition-colors duration-150`                       |
 | Shadow           | `shadow-xs` (scrolled header), `shadow-xl ring-1 ring-black/5` (dropdown menu) |
-| Accent usage     | `bg-[#c5a767] hover:bg-[#b49553] text-[#2c221e]` (pill CTA)                    |
+| Accent usage     | `bg-[#c5a767] hover:bg-[#b49553] text-[#2c221e]` (pill CTA), `text-brand-accent` (active/hover nav links) |
 
 **Pattern notes:**
 The top bar floats over the ambient hero plate with transparent background until scrolled. Nav links use `Plus Jakarta Sans` uppercase with medium letter tracking (`text-[13px] tracking-[0.08em] font-medium`).
@@ -72,26 +74,26 @@ Last updated: 2026-09-19
 | Spacing          | `max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-24 sm:pt-28 pb-8`                                               |
 | Hover state      | `hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200`                                    |
 | Shadow           | `shadow-sm hover:shadow-md`                                                                                  |
-| Accent usage     | `text-[#9b7b37]` (location badge), delicate botanical leaf watermark in `text-[#a68644]/25`                  |
+| Accent usage     | `bg-brand-cta hover:bg-brand-cta-hover text-[#fcf9f6]` (primary CTA pill), `text-[#9b7b37]` (location badge), delicate botanical leaf watermark in `text-[#a68644]/25` |
 
 **Pattern notes:**
-Directly matches reference mockup (`hero-section-reference.png`). Features soft left sunlight wash, subtle stone texture at `0.05` opacity, dual CTAs ("BOOK A VISIT" espresso pill + "CALL NOW" hairline outline pill), and delicate zen leaf watermark.
+Directly matches reference mockup (`hero-section-reference.png`). Features soft left sunlight wash, subtle stone texture at `0.05` opacity, dual CTAs ("BOOK A VISIT" `bg-brand-cta` pill + "CALL NOW" hairline outline pill), and delicate zen leaf watermark.
 
 ---
 
 ### TrustMetricsSection (Milestones & Infinite Partner Ribbon)
 
 File: `features/trust-metrics/components/trust-metrics-section.tsx`
-Last updated: 2026-09-19
+Last updated: 2026-11-12
 
 | Property         | Class                                                                                                                                                                                                                                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Background       | Section `bg-[#faf7f2]` with custom marble (`/images/textures/marble-texture-3-1.jpg`) and stone (`/images/textures/stone-background-1400.jpg`) textures                                                                                                                                                   |
-| Cards Background | Rich roasted espresso `bg-[#2d211d]` with internal marble texture plate (`/images/textures/download.webp` at 14% opacity)                                                                                                                                                                                 |
-| Border           | `border border-[#836a2c]/25 hover:border-[#c4a96a]/60`                                                                                                                                                                                                                                                    |
+| Cards Background | Theme-aware dark plate `bg-brand-dark` (`#0c2338` in `blue-gold`, `#281d19` in `original`) with internal marble texture plate (`/images/textures/download.webp` at 14% opacity)                                                                                                                           |
+| Border           | `border border-[#836a2c]/25 hover:border-brand-accent-light/60`                                                                                                                                                                                                                                           |
 | Border radius    | `rounded-2xl` (milestone stat cards)                                                                                                                                                                                                                                                                      |
 | Text — primary   | Stat numbers: `font-serif text-4xl sm:text-[46px] lg:text-[52px] font-light text-[#faf6f0] group-hover:text-[#ffefd1]`                                                                                                                                                                                    |
-| Text — secondary | Stat labels: `font-sans text-xs sm:text-[13px] text-[#d8c7be] font-medium tracking-wide`                                                                                                                                                                                                                  |
+| Text — secondary | Stat labels: `font-sans text-xs sm:text-[13px] text-brand-on-dark-muted font-medium tracking-wide`                                                                                                                                                                                                        |
 | Spacing          | Cards: `p-6 sm:p-7`, Section: `py-16 sm:py-24 px-6 sm:px-12 lg:px-16`                                                                                                                                                                                                                                     |
 | Hover state      | `hover:-translate-y-1 hover:shadow-xl transition-all duration-300`                                                                                                                                                                                                                                        |
 | Shadow           | `shadow-md hover:shadow-xl`                                                                                                                                                                                                                                                                               |
@@ -443,4 +445,23 @@ Last updated: 2026-09-20
 | Brand Watermark | Monumental display typography: `"MR. DENTIST"` at the absolute bottom (`text-[13.5vw] font-serif font-black uppercase text-[#836a2c]/[0.07] tracking-[0.22em] sm:tracking-[0.28em] select-none pointer-events-none`) |
 
 **Pattern notes:**
-Directly matches Reference 2: dark luxury footer architecture, 4-column navigation, circular social icons, and the monumental `"MR. DENTIST"` display wordmark.
+Directly matches Reference 2: theme-aware dark luxury footer architecture (`bg-brand-darker`), 4-column navigation, circular social icons (`bg-brand-dark hover:bg-brand-accent`), and the monumental `"MR. DENTIST"` display wordmark.
+
+---
+
+### Developer Brand Palette Configuration (`practiceData.brandTheme`)
+
+File: `content/practice-data.ts`, `app/globals.css`, `app/layout.tsx`
+Last updated: 2026-11-12
+
+| Property         | Configuration / Pattern                                                                                                       |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Mechanism        | Server-rendered `data-brand-theme` attribute on `<html>` (`app/layout.tsx`), zero client runtime or layout shift              |
+| Developer Switch | `practiceData.brandTheme`: `"blue-gold"` \| `"original"` (with optional `NEXT_PUBLIC_BRAND_THEME` environment variable override) |
+| Active Palettes  | `"blue-gold"`: Mr. Dentist Cerulean Blue (`#1488cc`), Deep Oxford Navy (`#0c2338`), Metallic Gold (`#836a2c` / `#c4a96a`)      |
+|                  | `"original"`: Original Warm Ochre Gold (`#836a2c` / `#c4a96a`) + Roasted Espresso (`#281d19` / `#18110e`)                    |
+| CSS Tokens       | `--color-brand-dark`, `--color-brand-darker`, `--color-brand-cta`, `--color-brand-accent`, `--color-brand-accent-light`        |
+| Client Overhead  | **0 KB** — No client toggle button in UI, no `localStorage` hydration lag, purely static CSS custom properties cascade      |
+
+**Pattern notes:**
+Industry-standard white-label theme architecture. Developers switch the entire demo's palette in one line in `content/practice-data.ts`. The UI remains 100% clean for prospective dentist clients without any dev/preview widgets in view.

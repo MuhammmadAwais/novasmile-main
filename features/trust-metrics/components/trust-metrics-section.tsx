@@ -110,8 +110,8 @@ export function TrustMetricsSection() {
               key={item.label}
               className={cn(
                 "milestone-card relative overflow-hidden rounded-2xl p-6 sm:p-7 min-h-[160px] sm:min-h-[175px]",
-                "bg-[#2d211d] text-white",
-                "border border-[#836a2c]/25 hover:border-[#c4a96a]/60",
+                "bg-brand-dark text-white",
+                "border border-[#836a2c]/25 hover:border-brand-accent-light/60",
                 "flex flex-col justify-between",
                 "transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1",
                 "group cursor-default"
@@ -128,15 +128,15 @@ export function TrustMetricsSection() {
                 }}
               />
 
-              {/* Ambient Ochre Radial Gradient Highlight */}
-              <div className="absolute -right-8 -top-8 w-32 h-32 bg-[#836a2c]/25 rounded-full blur-2xl pointer-events-none group-hover:bg-[#c4a96a]/35 transition-all" />
+              {/* Ambient Brand Accent Radial Gradient Highlight */}
+              <div className="absolute -right-8 -top-8 w-32 h-32 bg-brand-accent/25 rounded-full blur-2xl pointer-events-none group-hover:bg-brand-accent-light/35 transition-all" />
 
               {/* Stat Header: Label + Subtle Index */}
               <div className="relative z-10 flex items-start justify-between gap-2">
-                <span className="font-sans text-xs sm:text-[13px] text-[#d8c7be] font-medium tracking-wide leading-snug">
+                <span className="font-sans text-xs sm:text-[13px] text-brand-on-dark-muted font-medium tracking-wide leading-snug">
                   {item.label}
                 </span>
-                <span className="font-serif text-xs text-[#836a2c]/70 font-light italic">
+                <span className="font-serif text-xs text-[#c4a96a] font-light italic">
                   0{idx + 1}
                 </span>
               </div>

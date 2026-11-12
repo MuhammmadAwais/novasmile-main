@@ -86,7 +86,7 @@ export function FAQSection({ onBookClick, onCallClick }: FAQSectionProps) {
             <span className="block uppercase">{config.headlinePart1}</span>
             <span className="flex items-center justify-center gap-3 sm:gap-4 mt-2 sm:mt-3 flex-wrap">
               <span className="uppercase">{config.headlinePart2}</span>
-              <span className="inline-block bg-[#836a2c] text-[#fcf9f6] px-4 sm:px-6 py-1 sm:py-1.5 rounded-lg font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-[50px] shadow-sm tracking-normal">
+              <span className="inline-block bg-brand-accent text-[#fcf9f6] px-4 sm:px-6 py-1 sm:py-1.5 rounded-lg font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-[50px] shadow-sm tracking-normal">
                 {config.highlightBadge}
               </span>
             </span>

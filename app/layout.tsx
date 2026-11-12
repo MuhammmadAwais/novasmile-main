@@ -3,6 +3,7 @@ import { EB_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { InteractiveBubbleCursor } from "@/components/ui/interactive-cursor";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
+import { practiceData } from "@/content/practice-data";
 
 const ebGaramond = EB_Garamond({
   variable: "--font-serif",
@@ -29,9 +30,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const brandTheme =
+    (process.env.NEXT_PUBLIC_BRAND_THEME as "blue-gold" | "original") ||
+    practiceData.brandTheme ||
+    "blue-gold";
+
   return (
     <html
       lang="en"
+      data-brand-theme={brandTheme}
       suppressHydrationWarning
       className={`${ebGaramond.variable} ${plusJakartaSans.variable} h-full antialiased`}
     >

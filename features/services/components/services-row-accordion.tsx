@@ -427,7 +427,7 @@ export function ServicesRowAccordion({
   return (
     <div
       ref={sectionRef}
-      className="relative w-full bg-[#120b0a] text-[#fcf9f6] border-t border-b border-white/10 py-20 sm:py-28 lg:py-32 px-4 sm:px-8 lg:px-16 overflow-hidden"
+      className="relative w-full bg-brand-darker text-[#fcf9f6] border-t border-b border-white/10 py-20 sm:py-28 lg:py-32 px-4 sm:px-8 lg:px-16 overflow-hidden"
     >
       {/* 1. Alabaster Marble Texture Canvas Overlay */}
       <div
@@ -435,15 +435,15 @@ export function ServicesRowAccordion({
         style={{ backgroundImage: `url('/images/textures/marble-texture-3-1.jpg')` }}
       />
 
-      {/* Ambient Ochre Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#836a2c]/10 rounded-full blur-[160px] pointer-events-none" />
+      {/* Ambient Brand Accent Radial Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-accent/12 rounded-full blur-[160px] pointer-events-none" />
 
       {/* Section Header */}
       <div ref={headerRef} className="relative z-10 max-w-4xl mx-auto text-center mb-16 sm:mb-24">
         <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight leading-[1.15]">
           {config.rowHeadline}
         </h2>
-        <p className="font-sans text-xs sm:text-sm text-[#d0c5b4]/80 mt-4 max-w-xl mx-auto leading-relaxed">
+        <p className="font-sans text-xs sm:text-sm text-brand-on-dark-muted mt-4 max-w-xl mx-auto leading-relaxed">
           {config.rowSubtitle}
         </p>
       </div>

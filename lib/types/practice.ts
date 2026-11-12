@@ -288,6 +288,7 @@ export interface FooterConfig {
 export interface PracticeConfig {
   id: string;
   name: string;
+  brandTheme?: "blue-gold" | "original";
   tagline: string;
   emergencyHotline: string;
   officePhone: string;

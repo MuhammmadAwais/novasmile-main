@@ -70,8 +70,8 @@ export function Navbar({ onBookClick, onCallClick }: NavbarProps) {
                   className={cn(
                     "flex items-center gap-1.5 font-sans text-[13px] font-medium tracking-[0.08em] uppercase transition-colors duration-150 py-2",
                     activeDropdown === link.label
-                      ? "text-primary font-semibold"
-                      : "text-[#2e2320] hover:text-primary"
+                      ? "text-brand-accent font-semibold"
+                      : "text-[#2e2320] hover:text-brand-accent"
                   )}
                 >
                   <span>{link.label}</span>
@@ -79,7 +79,7 @@ export function Navbar({ onBookClick, onCallClick }: NavbarProps) {
                     <ChevronDown
                       className={cn(
                         "w-3 h-3 text-[#5e4f49] stroke-[2.2] transition-transform duration-200",
-                        activeDropdown === link.label ? "rotate-180 text-primary" : ""
+                        activeDropdown === link.label ? "rotate-180 text-brand-accent" : ""
                       )}
                     />
                   )}
@@ -96,7 +96,7 @@ export function Navbar({ onBookClick, onCallClick }: NavbarProps) {
                           onClick={() => setActiveDropdown(null)}
                           className="block px-3 py-2.5 rounded-lg hover:bg-surface-container-low transition-colors group"
                         >
-                          <div className="text-xs font-semibold text-[#2e2320] group-hover:text-primary">
+                          <div className="text-xs font-semibold text-[#2e2320] group-hover:text-brand-accent">
                             {item.label}
                           </div>
                           {item.description && (

@@ -169,11 +169,11 @@ export function HeroSection({ onBookVisit, onCallNow }: HeroSectionProps) {
             <button
               onClick={onBookVisit}
               className={cn(
-                "hero-btn bg-[#3f322e] hover:bg-[#29201d] text-[#fcf9f6]",
+                "hero-btn bg-brand-cta hover:bg-brand-cta-hover text-[#fcf9f6]",
                 "font-sans text-xs sm:text-[12px] font-semibold uppercase tracking-[0.14em]",
                 "px-8 sm:px-9 py-3.5 sm:py-4 rounded-full",
                 "transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0",
-                "cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#836a2c]/40",
+                "cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-accent/40",
               )}
             >
               {hero.primaryCtaText}

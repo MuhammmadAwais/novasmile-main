@@ -102,14 +102,14 @@ export function TestimonialsSection({ onExploreReviews }: TestimonialsSectionPro
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Sticky Left Column (Pinned while Right Reviews Stream Scrolls) */}
           <div className="lg:col-span-5 lg:sticky lg:top-28 self-start space-y-6 z-20">
-            {/* Two-Tone Headline with Ochre Highlight Badge matching Reference */}
+            {/* Two-Tone Headline with Brand Accent Highlight Badge matching Reference */}
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] text-[#201815] font-normal leading-[1.08] tracking-tight">
               <span className="block uppercase tracking-tight">{config.headlinePart1}</span>
               <span className="inline-flex items-center gap-2.5 sm:gap-3 mt-1.5 sm:mt-2.5 flex-wrap">
-                <span className="inline-block bg-[#836a2c] text-[#fcf9f6] px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-lg font-serif italic text-3xl sm:text-4xl lg:text-[44px] shadow-sm tracking-normal">
+                <span className="inline-block bg-brand-accent text-[#fcf9f6] px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-lg font-serif italic text-3xl sm:text-4xl lg:text-[44px] shadow-sm tracking-normal">
                   {config.highlightBadge}
                 </span>
-                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#836a2c] animate-pulse inline-block" />
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-brand-accent animate-pulse inline-block" />
               </span>
             </h2>
 
@@ -193,7 +193,7 @@ export function TestimonialsSection({ onExploreReviews }: TestimonialsSectionPro
       {/* Moving Sentence Marquee Carousel Ribbon (matching Image 4 with our theme & touch) */}
       <div
         onClick={onExploreReviews}
-        className="w-full bg-[#190f0c] text-[#fcf9f6] py-4 sm:py-5 border-y border-[#836a2c]/40 overflow-hidden relative select-none cursor-pointer group shadow-lg"
+        className="w-full bg-brand-darker text-[#fcf9f6] py-4 sm:py-5 border-y border-[#836a2c]/40 overflow-hidden relative select-none cursor-pointer group shadow-lg"
         title="Click to schedule your appointment"
       >
         {/* Subtle Marble Texture in Marquee */}
